@@ -25,6 +25,7 @@ const App = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

@@ -66,7 +66,9 @@ export const heroContent = [
     title: "Empowering Healing, Restoring Hope, Transforming Lives Together.",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
-    buttonText: "READ MORE",
+    buttonText1: "Read More",
     btnUrl: "/about-us",
+    buttonText2: "Donate Us",
+    btnUrl2: "/donation",
   },
 ];

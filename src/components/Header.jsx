@@ -1,19 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { headerSection, icons } from "../data";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
 
 const Header = () => {
   const headerleft = headerSection[0];
   const headerright = headerSection[1].rightSide;
 
+  const comp = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const t1 = gsap.timeline();
+      t1.from(comp.current, {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        transformOrigin: "right center",
+        y: 40,
+      });
+    }, comp);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="bg-upforangecrayola h-10 m-auto rounded-b-xl flex items-center justify-between px-4">
+    <div
+      ref={comp}
+      id="text-entry"
+      className="bg-upforangecrayola h-10 m-auto rounded-b-xl flex items-center justify-between px-4"
+    >
       <div className="flex items-center gap-2">
         <headerleft.icon />
         {/* <Icon  {headerleft.icon}/> */}
-        <p className="text-white font-medium">{headerleft.title}</p>
+        <p className="text-white font-medium 2xl:text-sm text-xs">
+          {headerleft.title}
+        </p>
         <Link
           to={headerleft.link}
-          className="hover:underline transition-all ease-in-out font-semibold"
+          className="hover:underline transition-all ease-in-out font-semibold 2xl:text-sm text-xs"
         >
           {headerleft.text}
         </Link>
@@ -21,7 +45,10 @@ const Header = () => {
       <div className="flex items-center gap-10">
         <div className="flex items-center gap-6 font-medium ">
           {headerright.map((right) => (
-            <span className="flex items-center gap-2" key={right.id}>
+            <span
+              className="flex items-center gap-2 2xl:text-lg text-sm"
+              key={right.id}
+            >
               <right.icon />
               {right.content}
             </span>

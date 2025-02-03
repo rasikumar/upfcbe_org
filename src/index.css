@@ -4,7 +4,11 @@
 
 @layer components {
     .btn-primary {
-        @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+        @apply bg-upforangecrayola text-white text-sm py-2 px-4 rounded-full hover:bg-transparent hover:border hover:border-upforangecrayola hover:text-black transition-all ease-in-out;
+    }
+
+    .btn-secondary {
+        @apply border border-upforangecrayola text-white text-sm py-2 px-4 rounded-full hover:bg-upforangecrayola hover:text-white transition-all ease-in-out;
     }
 }
 

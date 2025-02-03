@@ -12,6 +12,7 @@ const IntroSlider = ({ onComplete }) => {
       const t1 = gsap.timeline({
         onComplete: () => {
           if (onComplete) onComplete(); // Call the onComplete callback
+          comp.current.style.display = 'none'; // Hide the intro slider to prevent flicker
         },
       });
 
@@ -71,18 +72,18 @@ const IntroSlider = ({ onComplete }) => {
         className="h-screen py-10 px-36 bg-gray-50 absolute top-0 left-0 font-OpenSans z-10 w-full flex gap-10 tracking-tight justify-between items-center"
       >
         <div>
-          <h1 id="title-1" className="text-9xl">
+          <h1 id="title-1" className="2xl:text-9xl text-6xl">
             Universal
           </h1>
-          <h1 id="title-2" className="text-9xl">
+          <h1 id="title-2" className="2xl:text-9xl text-6xl">
             Peace
           </h1>
-          <h1 id="title-3" className="text-9xl">
+          <h1 id="title-3" className="2xl:text-9xl text-6xl">
             Foundation
           </h1>
         </div>
         <div id="icon">
-          <img src={main_logo} alt="main_logo" width={600} height={600} />
+          <img src={main_logo} alt="main_logo" className="w-96" />
         </div>
       </div>
       <div className="h-screen flex bg-gray-950 justify-center place-items-center">
