@@ -27,7 +27,7 @@ const Header = () => {
     <div
       ref={comp}
       id="text-entry"
-      className="bg-upforangecrayola h-10 m-auto rounded-b-xl flex items-center justify-between px-4"
+      className="bg-upforangecrayola h-10 m-auto rounded-b-xl flex items-center justify-between px-4 max-w-[100rem]"
     >
       <div className="flex items-center gap-2">
         <headerleft.icon />

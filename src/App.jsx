@@ -19,17 +19,17 @@ const App = () => {
       {/* {!animationComplete ? (
         <IntroSlider onComplete={handleAnimationComplete} />
       ) : ( */}
-      <div className="w-[90%] m-auto">
+      <div>
         <Header />
         <Navbar />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          
+
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
-      {/* )} */}
+      {/* )}  */}
     </div>
   );
 };

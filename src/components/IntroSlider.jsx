@@ -2,7 +2,8 @@
 // src/components/IntroSlider.js
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
-import { main_logo } from "../assets";
+import { gurujiHeropic } from "../assets";
+// import { main_logo } from "../assets";
 
 const IntroSlider = ({ onComplete }) => {
   const comp = useRef(null);
@@ -12,7 +13,7 @@ const IntroSlider = ({ onComplete }) => {
       const t1 = gsap.timeline({
         onComplete: () => {
           if (onComplete) onComplete(); // Call the onComplete callback
-          comp.current.style.display = 'none'; // Hide the intro slider to prevent flicker
+          comp.current.style.display = "none"; // Hide the intro slider to prevent flicker
         },
       });
 
@@ -50,15 +51,15 @@ const IntroSlider = ({ onComplete }) => {
         })
         .from("#hero-page", {
           opacity: 0,
-          duration: 1,
+          duration: 0.2,
         })
         .to("#hero-page", {
           opacity: 0,
-          duration: 1,
+          duration: 0.2,
         })
         .to(".bg-gray-950", {
           opacity: 0,
-          duration: 1,
+          duration: 0.2,
         });
     }, comp);
 
@@ -83,13 +84,13 @@ const IntroSlider = ({ onComplete }) => {
           </h1>
         </div>
         <div id="icon">
-          <img src={main_logo} alt="main_logo" className="w-96" />
+          <img src={gurujiHeropic} alt="main_logo" className="w-[40rem]" />
         </div>
       </div>
       <div className="h-screen flex bg-gray-950 justify-center place-items-center">
-        <div id="hero-page" className="text-white text-5xl">
+        {/* <div id="hero-page" className="text-white text-5xl">
           Welcome to 
-        </div>
+        </div> */}
       </div>
     </div>
   );

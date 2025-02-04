@@ -71,4 +71,41 @@ export const heroContent = [
     buttonText2: "Donate Us",
     btnUrl2: "/donation",
   },
+  {
+    id: 1,
+    boxes: [
+      {
+        id: 0,
+        title: "Volunteer",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
+        icon: FaPeopleGroup,
+        link: "/volunteer",
+      },
+      {
+        id: 1,
+        title: "Donate",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
+        icon: FaPeopleGroup,
+        link: "/donation",
+      },
+      {
+        id: 2,
+        title: "Volunteer",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
+        icon: FaPeopleGroup,
+        link: "/volunteer",
+      },
+      {
+        id: 3,
+        title: "Donate",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
+        icon: FaPeopleGroup,
+        link: "/donation",
+      },
+    ],
+  },
 ];
