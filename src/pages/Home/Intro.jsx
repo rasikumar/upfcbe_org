@@ -1,20 +1,24 @@
 import { ScrollParallax } from "react-just-parallax";
 import { MiniCards } from "../../components/MiniCards";
+import MotionSection from "../../components/MotionSection";
 import { gurujiwalk } from "../../assets";
 import { GiEnergise } from "react-icons/gi";
 import { BiBody, BiBuilding } from "react-icons/bi";
 import { FaHeading } from "react-icons/fa6";
 import { RiFeedbackFill } from "react-icons/ri";
 import { SiMinds } from "react-icons/si";
-import MotionSection from "../../components/MotionSection";
 
 const Intro = () => {
+
+
   return (
-    <div className="w-full bg-gradient-to-l to-upfhoneydew from-upfmelon m-auto">
-      <div className="flex items-center justify-between max-w-[100rem] m-auto">
-        <div>
+    <div className="w-full m-auto px-4">
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row bg-gradient-to-l to-upfhoneydew from-upfmelon rounded-xl items-center justify-between max-w-[100rem] m-auto p-6 sm:p-10 lg:p-20 overflow-hidden">
+        {/* Left MiniCards */}
+        <div className="w-full lg:w-1/3">
           <ScrollParallax className="flex">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 items-center justify-center">
               <MotionSection>
                 <MiniCards
                   title="Re-Engergize"
@@ -22,7 +26,6 @@ const Intro = () => {
                   icons={GiEnergise}
                 />
               </MotionSection>
-              <MotionSection></MotionSection>
               <MotionSection>
                 <MiniCards
                   title="Strength Building"
@@ -30,6 +33,7 @@ const Intro = () => {
                   icons={BiBuilding}
                 />
               </MotionSection>
+
               <MotionSection>
                 <MiniCards
                   title="Stress Relief"
@@ -40,10 +44,18 @@ const Intro = () => {
             </div>
           </ScrollParallax>
         </div>
-        <div>
-          <img src={gurujiwalk} />
+
+        {/* Center Image */}
+        <div className="w-full flex justify-center my-6 lg:my-0">
+          <img
+            src={gurujiwalk}
+            alt="Guruji Walk"
+            className="w-full max-w-xs sm:max-w-sm lg:max-w-md"
+          />
         </div>
-        <div className="relative">
+
+        {/* Right MiniCards */}
+        <div className="w-full lg:w-1/3">
           <ScrollParallax>
             <div className="flex flex-col gap-4">
               <MotionSection>
@@ -71,6 +83,12 @@ const Intro = () => {
           </ScrollParallax>
         </div>
       </div>
+
+      {/* About Content */}
+      
+
+      {/* Stats Section */}
+      
     </div>
   );
 };

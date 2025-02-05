@@ -1,34 +1,88 @@
 import { Link } from "react-router";
 import { main_logo } from "../assets";
 import { navigations } from "../data";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { MdMenu, MdClose } from "react-icons/md";
 
 const Navbar = () => {
   const comp = useRef(null);
+  const linksRef = useRef([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      const t1 = gsap.timeline({ paused: true });
-      t1.from(comp.current, {
-        yPercent: "-100",
-        duration: 1,
-        ease: "power4.inOut",
-      });
-      t1.play();
+      // Only animate the mobile menu when it is open
+      if (menuOpen) {
+        gsap.fromTo(
+          ".mobile-menu",
+          { opacity: 0, yPercent: "-100" },
+          { opacity: 1, yPercent: 0, duration: 0.2, ease: "power4.inOut" }
+        );
 
-      return () => t1.reverse(); // Revert the timeline when unmounted
-    }, comp);
+        // Sequential animation for the menu links
+        gsap.fromTo(
+          linksRef.current,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+            duration: 0.2,
+            ease: "power4.inOut",
+            delay: 0.5,
+          }
+        );
+      } else {
+        // Only animate the mobile menu when it is closing
+        if (document.querySelector(".mobile-menu")) {
+          gsap.to(".mobile-menu", {
+            opacity: 0,
+            yPercent: "100",
+            duration: 0.2,
+            ease: "power4.inOut",
+          });
+
+          // Sequential exit animation for the links
+          gsap.to(linksRef.current, {
+            opacity: 0,
+            y: 30,
+            stagger: 0.2,
+            duration: 0.2,
+            ease: "power4.inOut",
+            delay: 0.2,
+          });
+        }
+      }
+    });
+
     return () => ctx.revert();
-  }, []);
+  }, [menuOpen]); // Re-run on menuOpen state change
+
+  useLayoutEffect(() => {
+    if (buttonClicked) {
+      gsap.to(".menu-toggle", {
+        scale: 1.2,
+        duration: 0.2,
+        ease: "power1.out",
+        yoyo: true,
+        repeat: 1,
+      });
+      setButtonClicked(false);
+    }
+  }, [buttonClicked]);
 
   return (
-    <nav className="sticky top-0 z-50">
-      <div className="mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-20 bg-white">
-        <Link to="/" className="text-center md:text-left">
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="mx-auto flex justify-between items-center py-4 px-6 md:px-20 max-w-[100rem]">
+        {/* Logo */}
+        <Link to="/" className="text-center">
           <img src={main_logo} width={100} height={100} />
         </Link>
-        <div className="flex gap-4" ref={comp}>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex gap-6" ref={comp}>
           {navigations.map((navigation) => (
             <a
               href={navigation.url}
@@ -41,7 +95,47 @@ const Navbar = () => {
             </a>
           ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-2xl menu-toggle"
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+            setButtonClicked(true); // Trigger the button animation
+          }}
+        >
+          {menuOpen ? <MdClose /> : <MdMenu />}
+        </button>
       </div>
+
+      {/* Full-Screen Mobile Menu */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 w-full h-full bg-upforangecrayola flex flex-col items-center justify-center text-white z-50 transition-opacity duration-300 mobile-menu"
+          onClick={() => setMenuOpen(false)} // Click outside to close
+        >
+          <button
+            className="absolute top-6 right-6 text-3xl"
+            onClick={() => setMenuOpen(false)}
+          >
+            <MdClose />
+          </button>
+
+          <div className="flex flex-col items-center gap-6 text-xl">
+            {navigations.map((navigation, index) => (
+              <a
+                href={navigation.url}
+                key={navigation.title}
+                className="hover:text-gray-300 transition duration-300"
+                onClick={() => setMenuOpen(false)} // Close on click
+                ref={(el) => (linksRef.current[index] = el)} // Assign each link ref
+              >
+                {navigation.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
