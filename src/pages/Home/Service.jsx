@@ -1,11 +1,16 @@
 import { heroContent } from "@/data";
 import ServiceCard from "../../components/ServiceCard";
+import { bg } from "@/assets";
 
 const Service = () => {
   const serviceContents = heroContent[2]?.boxes || [];
+  console.log(serviceContents)
 
   return (
-    <div className="bg-red-100 flex flex-col gap-6 py-10 px-6">
+    <div
+      className="flex flex-col gap-6 py-10 px-6"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
       {/* Section Title */}
       <h2 className="text-center text-2xl md:text-4xl font-bold">
         {heroContent[2]?.title}
@@ -16,6 +21,7 @@ const Service = () => {
         {serviceContents.map((serviceContent) => (
           <ServiceCard
             key={serviceContent.id}
+            tag={serviceContent.tag}
             title={serviceContent.title}
             description={serviceContent.description}
             icon={serviceContent.icon}

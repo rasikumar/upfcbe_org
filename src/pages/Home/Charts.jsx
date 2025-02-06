@@ -27,7 +27,7 @@ const Charts = () => {
   };
   return (
     <div className="w-full m-auto px-4">
-      <div className="flex flex-col sm:flex-row bg-slate-200 rounded-xl p-6 mx-auto items-center justify-between max-w-[100rem] gap-6 sm:gap-4 my-4">
+      <div className="flex flex-col sm:flex-row rounded-xl p-6 mx-auto items-center justify-between max-w-[100rem] gap-6 sm:gap-4 my-4">
         <Component
           chartData={chartDataR}
           chartConfig={chartConfigR}

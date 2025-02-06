@@ -11,11 +11,12 @@ export default {
   			]
   		},
   		colors: {
-  			upfteagreen: '#C2E6C7ff',
-  			upforangecrayola: '#FE743Bff',
-  			upfmelon: '#FEAB91ff',
-  			upfwhite: '#FEFEFEff',
-  			upfhoneydew: '#DFF9EAff',
+  			upfteagreeno: '#40981D',
+  			upfteagreent: '#21B740',
+  			upforangecrayola: '#FD8348',
+  			upflightwhite: '#FBF5F2',
+  			upfwhite: '#FEFEFE',
+  			upfhoneydew: '#FDAB88',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

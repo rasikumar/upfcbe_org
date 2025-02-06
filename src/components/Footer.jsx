@@ -22,7 +22,7 @@ const Footer = () => {
                     src={section.img}
                     alt="UPF logo"
                     width={100}
-                    height={100}
+                    height={100}  
                     className="mr-2"
                   />
                   {section.title}

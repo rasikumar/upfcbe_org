@@ -44,17 +44,23 @@ const Hero = () => {
   return (
     <div ref={comp} className="flex flex-col gap-10 my-20 relative px-6">
       {/* Blurred Background Effect */}
-      <div className="w-80 h-32 absolute bg-upfteagreen rounded-full blur-[80px] flex items-center justify-center left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 -z-10" />
+      <div className="w-80 h-32 absolute bg-upfteagreent/50 rounded-full blur-[80px] flex items-center justify-center left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 -z-10" />
 
       {/* Content Wrapper */}
       <div className="max-w-7xl m-auto flex flex-col gap-6 text-center">
         {/* Hero Text */}
         <div className="flex flex-col items-center gap-6">
           <h2
-            className="text-2xl md:text-4xl 2xl:text-5xl font-bold 2xl:max-w-4xl max-w-2xl"
+            className="text-2xl md:text-4xl 2xl:text-5xl font-bold "
             id="text-reveal"
           >
-            {hero}
+            {/* {hero.split(",").map} */}
+            {hero.split(",").map((desc, index) => (
+              <span key={index}>
+                {desc.trim()}
+                {index !== hero.split(",").length - 1 && <br />}
+              </span>
+            ))}
           </h2>
           <p
             className="text-sm md:text-lg 2xl:text-xl max-w-xl"
@@ -76,22 +82,27 @@ const Hero = () => {
       </div>
 
       {/* SVG Section */}
-      <div className="flex max-md:flex-col gap-4 max-w-7xl m-auto">
-        <div className="flex flex-col md:flex-row w-full justify-center items-center m-auto gap-4">
-          <div className="md:-mt-44">
+      <div className="flex md:gap-4 gap-1  max-w-7xl m-auto">
+        <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
+          <div className="md:-mt-44 -mt-10">
             <SvgClipPath ref={(el) => (svgRefs.current[0] = el)} />
           </div>
           <div>
             <SvgClipPath ref={(el) => (svgRefs.current[1] = el)} />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row w-full justify-center items-center m-auto gap-4">
+        <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
           <div>
             <SvgClipPath ref={(el) => (svgRefs.current[2] = el)} />
           </div>
-          <div className="md:-mt-44">
+          <div className="md:-mt-44 -mt-10">
             <SvgClipPath ref={(el) => (svgRefs.current[3] = el)} />
           </div>
+        </div>
+      </div>
+      <div>
+        <div className="w-full h-52 bg-black rounded-lg">
+          <img src="" alt="" />
         </div>
       </div>
     </div>
