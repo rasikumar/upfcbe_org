@@ -1,13 +1,16 @@
-import { gurujihero } from "@/assets";
-import Button from "@/components/Button";
-import SvgClipPath from "@/components/SvgClipPath";
-import { heroContent } from "@/data";
-import gsap from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+
+import { familyphoto } from "@/assets";
+import Button from "@/components/Button";
+import LeftSvgClipPathOne from "@/components/clipPaths/LeftSvgClipPathOne";
+import LeftSvgClipPathTwo from "@/components/clipPaths/LeftSvgClipPathTwo";
+import RightSvgClipPathOne from "@/components/clipPaths/RightSvgClipPathOne";
+import RightSvgClipPathTwo from "@/components/clipPaths/RightSvgClipPathTwo";
+import { heroContent } from "@/data";
 
 const Hero = () => {
   const comp = useRef(null);
-  const svgRefs = useRef([]); // Store refs for each SvgClipPath component
 
   const { hero, description, buttonText1, buttonText2, btnUrl1, btnUrl2 } =
     heroContent[0];
@@ -74,21 +77,21 @@ const Hero = () => {
       <div className="flex md:gap-4 gap-1  max-w-[100rem] m-auto">
         <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
           <div className="md:-mt-44 -mt-10">
-            <SvgClipPath />
+            <LeftSvgClipPathOne />
           </div>
           <div>
-            <SvgClipPath />
+            <LeftSvgClipPathTwo />
           </div>
         </div>
-        <div className="w-[50rem] h-full relative overflow-hidden">
-          <img src={gurujihero} className="rounded-3xl" alt="" />
+        <div className="w-[50rem] h-full relative overflow-hidden 2xl:mt-52 mt-28">
+          <img src={familyphoto} className="rounded-3xl" alt="" />
         </div>
         <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
           <div>
-            <SvgClipPath />
+            <RightSvgClipPathOne />
           </div>
           <div className="md:-mt-44 -mt-10">
-            <SvgClipPath />
+            <RightSvgClipPathTwo />
           </div>
         </div>
       </div>

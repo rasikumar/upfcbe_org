@@ -10,6 +10,7 @@ import natural from "./hero/natural.JPG";
 import spirutal from "./hero/spirutal.JPG";
 import education from "./hero/education.JPG";
 import styleimage from "./styleimage.png";
+import familyphoto from "./hero/familyphoto.webp"
 
 export {
   main_logo,
@@ -24,4 +25,5 @@ export {
   spirutal,
   education,
   styleimage,
+  familyphoto,
 };

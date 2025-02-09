@@ -1,5 +1,6 @@
 import {
   education,
+  gurujihero,
   hero_banner,
   main_logo,
   medicalservice,
@@ -9,7 +10,9 @@ import {
 import {
   FaFacebookF,
   FaInstagram,
+  FaLinkedin,
   FaPeopleGroup,
+  FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
@@ -26,6 +29,38 @@ export const icons = [
     component: FaInstagram,
     color: "#C13584",
     link: "https://www.instagram.com",
+  },
+];
+
+export const founder = [
+  {
+    name: "Dr. Rashid Ahmad",
+    position: "Founder, UPF",
+    image: gurujihero,
+    description:
+      "Dr. Rashid Ahmad is a renowned spiritualist, medical expert, and philanthropist who has dedicated his life to helping others find peace and fulfillment. He is an accomplished and compassionate leader who believes in the power of community and the transformative power of spirituality.",
+    socialMedia: [
+      {
+        id: 0,
+        icon: FaFacebookF,
+        link: "https://www.facebook.com/rashidahmad.ahmed.9",
+      },
+      {
+        id: 1,
+        icon: FaInstagram,
+        link: "https://www.instagram.com/rashidahmad.ahmed.9/",
+      },
+      {
+        id: 2,
+        icon: FaWhatsapp,
+        link: "https://www.instagram.com/rashidahmad.ahmed.9/",
+      },
+      {
+        id: 3,
+        icon: FaLinkedin,
+        link: "https://www.instagram.com/rashidahmad.ahmed.9/",
+      },
+    ],
   },
 ];
 
@@ -166,7 +201,7 @@ export const heroContent = [
     id: 0,
     hero: "We Have the Power to Impact Our Future, We’re Doing Something About It by peace",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
+      "we believe in creating a brighter future for those in need. Through education, healthcare, and community support, we bring hope and opportunity to underserved populations. Join us in making a difference—because every action counts!",
     buttonText1: "Read More",
     btnUrl1: "/about-us",
     buttonText2: "Donate Us",
@@ -174,40 +209,6 @@ export const heroContent = [
   },
   {
     id: 1,
-    boxes: [
-      {
-        id: 0,
-        title: "Volunteer",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
-        icon: FaPeopleGroup,
-        link: "/volunteer",
-      },
-      {
-        id: 1,
-        title: "Donate",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
-        icon: FaPeopleGroup,
-        link: "/donation",
-      },
-      {
-        id: 2,
-        title: "Volunteer",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
-        icon: FaPeopleGroup,
-        link: "/volunteer",
-      },
-      {
-        id: 3,
-        title: "Donate",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, ipsum in faucibus pulvinar, justo nunc semper lectus, vel bibendum lectus nisi eu turpis.",
-        icon: FaPeopleGroup,
-        link: "/donation",
-      },
-    ],
     content: [
       {
         id: 0,
@@ -219,7 +220,7 @@ export const heroContent = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     title: "Our Services",
     description: "Empowering Lives with Compassion",
     boxes: [
@@ -274,5 +275,32 @@ export const heroContent = [
         linkName: "Read More",
       },
     ],
+  },
+];
+
+export const aboutContent = [
+  {
+    id: 1,
+    heading: "About Pure Hearts",
+    title: "Help the Society,Donate to the Charity",
+    content:
+      "On the other hand, we denounce with righteous indignation & dislike men who are so beguiled and demoralized by the charms of pleasure of the moment so blinded by desire that they cannot foresee the pain trouble that are bound to ensure.",
+  },
+  {
+    id: 2,
+    content: [
+      {
+        id: 0,
+        title: "Mission",
+        description:
+          "Mission of Universal Peace Foundation is to provide a safe, non-profitable and egalitarian society in the Indian cultural context based on egalitarian values. We aim to create a peaceful society by providing education, healthcare, and community support to those in need.",
+      },
+      {
+        id: 1,
+        title: "Vision",
+        description:
+          "Vision of Universal Peace Foundation is to create a peaceful society in the Indian cultural context based on egalitarian values, where every person has equal opportunities to live a happy, healthy, and fulfilling life. We believe that our mission and vision will be achieved through education, healthcare, and community support.",
+      },
+    ],  
   },
 ];
