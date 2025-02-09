@@ -84,15 +84,15 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6" ref={comp}>
           {navigations.map((navigation) => (
-            <a
-              href={navigation.url}
+            <Link
+              to={navigation.url}
               key={navigation.title}
               className={`2xl:text-lg text-sm font-medium ${
                 navigation.active ? "text-upfmelon" : "text-upforangecrayola"
               } hover:text-upfmelon transition duration-300 ease-in-out`}
             >
               {navigation.title}
-            </a>
+            </Link>
           ))}
         </div>
 

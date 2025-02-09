@@ -1,9 +1,10 @@
 // src/App.js
+import { Route, Routes } from "react-router";
 import { useState, useEffect } from "react";
+
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import { Route, Routes } from "react-router";
 import Error from "./components/Error";
 import ScrollToTop from "./lib/ScrollToTop";
 import Footer from "./components/Footer";
