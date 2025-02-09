@@ -3,7 +3,7 @@ import gurujiHeropic from "./hero/gurujiHeropic.png";
 import gurujiwalk from "./hero/guruji-walk.png";
 import gurujihero from "./hero/gurujihero.JPG";
 import bg from "./hero/bg.jpg";
-import bgo from "./hero/bgo.JPG";
+import bgo from "./hero/bgo.jpg";
 import hero_banner from "./hero/hero_banner.jpg";
 import medicalservice from "./hero/medical-service.JPG";
 import natural from "./hero/natural.JPG";
