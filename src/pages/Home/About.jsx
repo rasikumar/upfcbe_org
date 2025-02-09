@@ -30,10 +30,10 @@ const About = () => {
 
   return (
     <div
-      className="flex max-w-[100rem] mx-auto bg-cover bg-center items-start"
+      className="flex flex-col lg:flex-row max-w-[100rem] mx-auto bg-cover bg-center items-start"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="w-1/2 flex flex-col items-start">
+      <div className="w-full lg:w-1/2 flex flex-col items-start">
         {aboutContents.map((aboutContent) => (
           <div
             key={aboutContent.id}
@@ -109,7 +109,7 @@ const About = () => {
           })}
         </div>
       </div>
-      <div className="w-1/2 flex flex-col gap-8">
+      <div className="w-full lg:w-1/2 flex flex-col gap-8">
         <VerticalBox />
         <VerticalBox />
         <VerticalBox />

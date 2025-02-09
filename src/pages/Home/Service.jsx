@@ -56,7 +56,7 @@ const Service = () => {
 
   return (
     <div
-      className="flex items-center justify-end py-10 px-6 m-auto max-w-[120rem]"
+      className="flex items-center justify-end py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* Service Cards Grid */}
