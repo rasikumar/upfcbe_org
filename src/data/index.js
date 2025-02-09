@@ -1,4 +1,11 @@
-import { hero_banner, main_logo } from "@/assets";
+import {
+  education,
+  hero_banner,
+  main_logo,
+  medicalservice,
+  natural,
+  spirutal,
+} from "@/assets";
 import {
   FaFacebookF,
   FaInstagram,
@@ -204,6 +211,8 @@ export const heroContent = [
     content: [
       {
         id: 0,
+        heading: "Universal Peace Foundation",
+        title: "Learn About Us",
         description:
           "Universal Peace Foundation is a laudable trust in the field of humanitarian service over a decade. It continuously aims at establishing a peaceful society based on egalitarian values in the Indian cultural context. Free orphanage home for destitute children, women, old age, widow and physically challenged & mentally retardation. Its Non- Profitable Public Charitable Indian Trust and Funded by Guruji Shivathma. What one can realize about Universal Peace Foundation is a heaven for the starving illiterate children, differently abled unfortunate souls, uncared aged kith and kins and undignified destitute souls.",
       },
@@ -211,7 +220,8 @@ export const heroContent = [
   },
   {
     id: 3,
-    title: "Service",
+    title: "Our Services",
+    description: "Empowering Lives with Compassion",
     boxes: [
       {
         id: 0,
@@ -226,7 +236,7 @@ export const heroContent = [
       {
         id: 1,
         title: "Educational Service",
-        img: hero_banner,
+        img: education,
         tag: "Education & Literacy",
         description:
           "Students in and around villages numbering more than 100+ members are offered coaching in the evening within the ashram campus without any fees. Dresses and Free Computers are provided to the tribals of Thirumorthi Hills. Apart from that, UPF provides basic needs like water facilities, clothes, medicines, and groceries to the tribals according to their requirements.",
@@ -236,7 +246,7 @@ export const heroContent = [
       {
         id: 2,
         title: "Natural Service",
-        img: hero_banner,
+        img: natural,
         tag: "Environmental Conservation",
         description:
           "UPF planted more than 3000 trees inside the campus and also maintains nurseries. More than 100,000 saplings have been provided. By maintaining a social forestry system, we created a barrier-free healthy environment, and 12,000 saplings have been sent out to outside people.",
@@ -246,6 +256,7 @@ export const heroContent = [
       {
         id: 3,
         title: "Spiritual Service",
+        img: spirutal,
         tag: "Wellness & Mindfulness",
         description:
           "UPF promotes Indian inner science of Yoga, Meditation, Pranayama, Dhiyana, and Vipassana to all kinds of people. Classes by UPF help to find inner peace, which is taught by Guruji Shivathma based on course booking and appointments.",
@@ -255,6 +266,7 @@ export const heroContent = [
       {
         id: 4,
         title: "Medical Service",
+        img: medicalservice,
         tag: "Healthcare & Wellness",
         description:
           "UPF provides free hospital and ambulance services to needy people. Medical camps are also conducted twice a month inside the ashram. Apart from that, our medical team frequently conducts free medical camps for nearby village people with free medicines and general checkups. The UPF Medical team provides services in all other UPF branches in Tamil Nadu, covering more than six districts.",

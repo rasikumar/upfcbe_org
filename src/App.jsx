@@ -1,6 +1,5 @@
 // src/App.js
-// import { useState } from "react";
-// import IntroSlider from "./components/IntroSlider";
+import { useState, useEffect } from "react";
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -8,30 +7,39 @@ import { Route, Routes } from "react-router";
 import Error from "./components/Error";
 import ScrollToTop from "./lib/ScrollToTop";
 import Footer from "./components/Footer";
+import About from "./pages/Aboutus/About";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const App = () => {
-  // const [animationComplete, setAnimationComplete] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
-  // const handleAnimationComplete = () => {
-  //   setAnimationComplete(true); // Update state when animation completes
-  // };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div>
-      {/* {!animationComplete ? (
-        <IntroSlider onComplete={handleAnimationComplete} />
-      ) : ( */}
-      <div>
+      <div className="font-NotoSans">
         <Header />
         <Navbar />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-
+          <Route path="/about-us" element={<About />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        <Footer/>
+        <Footer />
+        {showScrollToTop && <ScrollToTopButton />}
       </div>
-      {/* )}  */}
     </div>
   );
 };

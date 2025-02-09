@@ -1,3 +1,4 @@
+import { gurujihero } from "@/assets";
 import Button from "@/components/Button";
 import SvgClipPath from "@/components/SvgClipPath";
 import { heroContent } from "@/data";
@@ -19,22 +20,12 @@ const Hero = () => {
       t1.from("#text-reveal", {
         opacity: 0,
         y: "+=50",
-        stagger: 0.5,
-        ease: "power1.Out",
+        ease: "power4.Out",
       });
       t1.from("#para-reveal", {
         opacity: 0,
         y: "+=50",
-        stagger: 0.7,
-        ease: "power1.Out",
-      });
-
-      // Animation for the SVG cards
-      t1.from(svgRefs.current, {
-        opacity: 0,
-        y: "+=50",
-        stagger: 0.4, // Add stagger for each SVG card
-        ease: "power1.Out",
+        ease: "power4.Out",
       });
     }, comp);
 
@@ -42,11 +33,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={comp} className="flex flex-col gap-10 my-20 relative px-6">
-      {/* Blurred Background Effect */}
+    <div ref={comp} className="flex flex-col gap-10 my-20 relative px-6 ">
       <div className="w-80 h-32 absolute bg-upfteagreent/50 rounded-full blur-[80px] flex items-center justify-center left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 -z-10" />
 
-      {/* Content Wrapper */}
       <div className="max-w-7xl m-auto flex flex-col gap-6 text-center">
         {/* Hero Text */}
         <div className="flex flex-col items-center gap-6">
@@ -82,27 +71,25 @@ const Hero = () => {
       </div>
 
       {/* SVG Section */}
-      <div className="flex md:gap-4 gap-1  max-w-7xl m-auto">
+      <div className="flex md:gap-4 gap-1  max-w-[100rem] m-auto">
         <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
           <div className="md:-mt-44 -mt-10">
-            <SvgClipPath ref={(el) => (svgRefs.current[0] = el)} />
+            <SvgClipPath />
           </div>
           <div>
-            <SvgClipPath ref={(el) => (svgRefs.current[1] = el)} />
+            <SvgClipPath />
           </div>
+        </div>
+        <div className="w-[50rem] h-full relative overflow-hidden">
+          <img src={gurujihero} className="rounded-3xl" alt="" />
         </div>
         <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
           <div>
-            <SvgClipPath ref={(el) => (svgRefs.current[2] = el)} />
+            <SvgClipPath />
           </div>
           <div className="md:-mt-44 -mt-10">
-            <SvgClipPath ref={(el) => (svgRefs.current[3] = el)} />
+            <SvgClipPath />
           </div>
-        </div>
-      </div>
-      <div>
-        <div className="w-full h-52 bg-black rounded-lg">
-          <img src="" alt="" />
         </div>
       </div>
     </div>

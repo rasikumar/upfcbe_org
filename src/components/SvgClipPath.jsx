@@ -3,15 +3,11 @@ import { gurujihero } from "@/assets";
 
 const SvgClipPath = forwardRef(
   (
-    {
-      imageUrl = gurujihero,
-      title = "Default Title",
-      description = "This is a default description.",
-    },
+    { imageUrl = gurujihero, title = "25 K", description = "Volunteers" },
     ref
   ) => {
     return (
-      <div ref={ref} className="relative w-full h-full">
+      <div className="relative w-full h-full" ref={ref}>
         <svg viewBox="0 0 210 296" className="main__hero__image w-full h-auto">
           <defs>
             <clipPath id="border" clipPathUnits="userSpaceOnUse">
@@ -38,9 +34,9 @@ const SvgClipPath = forwardRef(
           />
         </svg>
 
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center p-4">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between items-center text-center py-20">
           {title && (
-            <h2 className="md:text-lg text-[8px] font-bold text-white drop-shadow-md">
+            <h2 className="md:text-4xl text-[8px] font-bold text-white drop-shadow-md">
               {title}
             </h2>
           )}
