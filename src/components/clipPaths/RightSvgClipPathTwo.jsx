@@ -1,12 +1,12 @@
 import React, { forwardRef } from "react";
-import { gurujiwalk } from "@/assets";
+import { donarDetails } from "@/assets";
 
 const RightSvgClipPathTwo = forwardRef(
   (
     {
-      imageUrl = gurujiwalk,
-      title = "25 K",
-      description = "Voaksnanslunteers",
+      imageUrl = donarDetails,
+      title = "Awards",
+      description = "Reconication",
     },
     ref
   ) => {
@@ -38,7 +38,7 @@ const RightSvgClipPathTwo = forwardRef(
           />
         </svg>
 
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col px-4 py-20 items-end">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col px-4 py-10 justify-end items-end">
           {title && (
             <h2 className="md:text-4xl text-[8px] font-bold text-white text-start">
               {title}

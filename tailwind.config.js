@@ -17,7 +17,7 @@ export default {
         upfwhite: "#FEFEFE",
         upfhoneydew: "#FDAB88",
         upfgray: "#979ca6",
-        upfblack : "#4b5563",
+        upfblack: "#4b5563",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -66,6 +66,15 @@ export default {
       },
       boxShadow: {
         upfshadow: "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;",
+      },
+      animation: {
+        "spin-custom": "rotateOrigin 15s linear infinite",
+      },
+      keyframes: {
+        rotateOrigin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
     },
   },

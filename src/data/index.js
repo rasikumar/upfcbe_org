@@ -1,11 +1,15 @@
 import {
   education,
+  eightyG,
+  fcra,
   gurujihero,
+  gurujiHeropic,
   hero_banner,
   main_logo,
   medicalservice,
   natural,
   spirutal,
+  twelveA,
 } from "@/assets";
 import {
   FaFacebookF,
@@ -36,28 +40,30 @@ export const founder = [
   {
     name: "Dr. Rashid Ahmad",
     position: "Founder, UPF",
-    image: gurujihero,
-    description:
-      "Dr. Rashid Ahmad is a renowned spiritualist, medical expert, and philanthropist who has dedicated his life to helping others find peace and fulfillment. He is an accomplished and compassionate leader who believes in the power of community and the transformative power of spirituality.",
+    image: gurujiHeropic,
     socialMedia: [
       {
         id: 0,
         icon: FaFacebookF,
+        color: "#3b5998",
         link: "https://www.facebook.com/rashidahmad.ahmed.9",
       },
       {
         id: 1,
         icon: FaInstagram,
+        color: "#C13584",
         link: "https://www.instagram.com/rashidahmad.ahmed.9/",
       },
       {
         id: 2,
-        icon: FaWhatsapp,
+        icon: FaYoutube,
+        color: "#FF0000",
         link: "https://www.instagram.com/rashidahmad.ahmed.9/",
       },
       {
         id: 3,
         icon: FaLinkedin,
+        color: "#3b5998",
         link: "https://www.instagram.com/rashidahmad.ahmed.9/",
       },
     ],
@@ -76,12 +82,12 @@ export const headerSection = [
       {
         id: 0,
         icon: IoCall,
-        content: "1234567890",
+        content: "+91 98422 20285",
       },
       {
         id: 1,
         icon: IoMdMail,
-        content: "info@example.com",
+        content: "upfcbe@gmail.com",
       },
     ],
   },
@@ -288,19 +294,95 @@ export const aboutContent = [
   },
   {
     id: 2,
-    content: [
+    sets: [
       {
         id: 0,
-        title: "Mission",
+        year: 2000,
+        img: "https://dummyimage.com/350x400/dedede/dedede",
+        title: "Laying the Foundation for Change",
         description:
-          "Mission of Universal Peace Foundation is to provide a safe, non-profitable and egalitarian society in the Indian cultural context based on egalitarian values. We aim to create a peaceful society by providing education, healthcare, and community support to those in need.",
+          "Established our mission to support underprivileged communities, focusing on education, healthcare, and basic human rights.",
       },
       {
         id: 1,
-        title: "Vision",
+        year: 2011,
+        img: "https://dummyimage.com/350x400/dedede/dedede",
+        title: "Expanding Our Reach",
         description:
-          "Vision of Universal Peace Foundation is to create a peaceful society in the Indian cultural context based on egalitarian values, where every person has equal opportunities to live a happy, healthy, and fulfilling life. We believe that our mission and vision will be achieved through education, healthcare, and community support.",
+          "Launched nationwide programs, providing food, shelter, and medical aid to thousands in need.",
       },
-    ],  
+      {
+        id: 2,
+        year: 2021,
+        img: "https://dummyimage.com/350x400/dedede/dedede",
+        title: "Empowering Through Education",
+        description:
+          "Introduced scholarship programs and skill development workshops, uplifting disadvantaged youth and creating sustainable opportunities.",
+      },
+      {
+        id: 3,
+        year: 2025,
+        img: "https://dummyimage.com/350x400/dedede/dedede",
+        title: "A Vision for the Future",
+        description:
+          "Aiming for global impact, strengthening policies, and increasing partnerships to bring lasting change to marginalized communities.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    content: [
+      {
+        id: 0,
+        title: "Our Mission",
+        description:
+          "We aim to build an egalitarian society through education, healthcare, and community support, ensuring safety and equality for all.",
+      },
+      {
+        id: 1,
+        title: "Our Vision",
+        description:
+          "We envision a peaceful, equal society where everyone has access to education, healthcare, and opportunities for a fulfilling life.",
+      },
+      {
+        id: 2,
+        title: "Our Goal",
+        description:
+          "We uphold business responsibilities, ensuring ethical practices while minimizing disruptions and maximizing benefits for all stakeholders.",
+      },
+    ],
+  },
+  {
+    id: 4,
+    certificates: [
+      {
+        id: 0,
+        image: eightyG,
+        description:
+          "80G certification allows donors to claim tax deductions on donations made to registered charitable organizations under Section 80G of the IT Act.",
+        link: "#",
+      },
+      {
+        id: 1,
+        image: twelveA,
+        description:
+          "12A certification grants tax exemption to nonprofit organizations, ensuring they do not have to pay income tax on surplus funds.",
+        link: "#",
+      },
+      {
+        id: 2,
+        image: eightyG,
+        description:
+          "Donors with 80G-certified receipts can avail tax deductions, promoting transparency and encouraging charitable contributions for social welfare initiatives.",
+        link: "#",
+      },
+      {
+        id: 3,
+        image: fcra,
+        description:
+          "FCRA certification enables NGOs to legally receive foreign contributions, ensuring compliance with India's regulations on foreign funding for charities.",
+        link: "#",
+      },
+    ],
   },
 ];
