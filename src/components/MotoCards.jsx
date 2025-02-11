@@ -32,7 +32,7 @@ const MotoCards = () => {
   return (
     <div
       ref={cardRef}
-      className="relative p-10 border-r border-b border-cyan-800 flex flex-col items-center justify-center h-96 gap-5 overflow-hidden"
+      className="relative p-10 border-r md:border-b border-cyan-800 flex flex-col items-center justify-center h-96 gap-5 overflow-hidden"
     >
       {/* Background Letter */}
       <span className="font-Caveat text-8xl absolute font-extrabold text-upfgray/20">

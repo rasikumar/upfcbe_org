@@ -14,7 +14,7 @@ const Intro = () => {
   return (
     <div className="w-full m-auto px-4">
       {/* Hero Section */}
-      <div className="flex flex-col lg:flex-row bg-gradient-to-l to-upfhoneydew from-upfmelon rounded-xl items-center justify-between max-w-[100rem] m-auto p-6 sm:p-10 lg:p-20 overflow-hidden">
+      <div className="flex flex-col lg:flex-row bg-gradient-to-l to-upfhoneydew from-upfmelon rounded-xl items-center justify-between max-w-[100rem] m-auto  sm:p-10 lg:p-20 overflow-hidden">
         {/* Left MiniCards */}
         <div className="w-full lg:w-1/3">
           <ScrollParallax className="flex">

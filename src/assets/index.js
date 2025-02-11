@@ -21,6 +21,7 @@ import rotate_text from "./aboutus/rotate_text.png";
 
 import shape from "./shape.png";
 import timeline_bg from "./aboutus/timeline_bg.png";
+import dummy_image from "./aboutus/dummy_image.png";
 
 export {
   main_logo,
@@ -44,4 +45,5 @@ export {
   rotate_text,
   shape,
   timeline_bg,
+  dummy_image,
 };

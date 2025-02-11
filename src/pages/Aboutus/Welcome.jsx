@@ -1,4 +1,4 @@
-import { heart, rotate_text } from "@/assets";
+import { dummy_image, gurujiwalk, heart, rotate_text } from "@/assets";
 import Heading from "@/components/Heading";
 import { aboutContent, founder } from "@/data";
 import { FaHandHoldingHeart } from "react-icons/fa6";
@@ -9,14 +9,16 @@ const Welcome = () => {
   const { link, icon } = socialMedia[0];
   //   console.log(socialMedia);
   return (
-    <div className="flex max-w-[100rem] m-auto py-24 justify-between gap-28">
-      <div className="w-1/2 flex flex-col gap-10">
-        <div className="flex flex-col gap-8">
+    <div className="flex max-md:flex-col max-w-[100rem] m-auto md:py-24 py-10 justify-between md:gap-28 gap-14 md:px-10 px-4">
+      <div className="md:w-1/2  flex flex-col gap-10">
+        <div className="flex flex-col md:gap-8 gap-4">
           <Heading undertext={heading} />
-          <h2 className="text-5xl font-semibold">{title}</h2>
-          <p className="text-upfblack text-lg">{content}</p>
+          <h2 className="2xl:text-5xl text-4xl font-semibold">{title}</h2>
+          <p className="text-upfblack 2xl:text-lg text-base">{content}</p>
         </div>
-        <div className="flex gap-8 items-center">
+
+        {/* founder Section */}
+        <div className="flex max-md:flex-col md:gap-8 gap-4 md:items-center">
           <div className="flex gap-4 items-start">
             <div className="flex gap-4">
               <a href={link} target="_blank" rel="noopener noreferrer">
@@ -41,7 +43,7 @@ const Welcome = () => {
               <div key={index}>
                 <a href={icon.link} target="_blank" rel="noopener noreferrer">
                   <icon.icon
-                    className="w-5 h-5 md:w-10 md:h-10"
+                    className="w-10 h-10"
                     style={{ color: icon.color }}
                   />
                 </a>
@@ -50,24 +52,30 @@ const Welcome = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2 flex gap-8 relative">
+
+      {/* image section */}
+      <div className="md:w-1/2 w-full flex max-md:flex-col gap-8 relative">
         <img
-          src="https://dummyimage.com/300x400/dedede/dedede"
+          src={dummy_image}
           alt="dummy_image"
-          className="z-10 rounded-3xl mb-24"
+          className="z-10 rounded-3xl md:mb-24 2xl:h-full md:h-[21rem]"
         />
-        <img src={heart} alt="Heart_image" className="absolute -top-5" />
         <img
-          src="https://dummyimage.com/300x400/dedede/dedede"
+          src={heart}
+          alt="Heart_image"
+          className="absolute -top-5 hidden md:block"
+        />
+        <img
+          src={dummy_image}
           alt="dummy_image"
-          className="rounded-3xl mt-24"
+          className="rounded-3xl md:mt-24 2xl:h-full md:h-[21rem]"
         />
         <img
           src={rotate_text}
           alt="rotate_text"
-          className="absolute z-20 2xl:left-[30%] top-[30%] transform -translate-x-1/2 -translate-y-1/2 animate-spin-custom"
+          className="absolute z-20 2xl:left-[45%] xl:left-[40%] md:w-28 2xl:w-40 md:top-[45%] left-[30%] top-[40%] transform -translate-x-1/2 -translate-y-1/2 animate-spin-custom"
         />
-        <div className="absolute bottom-4 left-20 bg-upfwhite py-4 pl-6 pr-14 rounded-full shadow-upfshadow">
+        <div className="md:absolute bottom-4 left-20 bg-upfwhite py-4 pl-6 pr-14 rounded-full shadow-upfshadow">
           <h2 className="inline-flex items-center justify-center gap-3 text-lg font-bold">
             <span className="text-2xl">
               <FaHandHoldingHeart className="text-upforangecrayola" />

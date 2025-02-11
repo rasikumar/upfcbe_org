@@ -36,7 +36,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={comp} className="flex flex-col gap-10 my-20 relative px-6 ">
+    <div ref={comp} className="flex flex-col gap-10 my-20 relative px-4 ">
       <div className="w-80 h-32 absolute bg-upfteagreent/50 rounded-full blur-[80px] flex items-center justify-center left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 -z-10" />
 
       <div className="max-w-7xl m-auto flex flex-col gap-6 text-center">
@@ -74,23 +74,23 @@ const Hero = () => {
       </div>
 
       {/* SVG Section */}
-      <div className="flex md:gap-4 gap-1  max-w-[100rem] m-auto">
-        <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
-          <div className="md:-mt-44 -mt-10">
+      <div className="flex max-md:flex-col md:gap-4 gap-2 max-w-[100rem] m-auto">
+        <div className="flex md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-2">
+          <div className="md:-mt-44">
             <LeftSvgClipPathOne />
           </div>
           <div>
             <LeftSvgClipPathTwo />
           </div>
         </div>
-        <div className="w-[50rem] h-full relative overflow-hidden 2xl:mt-52 mt-28">
-          <img src={familyphoto} className="rounded-3xl" alt="" />
+        <div className="md:w-[50rem] h-full relative overflow-hidden 2xl:mt-[14.5rem] md:mt-[7.5rem]">
+          <img src={familyphoto} className="rounded-3xl" alt="Upf_family" />
         </div>
-        <div className="flex  md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-1 ">
+        <div className="flex md:flex-row w-full justify-center items-center m-auto md:gap-4 gap-2">
           <div>
             <RightSvgClipPathOne />
           </div>
-          <div className="md:-mt-44 -mt-10">
+          <div className="md:-mt-44 ">
             <RightSvgClipPathTwo />
           </div>
         </div>

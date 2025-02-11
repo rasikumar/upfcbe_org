@@ -123,15 +123,15 @@ const Navbar = () => {
 
           <div className="flex flex-col items-center gap-6 text-xl">
             {navigations.map((navigation, index) => (
-              <a
-                href={navigation.url}
+              <Link
+                to={navigation.url}
                 key={navigation.title}
                 className="hover:text-gray-300 transition duration-300"
                 onClick={() => setMenuOpen(false)} // Close on click
                 ref={(el) => (linksRef.current[index] = el)} // Assign each link ref
               >
                 {navigation.title}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

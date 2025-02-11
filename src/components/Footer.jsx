@@ -1,6 +1,7 @@
 import { footer, icons } from "@/data";
 import Button from "./Button";
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-router";
 
 const Footer = () => {
   const contacts = footer[0].contact;
@@ -11,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="w-full m-auto px-4">
       {/* Navigation & Content */}
-      <div className="bg-slate-400 max-w-[100rem] mx-auto my-4 flex flex-col text-secondary rounded-xl p-6">
+      <div className="bg-upforangecrayola max-w-[100rem] mx-auto my-4 flex flex-col text-secondary rounded-xl p-6">
         <nav className="flex flex-col md:flex-row md:justify-between items-start p-4 gap-8">
           {/* Left Section */}
           <div className="flex flex-col max-w-md gap-4">
@@ -22,7 +23,7 @@ const Footer = () => {
                     src={section.img}
                     alt="UPF logo"
                     width={100}
-                    height={100}  
+                    height={100}
                     className="mr-2"
                   />
                   {section.title}
@@ -42,8 +43,8 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex mt-2">
               {icons.map((icon, index) => (
-                <a
-                  href={icon.link}
+                <Link
+                  to={icon.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   key={index}
@@ -51,7 +52,7 @@ const Footer = () => {
                   style={{ color: icon.color }}
                 >
                   <icon.component />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -72,13 +73,13 @@ const Footer = () => {
             <div className="flex flex-col">
               <h2 className="font-bold mb-4 text-lg">Navigations</h2>
               {links.map((link) => (
-                <a
-                  href={link.url}
+                <Link
+                  to={link.url}
                   key={link.id}
                   className="text-lg hover:text-upfmelon transition duration-300 ease-in-out"
                 >
                   {link.title}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -86,13 +87,13 @@ const Footer = () => {
             <div className="flex flex-col">
               <h2 className="font-bold mb-4 text-lg">Quicklinks</h2>
               {quicklinks.map((quicklink) => (
-                <a
-                  href={quicklink.url}
+                <Link
+                  to={quicklink.url}
                   key={quicklink.id}
                   className="text-lg hover:text-upfmelon transition duration-300 ease-in-out"
                 >
                   {quicklink.title}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -104,9 +105,9 @@ const Footer = () => {
         {/* Footer Bottom Section */}
         <div className="flex flex-col sm:flex-row items-center justify-between py-4 gap-4">
           <div>&copy; {new Date().getFullYear()} UPF. All rights reserved.</div>
-          <Button>
-            Donate Now{" "}
-            <ArrowUp className="rotate-45 hover:rotate-90 transition-all" />
+          <Button className="bg-upfteagreeno max-md:w-full group relative overflow-hidden hover:text-white hover:border-white hover:bg-black">
+            Donate Now
+            <ArrowUp className="rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-90" />
           </Button>
         </div>
       </div>

@@ -39,10 +39,10 @@ const LeftSvgClipPathTwo = forwardRef(
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col p-4 justify-between">
           {title && (
-            <h2 className="md:text-[16px] text-[8px] text-white">{title}</h2>
+            <h2 className="text-xl text-white">{title}</h2>
           )}
           {description && (
-            <p className="md:text-xl text-[6px] text-white drop-shadow-md line-clamp-3">
+            <p className="text-xs md:text-base text-white drop-shadow-md line-clamp-3">
               {description}
             </p>
           )}

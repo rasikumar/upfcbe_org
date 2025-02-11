@@ -36,12 +36,12 @@ const LeftSvgClipPathOne = forwardRef(
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col px-4 py-20">
           {title && (
-            <h2 className="md:text-4xl text-[8px] font-bold text-white text-start">
+            <h2 className="text-4xl font-bold text-white text-start">
               {title}
             </h2>
           )}
           {description && (
-            <p className="md:text-sm text-[6px] text-white drop-shadow-md">
+            <p className="text-sm text-white drop-shadow-md">
               {description}
             </p>
           )}

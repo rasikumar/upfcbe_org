@@ -1,7 +1,7 @@
 import Heading from "@/components/Heading";
 import { heroContent } from "../../data";
 import CountUp from "react-countup";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { bg } from "@/assets";
 import VerticalBox from "@/components/VerticalBox";
 
@@ -9,6 +9,7 @@ const About = () => {
   const aboutContents = heroContent[1].content;
   const [progress, setProgress] = useState([0, 0, 0]);
   const [startCounting, setStartCounting] = useState(false);
+  const sectionRef = useRef(null);
 
   const endValues = [
     { value: 5, suffix: " +", title: "Services" },
@@ -17,20 +18,42 @@ const About = () => {
   ];
 
   useEffect(() => {
-    setStartCounting(true); // Start counting when component mounts
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStartCounting(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-    const interval = setInterval(() => {
-      setProgress((prevProgress) =>
-        prevProgress.map((value) => (value < 100 ? value + 1 : value))
-      );
-    }, 20);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-    return () => clearInterval(interval);
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
+
+  useEffect(() => {
+    if (startCounting) {
+      const interval = setInterval(() => {
+        setProgress((prevProgress) =>
+          prevProgress.map((value) => (value < 100 ? value + 1 : value))
+        );
+      }, 20);
+
+      return () => clearInterval(interval);
+    }
+  }, [startCounting]);
 
   return (
     <div
-      className="flex flex-col lg:flex-row max-w-[100rem] mx-auto bg-cover bg-center items-start"
+      ref={sectionRef}
+      className="flex flex-col lg:flex-row max-w-[100rem] mx-auto bg-cover bg-center items-start p-4 sm:p-8"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="w-full lg:w-1/2 flex flex-col items-start">
@@ -40,13 +63,15 @@ const About = () => {
             className="m-auto py-5 md:px-4 sm:px-6 lg:px-8 flex flex-col gap-4"
           >
             <Heading undertext={aboutContent.heading} />
-            <h2 className="text-4xl font-semibold">{aboutContent.title}</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+              {aboutContent.title}
+            </h2>
             <p className="mt-5 text-upfblack">{aboutContent.description}</p>
           </div>
         ))}
 
         {/* Progress Circles */}
-        <div className="flex flex-wrap justify-center gap-8 ml-4">
+        <div className="flex  justify-center gap-8 md:ml-4">
           {progress.map((value, index) => {
             const radius = 26;
             const circumference = 2 * Math.PI * radius;
@@ -58,12 +83,12 @@ const About = () => {
                 key={index}
                 className="relative flex flex-col items-center justify-center gap-4"
               >
-                <h3 className="mb-2 text-lg font-medium text-center">
+                <h3 className="mb-2 md:text-lg text-xs font-medium text-center">
                   {endValues[index].title}
                 </h3>
-                <div className="relative w-28 h-28 rounded-full flex items-center justify-center ml-2">
+                <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-full flex items-center justify-center ml-2">
                   <svg
-                    className="w-[10rem] h-[10rem] absolute transform rotate-[-90deg]"
+                    className="w-[8rem] sm:w-[10rem] h-[8rem] sm:h-[10rem] absolute transform rotate-[-90deg]"
                     viewBox="0 0 80 80"
                   >
                     {/* Background Circle */}
@@ -91,7 +116,7 @@ const About = () => {
                       }}
                     />
                   </svg>
-                  <div className="absolute flex items-center justify-center w-full h-full text-2xl font-bold">
+                  <div className="absolute flex items-center justify-center w-full h-full text-xl sm:text-2xl font-bold">
                     {/* Counting Animation */}
                     {startCounting && (
                       <CountUp
@@ -109,7 +134,7 @@ const About = () => {
           })}
         </div>
       </div>
-      <div className="w-full lg:w-1/2 flex flex-col gap-8">
+      <div className="w-full lg:w-1/2 flex flex-col gap-8 mt-8 lg:mt-0">
         <VerticalBox />
         <VerticalBox />
         <VerticalBox />

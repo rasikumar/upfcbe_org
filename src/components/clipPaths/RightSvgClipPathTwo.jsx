@@ -3,11 +3,7 @@ import { donarDetails } from "@/assets";
 
 const RightSvgClipPathTwo = forwardRef(
   (
-    {
-      imageUrl = donarDetails,
-      title = "Awards",
-      description = "Reconication",
-    },
+    { imageUrl = donarDetails, title = "Awards", description = "Reconication" },
     ref
   ) => {
     return (
@@ -40,12 +36,12 @@ const RightSvgClipPathTwo = forwardRef(
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col px-4 py-10 justify-end items-end">
           {title && (
-            <h2 className="md:text-4xl text-[8px] font-bold text-white text-start">
+            <h2 className="md:text-4xl text-2xl font-bold text-white text-start">
               {title}
             </h2>
           )}
           {description && (
-            <p className="md:text-sm text-[6px] text-white drop-shadow-md">
+            <p className="text-sm text-white drop-shadow-md">
               {description}
             </p>
           )}
