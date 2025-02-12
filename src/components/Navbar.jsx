@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { main_logo } from "../assets";
-import { navigations } from "../data";
+import { navigations, setActiveNavigation } from "../data";
 import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { MdMenu, MdClose } from "react-icons/md";
@@ -10,6 +10,9 @@ const Navbar = () => {
   const linksRef = useRef([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [navItems, setNavItems] = useState(
+    setActiveNavigation(navigations[0].id)
+  );
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -73,6 +76,11 @@ const Navbar = () => {
     }
   }, [buttonClicked]);
 
+  const handleNavigationClick = (id) => {
+    setNavItems(setActiveNavigation(id));
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="mx-auto flex justify-between items-center py-4 px-6 md:px-20 max-w-[100rem]">
@@ -83,13 +91,16 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6" ref={comp}>
-          {navigations.map((navigation) => (
+          {navItems.map((navigation) => (
             <Link
               to={navigation.url}
               key={navigation.title}
-              className={`2xl:text-lg text-sm font-medium ${
-                navigation.active ? "text-upfmelon" : "text-upforangecrayola"
+              className={`2xl:text-lg text-sm font-medium hover:text-upforangecrayola ${
+                navigation.active
+                  ? "text-upforangecrayola"
+                  : "text-upfdarkblack"
               } hover:text-upfmelon transition duration-300 ease-in-out`}
+              onClick={() => handleNavigationClick(navigation.id)}
             >
               {navigation.title}
             </Link>
@@ -122,12 +133,14 @@ const Navbar = () => {
           </button>
 
           <div className="flex flex-col items-center gap-6 text-xl">
-            {navigations.map((navigation, index) => (
+            {navItems.map((navigation, index) => (
               <Link
                 to={navigation.url}
                 key={navigation.title}
-                className="hover:text-gray-300 transition duration-300"
-                onClick={() => setMenuOpen(false)} // Close on click
+                className={`hover:text-gray-300 transition duration-300 ${
+                  navigation.active ? "text-red-400" : ""
+                }`}
+                onClick={() => handleNavigationClick(navigation.id)} // Close on click
                 ref={(el) => (linksRef.current[index] = el)} // Assign each link ref
               >
                 {navigation.title}

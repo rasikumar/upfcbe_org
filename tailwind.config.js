@@ -18,6 +18,7 @@ export default {
         upfhoneydew: "#FDAB88",
         upfgray: "#979ca6",
         upfblack: "#4b5563",
+        upfdarkblack: "#232323",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

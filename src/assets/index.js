@@ -22,6 +22,16 @@ import rotate_text from "./aboutus/rotate_text.png";
 import shape from "./shape.png";
 import timeline_bg from "./aboutus/timeline_bg.png";
 import dummy_image from "./aboutus/dummy_image.png";
+import about_guruji from "./aboutus/about_guruji.jpg";
+import about_bottom_pic from "./aboutus/about_bottom_pic.jpg";
+
+import events_1 from "./events/events_1.jpg";
+import events_2 from "./events/events_2.jpg";
+import events_3 from "./events/events_3.jpg";
+import news_1 from "./events/news_1.jpg";
+import news_2 from "./events/news_2.jpg";
+import bannerbg from "./events/bannerbg.jpg";
+import eventbg from "./events/eventbg.png";
 
 export {
   main_logo,
@@ -46,4 +56,13 @@ export {
   shape,
   timeline_bg,
   dummy_image,
+  about_guruji,
+  events_1,
+  events_2,
+  events_3,
+  news_1,
+  news_2,
+  bannerbg,
+  eventbg,
+  about_bottom_pic,
 };

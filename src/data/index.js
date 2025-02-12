@@ -1,6 +1,10 @@
 import {
+  about_guruji,
   education,
   eightyG,
+  events_1,
+  events_2,
+  events_3,
   fcra,
   gurujihero,
   gurujiHeropic,
@@ -8,9 +12,12 @@ import {
   main_logo,
   medicalservice,
   natural,
+  news_1,
+  news_2,
   spirutal,
   twelveA,
 } from "@/assets";
+import { Crosshair, Eye, Goal } from "lucide-react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -98,28 +105,40 @@ export const navigations = [
     id: "0",
     title: "Home",
     url: "/",
+    active: false,
   },
   {
     id: "1",
     title: "About Us",
     url: "/about-us",
+    active: false,
   },
   {
     id: "2",
     title: "UPF Family",
     url: "/our-family",
+    active: false,
   },
   {
     id: "3",
     title: "Service",
     url: "/services",
+    active: false,
   },
   {
     id: "4",
     title: "Contact Us",
     url: "/contact-us",
+    active: false,
   },
 ];
+
+export const setActiveNavigation = (id) => {
+  return navigations.map((nav) => ({
+    ...nav,
+    active: nav.id === id,
+  }));
+};
 
 export const footer = [
   {
@@ -335,18 +354,24 @@ export const aboutContent = [
       {
         id: 0,
         title: "Our Mission",
+        icon: Crosshair,
+        letter: "M",
         description:
           "We aim to build an egalitarian society through education, healthcare, and community support, ensuring safety and equality for all.",
       },
       {
         id: 1,
         title: "Our Vision",
+        icon: Eye,
+        letter: "V",
         description:
           "We envision a peaceful, equal society where everyone has access to education, healthcare, and opportunities for a fulfilling life.",
       },
       {
         id: 2,
         title: "Our Goal",
+        letter: "G",
+        icon: Goal,
         description:
           "We uphold business responsibilities, ensuring ethical practices while minimizing disruptions and maximizing benefits for all stakeholders.",
       },
@@ -354,35 +379,135 @@ export const aboutContent = [
   },
   {
     id: 4,
+    title: "About Guruji",
+    heading: "Guruji Shivathma: A Beacon of Hope for the Underprivileged",
+    description:
+      " GURUJI SHIVATHMA, born in 1962 in Coimbatore, Tamil Nadu, grew up in poverty, struggling for even one meal a day. Despite hardships, he pursued education diligently and excelled academically. Deeply moved by the suffering of the poor, he resolved to fight hunger and uplift the underprivileged, especially children, women, and the elderly. new After completing his B.Com, Diploma in Siddha Medicine, and Human Psychology, he became a successful Siddha practitioner and counselor. With his lifelong vision of helping destitute children, particularly girls, he used his savings and ancestral property proceeds to buy 8.68 acres in Nallagoundanpalayam. In 2000, he established the Universal Peace Foundation to provide free food, shelter, education, and medical aid to the needy. new Today, the foundation operates in six districts of Tamil Nadu, supporting 960 people. It empowers individuals through vocational training, ensuring they lead independent and dignified lives. His unwavering dedication continues to transform lives, bringing hope and security to countless underprivileged individuals. His mission remains to eradicate hunger and provide holistic support, making a lasting impact on society.",
+    image: about_guruji,
+    imageAlt: "GurjiAboutPic",
+  },
+  {
+    id: 5,
     certificates: [
       {
         id: 0,
-        image: eightyG,
+        title: "80G Certification",
+        image: { src: eightyG, alt: "80G Certification Document" },
         description:
-          "80G certification allows donors to claim tax deductions on donations made to registered charitable organizations under Section 80G of the IT Act.",
+          "80G certification allows donors to claim tax deductions on donations made to registered charitable organizations under Section 80G of the IT Act. This encourages philanthropy by reducing taxable income. NGOs with this certification gain credibility, attracting more donors and ensuring compliance with government regulations for charitable contributions.",
         link: "#",
       },
       {
         id: 1,
-        image: twelveA,
+        title: "12A Certification",
+        image: { src: twelveA, alt: "12A Certification Document" },
         description:
-          "12A certification grants tax exemption to nonprofit organizations, ensuring they do not have to pay income tax on surplus funds.",
+          "12A certification grants tax exemption to nonprofit organizations, ensuring they do not have to pay income tax on surplus funds. This enables NGOs to utilize their entire income for charitable activities. It also enhances their financial sustainability, making them eligible for grants and funding from various government and private institutions.",
         link: "#",
       },
       {
         id: 2,
-        image: eightyG,
+        title: "80G Certified Receipt",
+        image: { src: eightyG, alt: "80G Certification Receipt" },
         description:
-          "Donors with 80G-certified receipts can avail tax deductions, promoting transparency and encouraging charitable contributions for social welfare initiatives.",
+          "An 80G-certified receipt allows donors to avail of tax deductions, promoting transparency and encouraging charitable contributions. It serves as proof of donation under Section 80G of the IT Act, helping NGOs attract more donations. Organizations issuing these receipts must maintain proper financial records to ensure compliance with tax regulations.",
         link: "#",
       },
       {
         id: 3,
-        image: fcra,
+        title: "FCRA Certification",
+        image: { src: fcra, alt: "FCRA Certification Document" },
         description:
-          "FCRA certification enables NGOs to legally receive foreign contributions, ensuring compliance with India's regulations on foreign funding for charities.",
+          "FCRA certification enables NGOs to legally receive foreign contributions, ensuring compliance with India's regulations on international funding. This certification is essential for organizations working on social, educational, and developmental projects. It also mandates transparency in fund utilization, preventing misuse and ensuring funds are used solely for charitable purposes.",
         link: "#",
       },
     ],
+  },
+  {
+    id: 6,
+    title: "Interesting Numbers",
+    heading: "Pure Hearts Facts & Figures",
+    description:
+      "The master-builder of human happiness no one rejects, dislikes or avoids pleasure itself pleasure.",
+    boxes: [
+      {
+        id: 0,
+        icon: FaPeopleGroup,
+        number: "25",
+        title: "Years",
+      },
+
+      {
+        id: 1,
+        icon: FaPeopleGroup,
+        number: "25 +",
+        title: "Branches",
+      },
+      {
+        id: 2,
+        icon: FaPeopleGroup,
+        number: "2500 +",
+        title: "Volunteers",
+      },
+      {
+        id: 3,
+        icon: FaPeopleGroup,
+        number: "4000 +",
+        title: "Beneficiaries",
+      },
+    ],
+  },
+];
+
+export const events = [
+  {
+    id: 0,
+    image: events_1,
+    date: "31",
+    month: "Mar",
+    time: "17:30 AM - 8:00 AM",
+    title: "Event Name",
+    location: "india",
+  },
+  {
+    id: 1,
+    image: events_2,
+    date: "05",
+    month: "Nov",
+    time: "10:00 PM - 11:00 AM",
+    title: "Event Name",
+    location: "india",
+  },
+  {
+    id: 2,
+    image: events_3,
+    date: "22",
+    month: "May",
+    time: "10:00 AM - 11:00 AM",
+    title: "Event Name",
+    location: "india",
+  },
+];
+export const news = [
+  {
+    id: 1,
+    location: "india",
+    title: "Royal Parks Half Marathon",
+    description:
+      "On the other hand denounce with righteous indignations dislike men who are so beguiled.",
+    date: "31",
+    month: "May",
+    time: "10:00 AM",
+    image: news_1,
+  },
+  {
+    id: 2,
+    location: "tamilnadu",
+    title: "Some Other Event",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    date: "15",
+    month: "Mar",
+    time: "10:00 AM",
+    image: news_2,
   },
 ];

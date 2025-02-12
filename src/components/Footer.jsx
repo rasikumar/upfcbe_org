@@ -10,9 +10,9 @@ const Footer = () => {
   const sections = footer[0].section;
 
   return (
-    <footer className="w-full m-auto px-4">
+    <footer className="w-full m-auto bg-upfdarkblack">
       {/* Navigation & Content */}
-      <div className="bg-upforangecrayola max-w-[100rem] mx-auto my-4 flex flex-col text-secondary rounded-xl p-6">
+      <div className=" max-w-[100rem] mx-auto flex flex-col text-secondary p-6">
         <nav className="flex flex-col md:flex-row md:justify-between items-start p-4 gap-8">
           {/* Left Section */}
           <div className="flex flex-col max-w-md gap-4">

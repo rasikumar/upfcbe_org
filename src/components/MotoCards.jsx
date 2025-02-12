@@ -1,8 +1,7 @@
-import { MdWork } from "react-icons/md";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const MotoCards = () => {
+const MotoCards = ({ title, description, letter, icon: Icon }) => {
   const cardRef = useRef(null);
   const iconRef = useRef(null);
 
@@ -36,7 +35,7 @@ const MotoCards = () => {
     >
       {/* Background Letter */}
       <span className="font-Caveat text-8xl absolute font-extrabold text-upfgray/20">
-        M
+        {letter}
       </span>
 
       {/* Animated Icon */}
@@ -44,17 +43,14 @@ const MotoCards = () => {
         ref={iconRef}
         className="bg-white p-3 rounded-full transition-all duration-300 ease-in-out"
       >
-        <MdWork className="text-4xl" />
+        <Icon className="text-4xl" />
       </span>
 
       {/* Heading */}
-      <h2 className="text-2xl font-semibold">Our Mission</h2>
+      <h2 className="text-2xl font-semibold">{title}</h2>
 
       {/* Description (always visible) */}
-      <p className="text-center text-lg text-upfblack">
-        Beguiled and demoralized by the charms of pleasure of the moment blinded
-        that they cannot foresee.
-      </p>
+      <p className="text-center text-lg text-upfblack">{description}</p>
     </div>
   );
 };

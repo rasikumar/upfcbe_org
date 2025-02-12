@@ -10,6 +10,7 @@ import ScrollToTop from "./lib/ScrollToTop";
 import Footer from "./components/Footer";
 import About from "./pages/Aboutus/About";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Event_NewsHome from "./pages/events/Event_NewsHome";
 
 const App = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -36,6 +37,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/events-home" element={<Event_NewsHome />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
