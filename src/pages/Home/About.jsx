@@ -7,6 +7,8 @@ import VerticalBox from "@/components/VerticalBox";
 
 const About = () => {
   const aboutContents = heroContent[1].content;
+  const motoContents = heroContent[3].moto;
+  console.log(motoContents);
   const [progress, setProgress] = useState([0, 0, 0]);
   const [startCounting, setStartCounting] = useState(false);
   const sectionRef = useRef(null);
@@ -24,7 +26,7 @@ const About = () => {
           setStartCounting(true);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 } // Adjusted threshold for better mobile detection
     );
 
     if (sectionRef.current) {
@@ -44,7 +46,7 @@ const About = () => {
         setProgress((prevProgress) =>
           prevProgress.map((value) => (value < 100 ? value + 1 : value))
         );
-      }, 20);
+      }, 30); // Reduced interval time for smoother animation
 
       return () => clearInterval(interval);
     }
@@ -135,9 +137,14 @@ const About = () => {
         </div>
       </div>
       <div className="w-full lg:w-1/2 flex flex-col gap-8 mt-8 lg:mt-0">
-        <VerticalBox />
-        <VerticalBox />
-        <VerticalBox />
+        {motoContents.map((moto) => (
+          <VerticalBox
+            title={moto.title}
+            description={moto.description}
+            url={moto.url}
+            number={moto.number}
+          />
+        ))}
       </div>
     </div>
   );

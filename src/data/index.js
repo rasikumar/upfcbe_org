@@ -9,6 +9,7 @@ import {
   gurujihero,
   gurujiHeropic,
   hero_banner,
+  hoverbg,
   main_logo,
   medicalservice,
   natural,
@@ -18,7 +19,9 @@ import {
   twelveA,
 } from "@/assets";
 import { Crosshair, Eye, Goal } from "lucide-react";
+import { FaCalendarAlt, FaHandsHelping, FaUser } from "react-icons/fa";
 import {
+  FaBuilding,
   FaFacebookF,
   FaInstagram,
   FaLinkedin,
@@ -45,7 +48,7 @@ export const icons = [
 
 export const founder = [
   {
-    name: "Dr. Rashid Ahmad",
+    name: "Guruji Shivathma",
     position: "Founder, UPF",
     image: gurujiHeropic,
     socialMedia: [
@@ -115,8 +118,8 @@ export const navigations = [
   },
   {
     id: "2",
-    title: "UPF Family",
-    url: "/our-family",
+    title: "News & Events",
+    url: "/events-home",
     active: false,
   },
   {
@@ -301,6 +304,35 @@ export const heroContent = [
       },
     ],
   },
+  {
+    id: 3,
+    moto: [
+      {
+        id: 0,
+        title: "Our Vision & Mission",
+        description:
+          "create a sustainable and inclusive world where every individual has access to essential resources and opportunities. We empower communities through education, healthcare, and social initiatives to drive lasting change.",
+        number: "1",
+        url: "/about-us",
+      },
+      {
+        id: 1,
+        title: "About NGO",
+        description:
+          "Dedicated to transforming lives, we focus on grassroots initiatives in education, healthcare, and women empowerment, believing in sustainable development driven by community participation.",
+        number: "2",
+        url: "about-us",
+      },
+      {
+        id: 2,
+        title: "Our Team",
+        description:
+          "Our team includes passionate leaders committed to social change, dedicated strategists with expertise in community welfare, experienced philanthropists focusing on education and healthcare, and visionary entrepreneurs supporting sustainable growth and empowerment programs.",
+        number: "3",
+        url: "/about-us",
+      },
+    ],
+  },
 ];
 
 export const aboutContent = [
@@ -357,7 +389,7 @@ export const aboutContent = [
         icon: Crosshair,
         letter: "M",
         description:
-          "We aim to build an egalitarian society through education, healthcare, and community support, ensuring safety and equality for all.",
+          "“We would enhance our service day to day of life, enhance like fulfill the basic needs of people... peace is out primary way to reach our mission",
       },
       {
         id: 1,
@@ -365,7 +397,7 @@ export const aboutContent = [
         icon: Eye,
         letter: "V",
         description:
-          "We envision a peaceful, equal society where everyone has access to education, healthcare, and opportunities for a fulfilling life.",
+          "Equal every one facility and basic needs must reach every people around the world, and we marching towards to vision by peace .",
       },
       {
         id: 2,
@@ -432,26 +464,26 @@ export const aboutContent = [
     boxes: [
       {
         id: 0,
-        icon: FaPeopleGroup,
+        icon: FaCalendarAlt,
         number: "25",
         title: "Years",
       },
 
       {
         id: 1,
-        icon: FaPeopleGroup,
+        icon: FaBuilding,
         number: "25 +",
         title: "Branches",
       },
       {
         id: 2,
-        icon: FaPeopleGroup,
+        icon: FaHandsHelping,
         number: "2500 +",
         title: "Volunteers",
       },
       {
         id: 3,
-        icon: FaPeopleGroup,
+        icon: FaUser,
         number: "4000 +",
         title: "Beneficiaries",
       },
@@ -509,5 +541,35 @@ export const news = [
     month: "Mar",
     time: "10:00 AM",
     image: news_2,
+  },
+];
+
+export const live = [
+  {
+    id: 0,
+    title: "Chat with a Live",
+    description:
+      "Let’s chat with our live experts to get answer your questions.",
+    buttonText: "LIVE CHAT",
+    hoverbg: hoverbg,
+    link: "https://wa.me/your-whatsapp-number",
+  },
+  {
+    id: 1,
+    title: "Become a Partner",
+    description:
+      "Become a business partner with us and get an opportunity to grow.",
+    buttonText: "JOIN WITH US",
+    hoverbg: hoverbg,
+    link: "https://wa.me/your-whatsapp-number",
+  },
+  {
+    id: 2,
+    title: "Donation",
+    description:
+      "You can find the answers in our list of frequently asked questions.",
+    buttonText: "GET ANSWER",
+    hoverbg: hoverbg,
+    link: "https://your-donation-page.com",
   },
 ];

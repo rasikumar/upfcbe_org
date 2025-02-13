@@ -24,8 +24,10 @@ const Error = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="text-center p-6">
         <h1 className="text-6xl font-bold text-red-600 mb-2">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Page Not Found</p>
-        <p className="text-lg text-gray-600 mb-4">Redirecting in {seconds} seconds...</p>
+        <p className="text-xl text-upfgray mb-4">Page Not Found</p>
+        <p className="text-lg text-upfgray mb-4">
+          Redirecting in {seconds} seconds...
+        </p>
         <Link to="/" className="text-lg text-blue-500 hover:underline">
           Go back to Home
         </Link>

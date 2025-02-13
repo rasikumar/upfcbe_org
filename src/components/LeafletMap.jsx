@@ -17,7 +17,6 @@ export default function Map() {
     []
   );
 
-  // Branch locations (replace with your actual branches)
   const [branches, setBranches] = useState([
     { name: "Chennai", latitude: 13.0827, longitude: 80.2707 },
     { name: "Coimbatore", latitude: 11.0168, longitude: 76.9558 },
@@ -34,8 +33,8 @@ export default function Map() {
           maxZoom: 7,
           zoomControl: false,
           maxBounds: [
-            [8.0, 76.0], // Southwest coordinates (approximate bounds for Tamil Nadu)
-            [14.0, 81.0], // Northeast coordinates
+            [8.0, 76.0],
+            [14.0, 81.0],
           ],
         })
         .setView([userPosition.latitude, userPosition.longitude], 7);
@@ -56,26 +55,9 @@ export default function Map() {
             `lat: ${latitude.toFixed(2)}, long: ${longitude.toFixed(2)}`
           );
       });
-
-      // Disable the click event listener
-      // mapRef.current.addEventListener("click", (e) => {
-      //   const { lat: latitude, lng: longitude } = e.latlng;
-      //   leaflet
-      //     .marker([latitude, longitude])
-      //     .addTo(mapRef.current)
-      //     .bindPopup(
-      //       `lat: ${latitude.toFixed(2)}, long: ${longitude.toFixed(2)}`
-      //     );
-
-      //   setNearbyMarkers((prevMarkers) => [
-      //     ...prevMarkers,
-      //     { latitude, longitude },
-      //   ]);
-      // });
     }
   }, []);
 
-  // Update user marker and center map
   useEffect(() => {
     setUserPosition({ ...userPosition });
 
@@ -83,21 +65,9 @@ export default function Map() {
       userMarkerRef.current.remove();
     }
 
-    // Remove the user marker addition
-    // userMarkerRef.current = leaflet
-    //   .marker([location.latitude, location.longitude])
-    //   .addTo(mapRef.current)
-    //   .bindPopup("User");
-
-    // const el = userMarkerRef.current.getElement();
-    // if (el) {
-    //   el.style.filter = "hue-rotate(120deg)";
-    // }
-
     mapRef.current.setView([location.latitude, location.longitude]);
   }, [location, userPosition.latitude, userPosition.longitude]);
 
-  // Add Branches to Map
   useEffect(() => {
     if (mapRef.current) {
       branches.forEach(({ name, latitude, longitude }) => {
@@ -113,5 +83,31 @@ export default function Map() {
     }
   }, [branches]);
 
-  return <div id="map" style={{ width: "100%", height: "500px" }}></div>;
+  return (
+    <div style={{ position: "relative", width: "100%", height: "500px" }}>
+      {/* Map Container */}
+      <div
+        id="map"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          zIndex: 1,
+        }}
+      ></div>
+
+      {/* Overlay */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.3)", // Adjust transparency
+          zIndex: 2, // Ensure overlay is above the map
+        }}
+      ></div>
+    </div>
+  );
 }

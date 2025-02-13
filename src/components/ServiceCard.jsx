@@ -38,7 +38,7 @@ export default function ServiceCard({
             </h2>
           )}
           {description && (
-            <p className="text-gray-600 2xl:text-lg text-base leading-relaxed line-clamp-4 ">
+            <p className="text-upfgray 2xl:text-lg text-base leading-relaxed line-clamp-4 ">
               {description}
             </p>
           )}

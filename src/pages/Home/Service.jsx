@@ -56,11 +56,11 @@ const Service = () => {
 
   return (
     <div
-      className="flex items-center justify-end py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
+      className="flex items-center md:justify-end justify-center py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* Service Cards Grid */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row max-md:gap-3">
         <div className="relative max-w-7xl mx-auto flex flex-col gap-4 px-6">
           <Heading
             undertext={heroContent[2]?.title}

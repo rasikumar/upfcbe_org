@@ -14,7 +14,7 @@ export const MiniCards = ({ title, description, icon: Icon }) => {
       </h2>
 
       {/* Description */}
-      <p className="w-full sm:w-60 text-gray-600 text-center mt-2">
+      <p className="w-full sm:w-60 text-upfgray text-center mt-2">
         {description}
       </p>
     </div>
