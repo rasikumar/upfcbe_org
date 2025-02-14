@@ -13,9 +13,12 @@ import styleimage from "./styleimage.png";
 import familyphoto from "./hero/familyphoto.webp";
 import donarDetails from "./hero/donarDetails.jpg";
 
-import twelveA from "./aboutus/certificate/twelveA.png";
-import eightyG from "./aboutus/certificate/eightyG.webp";
-import fcra from "./aboutus/certificate/fcra.png";
+import Amahathma from "./aboutus/certificate/A-mahathma.jpg";
+import Bmahathma from "./aboutus/certificate/B-mahathma.jpg";
+import DMotherTerasascaled from "./aboutus/certificate/D-Mother-Terasa-scaled.jpg";
+import EDR from "./aboutus/certificate/E-DR.jpg";
+import FSevaRatna from "./aboutus/certificate/F-Seva-Ratna.jpg";
+
 import heart from "./aboutus/heart.png";
 import rotate_text from "./aboutus/rotate_text.png";
 
@@ -38,7 +41,6 @@ import eventbg from "./events/eventbg.png";
 
 import hoverbg from "./contact/hoverbg.jpg";
 
-
 export {
   hoverbg,
   main_logo,
@@ -55,9 +57,9 @@ export {
   styleimage,
   familyphoto,
   donarDetails,
-  twelveA,
-  eightyG,
-  fcra,
+  Amahathma,
+  Bmahathma,
+  DMotherTerasascaled,
   heart,
   rotate_text,
   shape,
@@ -75,4 +77,6 @@ export {
   about_first,
   about_second,
   pigeon,
+  EDR,
+  FSevaRatna,
 };

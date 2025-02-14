@@ -17,7 +17,7 @@ export default function ServiceCard({
           <div className="relative w-full h-64">
             <img
               src={imageSrc}
-              alt="Service Image"
+              alt={title}
               className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-105"
             />
             {/* <div className="absolute inset-0 bg-white object-cover opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-50"></div> */}

@@ -1,112 +1,130 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { aboutContent } from "@/data";
-import { timeline_bg } from "@/assets";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { IoIosArrowBack } from "react-icons/io";
+import Heading from "@/components/Heading";
+import ServiceCard from "@/components/ServiceCard";
 
 const Certification = () => {
   const certificates = aboutContent[4]?.certificates || [];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const contentRef = useRef(null);
   const containerRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => {
+      const newIndex =
+        prevIndex === 0 ? certificates.length - 1 : prevIndex - 1;
+      setActiveIndex(newIndex); // Update activeIndex
+      return newIndex;
+    });
+  };
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => {
+      const newIndex =
+        prevIndex === certificates.length - 1 ? 0 : prevIndex + 1;
+      setActiveIndex(newIndex); // Update activeIndex
+      return newIndex;
+    });
+  };
+
+  const handleServiceClick = (index) => {
+    setActiveIndex(index);
+    setCurrentIndex(index);
+  };
+
+  const getVisibleCertificates = () => {
+    if (currentIndex + 3 > certificates.length) {
+      return [
+        ...certificates.slice(currentIndex),
+        ...certificates.slice(0, (currentIndex + 3) % certificates.length),
+      ];
     }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
+    return certificates.slice(currentIndex, currentIndex + 3);
+  };
 
   useEffect(() => {
-    if (certificates.length === 0 || !isInView) return;
-
-    const interval = setInterval(() => {
-      gsap.to(contentRef.current, {
-        x: -100,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power1.in",
-        onComplete: () => {
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % certificates.length);
-        },
-      });
-    }, 3000);
-
+    const interval = setInterval(handleNext, 3000);
     return () => clearInterval(interval);
-  }, [certificates.length, isInView]);
-
-  useEffect(() => {
-    if (contentRef.current && isInView) {
-      gsap.fromTo(
-        contentRef.current,
-        { x: 100, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: "power1.out" }
-      );
-    }
-  }, [currentIndex, isInView]);
-
-  const selectedCertificate = certificates[currentIndex];
-
-  if (!selectedCertificate) return null; // Prevent errors if no data is available
+  }, [currentIndex]);
 
   return (
     <div
       ref={containerRef}
-      className="flex flex-col lg:flex-row justify-end items-center m-auto max-w-full md:pl-4 max-md:px-4 my-10 gap-8 lg:gap-24"
+      className="flex items-center md:justify-end justify-center md:py-16 py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
     >
-      <h2 className="text-2xl lg:text-3xl font-Caveat text-upfteagreent">
-        Certifications
-      </h2>
-      <div className="h-full flex flex-col w-full lg:w-auto">
-        {certificates.map((certificate, index) => (
-          <button
-            key={certificate.id}
-            onClick={() => setCurrentIndex(index)}
-            className={`block bg-upforangecrayola p-2 2xl:p-4 2xl:text-base xl:text-xs rounded-full my-1 lg:my-2 mx-1 lg:mx-2 text-center transition-all duration-500 ease-in-out shadow-upfshadow w-full ${
-              currentIndex === index
-                ? "translate-x-0 bg-upforangecrayola text-white"
-                : "translate-x-0 text-upfblack bg-white"
-            } hover:bg-upfteagreent hover:text-white`}
-          >
-            {certificate.title}
-          </button>
-        ))}
-      </div>
-      <div
-        className="flex rounded-l-3xl max-h-[25rem] lg:max-h-[20rem] 2xl:max-h-[30rem] min-h-[15rem] lg:min-h-[20rem] 2xl:min-h-[30rem] max-w-full lg:max-w-[60rem] 2xl:max-w-[70rem] min-w-full lg:min-w-[30rem] 2xl:min-w-[70rem] p-4 lg:p-16 z-10 overflow-hidden"
-        style={{ backgroundImage: `url(${timeline_bg})` }}
-      >
-        <div
-          className="flex flex-col lg:flex-row items-center m-auto h-full w-full lg:gap-20"
-          ref={contentRef}
-        >
-          <div className="w-full xl:w-[50rem] max-md:w-[4rem] mx-auto">
-            <img
-              src={selectedCertificate.image.src}
-              alt={selectedCertificate.image.alt}
-              className="w-full"
+      <div className="flex flex-col md:flex-row max-md:gap-3">
+        <div className="relative max-w-7xl mx-auto flex flex-col gap-4 px-6">
+          <Heading
+            undertext="Certifications"
+            className="flex items-center justify-end"
+          />
+          <p className="text-end w-96 text-4xl font-semibold leading-snug">
+            Our Achievements & Recognitions
+          </p>
+          <div>
+            <ul className="flex flex-col items-end">
+              {certificates.map((cert, index) => (
+                <li
+                  key={cert.id}
+                  className={`relative justify-end inline-flex items-center border-transparent cursor-pointer rounded-full w-full group overflow-hidden py-3 transition-all duration-500 ease-in-out hover:border border hover:border-upforangecrayola ${
+                    activeIndex === index ? "border-upforangecrayola" : ""
+                  }`}
+                  onClick={() => handleServiceClick(index)}
+                >
+                  <span
+                    className={`text-xl text-end font-semibold transition-all duration-500 ease-in-out group-hover:-translate-x-10 mr-6 group-hover:text-upforangecrayola ${
+                      activeIndex === index
+                        ? "text-upforangecrayola -translate-x-10"
+                        : "text-upfgray"
+                    }`}
+                  >
+                    {cert.title}
+                  </span>
+                  <IoIosArrowBack
+                    className={`transition-all absolute duration-500 ease-in-out group-hover:translate-x-10 ${
+                      activeIndex === index ? "-translate-x-10" : ""
+                    }`}
+                  />
+                  <div className="inset-0 border opacity-0 group-hover:opacity-20 transition-all duration-500 ease-in-out"></div>
+                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-upforangecrayola group-hover:w-full transition-all duration-500 ease-in-out"></div>
+                </li>
+              ))}
+              <div className="flex gap-4 relative">
+                <div className="absolute flex right-0 gap-4 mt-4">
+                  <button
+                    className="text-black p-4 rounded-full border-upfgray border-2 hover:border-upforangecrayola hover:bg-upforangecrayola hover:text-white transition-all duration-500 ease-in-out"
+                    onClick={handlePrev}
+                  >
+                    <FaArrowLeft className="text-xl" />
+                  </button>
+                  <button
+                    className="text-black p-4 rounded-full border-upfgray border-2 hover:border-upforangecrayola hover:bg-upforangecrayola hover:text-white transition-all duration-500 ease-in-out"
+                    onClick={handleNext}
+                  >
+                    <FaArrowRight className="text-xl" />
+                  </button>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 border-l-4 overflow-hidden">
+          {getVisibleCertificates().map((cert) => (
+            <ServiceCard
+              tag={cert.tag}
+              title={cert.title}
+              description={cert.description}
+              icon={cert.icon}
+              link={cert.link}
+              imageSrc={cert.image.src}
             />
-          </div>
-          <div className="flex flex-col gap-2 lg:gap-4">
-            <h3 className="mt-4 text-base lg:text-lg w-full lg:w-1/2">
-              {selectedCertificate.title}
-            </h3>
-            <p className="text-upfblack text-sm lg:text-base w-full">
-              {selectedCertificate.description}
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </div>

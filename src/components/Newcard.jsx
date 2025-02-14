@@ -1,5 +1,5 @@
 import React from "react";
-import { FaClock } from "react-icons/fa6";
+import { FaClock, FaLocationDot } from "react-icons/fa6";
 
 const Newcard = ({ event }) => {
   return (
@@ -26,7 +26,7 @@ const Newcard = ({ event }) => {
             <FaClock className="mr-1" /> {event.time}
           </li>
           <li className="flex items-center gap-1">
-            <FaClock className="mr-1" /> {event.location}
+            <FaLocationDot className="mr-1" /> {event.location}
           </li>
         </ul>
 

@@ -1,11 +1,14 @@
 import {
   about_guruji,
+  Amahathma,
+  Bmahathma,
+  DMotherTerasascaled,
+  EDR,
   education,
-  eightyG,
   events_1,
   events_2,
   events_3,
-  fcra,
+  FSevaRatna,
   gurujihero,
   gurujiHeropic,
   hero_banner,
@@ -16,7 +19,6 @@ import {
   news_1,
   news_2,
   spirutal,
-  twelveA,
 } from "@/assets";
 import { Crosshair, Eye, Goal } from "lucide-react";
 import { FaCalendarAlt, FaHandsHelping, FaUser } from "react-icons/fa";
@@ -339,9 +341,9 @@ export const aboutContent = [
   {
     id: 1,
     heading: "About Pure Hearts",
-    title: "Help the Society,Donate to the Charity",
+    title: "Beacon of Hope for the Destitute",
     content:
-      "On the other hand, we denounce with righteous indignation & dislike men who are so beguiled and demoralized by the charms of pleasure of the moment so blinded by desire that they cannot foresee the pain trouble that are bound to ensure.",
+      "Universal Peace Foundation provides shelter and support to orphans, elderly, and people with disabilities. It works to create a fair and peaceful society based on Indian values. Funded by Guruji Shivathma, this trust has been helping people for over 10 years. It is a safe home for those in need.",
   },
   {
     id: 2,
@@ -350,25 +352,26 @@ export const aboutContent = [
         id: 0,
         year: 2000,
         img: "https://dummyimage.com/350x400/dedede/dedede",
-        title: "Laying the Foundation for Change",
+        title: "A Lifelong Mission of Compassion and Service",
         description:
-          "Established our mission to support underprivileged communities, focusing on education, healthcare, and basic human rights.",
+          "Even from childhood, his heart was with the poor who struggled for a single meal.He started the Home as his dream project to serve the needy and helpless.Universal Peace Foundation was founded to support the downtrodden and homeless.Its mission is to provide free food, clothing, shelter, education, and medical care.",
       },
       {
         id: 1,
         year: 2011,
         img: "https://dummyimage.com/350x400/dedede/dedede",
-        title: "Expanding Our Reach",
+        title: "Honored for Humanity: A Legacy of Service and Recognition",
         description:
-          "Launched nationwide programs, providing food, shelter, and medical aid to thousands in need.",
+          "For his noble service, he was honored by the Collector of Coimbatore with the title 'Arivoli Siva'.Appreciated by Government Awards, his dedication continues to inspire many.The UPF Home has grown, now serving and sheltering over 100+ individuals.It is a great privilege to provide food and accommodation to those in need",
       },
       {
         id: 2,
         year: 2021,
         img: "https://dummyimage.com/350x400/dedede/dedede",
-        title: "Empowering Through Education",
+        title:
+          "Universal Peace Foundation: Spreading Hope and Care Across Communities",
         description:
-          "Introduced scholarship programs and skill development workshops, uplifting disadvantaged youth and creating sustainable opportunities.",
+          "Universal Peace Foundation – A Beacon of Hope for the DestituteWe are an iconic home for the needy, serving the destitute in Coimbatore and beyond.Spreading Love & Care with 25+ Branches, bringing hope to countless lives.With compassion at our core, we provide shelter and care to those in need.",
       },
       {
         id: 3,
@@ -389,7 +392,7 @@ export const aboutContent = [
         icon: Crosshair,
         letter: "M",
         description:
-          "“We would enhance our service day to day of life, enhance like fulfill the basic needs of people... peace is out primary way to reach our mission",
+          "We would enhance our service day to day of life, enhance like fulfill the basic needs of people... peace is out primary way to reach our mission.",
       },
       {
         id: 1,
@@ -397,7 +400,7 @@ export const aboutContent = [
         icon: Eye,
         letter: "V",
         description:
-          "Equal every one facility and basic needs must reach every people around the world, and we marching towards to vision by peace .",
+          "Equal every one facility and basic needs must reach every people around the world, and we marching towards to vision by peace.",
       },
       {
         id: 2,
@@ -405,7 +408,7 @@ export const aboutContent = [
         letter: "G",
         icon: Goal,
         description:
-          "We uphold business responsibilities, ensuring ethical practices while minimizing disruptions and maximizing benefits for all stakeholders.",
+          "The Universal Peace Foundation seeks to expand beyond 25+ branches, providing essentials like food, shelter, and medical aid.",
       },
     ],
   },
@@ -414,7 +417,7 @@ export const aboutContent = [
     title: "About Guruji",
     heading: "Guruji Shivathma: A Beacon of Hope for the Underprivileged",
     description:
-      " GURUJI SHIVATHMA, born in 1962 in Coimbatore, Tamil Nadu, grew up in poverty, struggling for even one meal a day. Despite hardships, he pursued education diligently and excelled academically. Deeply moved by the suffering of the poor, he resolved to fight hunger and uplift the underprivileged, especially children, women, and the elderly. new After completing his B.Com, Diploma in Siddha Medicine, and Human Psychology, he became a successful Siddha practitioner and counselor. With his lifelong vision of helping destitute children, particularly girls, he used his savings and ancestral property proceeds to buy 8.68 acres in Nallagoundanpalayam. In 2000, he established the Universal Peace Foundation to provide free food, shelter, education, and medical aid to the needy. new Today, the foundation operates in six districts of Tamil Nadu, supporting 960 people. It empowers individuals through vocational training, ensuring they lead independent and dignified lives. His unwavering dedication continues to transform lives, bringing hope and security to countless underprivileged individuals. His mission remains to eradicate hunger and provide holistic support, making a lasting impact on society.",
+      "Guruji Shivathma was born into poverty in 1962 in Coimbatore, Tamil Nadu. As a child, he struggled for food and worked as a laborer while pursuing his education. Despite hardships, he excelled academically and was deeply moved by the suffering of the poor. new He vowed to fight hunger and poverty, especially for children, women, and the elderly. After earning a B.Com, a Diploma in Siddha Medicine, and Human Psychology, he became a successful Siddha practitioner and counselor. With his savings and proceeds from his ancestral property, he bought 8.68 acres of land near Coimbatore. new In 2000, he founded the Universal Peace Foundation to provide free food, shelter, education, and medical care. The foundation supports people regardless of their background and empowers them through vocational training. new Today, the organization operates in six districts of Tamil Nadu. Over 960 people benefit from its humanitarian services",
     image: about_guruji,
     imageAlt: "GurjiAboutPic",
   },
@@ -423,34 +426,42 @@ export const aboutContent = [
     certificates: [
       {
         id: 0,
-        title: "80G Certification",
-        image: { src: eightyG, alt: "80G Certification Document" },
+        title: "Mahatma Gandhi Award",
+        image: { src: Amahathma, alt: "Mahatma Gandhi Award" },
         description:
-          "80G certification allows donors to claim tax deductions on donations made to registered charitable organizations under Section 80G of the IT Act. This encourages philanthropy by reducing taxable income. NGOs with this certification gain credibility, attracting more donors and ensuring compliance with government regulations for charitable contributions.",
+          "This award plaque recognizes Dr. A. Sivasubramaniam of the Universal Peace Foundation, Coimbatore, for his outstanding accomplishments and excellence in the field of social work. Presented by the Consumer Awareness Organization as part of the CAO Excellence Awards 2020, the award highlights his contributions to humanitarian efforts. The event is endorsed by NGO partnerships under the Planning Commission of the Government of India and the United Nations NGO Branch.",
         link: "#",
       },
       {
         id: 1,
-        title: "12A Certification",
-        image: { src: twelveA, alt: "12A Certification Document" },
+        title: "Honoring Social Excellence",
+        image: { src: Bmahathma, alt: "Honoring Social Excellence" },
         description:
-          "12A certification grants tax exemption to nonprofit organizations, ensuring they do not have to pay income tax on surplus funds. This enables NGOs to utilize their entire income for charitable activities. It also enhances their financial sustainability, making them eligible for grants and funding from various government and private institutions.",
+          "This prestigious Mahatma Gandhi Award was presented to Dr. A. Sivasubramaniam of the Universal Peace Foundation, Coimbatore, in recognition of his outstanding contributions to social work. The award was given as part of the CAO Excellence Awards 2020 on National Consumer Day. The event was held at COINDIA - SIEMA Building, Coimbatore, on February 5, 2020, and was supported by NGO partnerships under the Planning Commission of the Government of India and the United Nations NGO Branch. The elegantly crafted plaque signifies dedication to humanitarian service and social excellence.",
         link: "#",
       },
       {
         id: 2,
-        title: "80G Certified Receipt",
-        image: { src: eightyG, alt: "80G Certification Receipt" },
+        title: "Mother Teresa Humanity",
+        image: { src: DMotherTerasascaled, alt: "Mother Teresa Humanity" },
         description:
-          "An 80G-certified receipt allows donors to avail of tax deductions, promoting transparency and encouraging charitable contributions. It serves as proof of donation under Section 80G of the IT Act, helping NGOs attract more donations. Organizations issuing these receipts must maintain proper financial records to ensure compliance with tax regulations.",
+          "This humanitarian award was presented at an event organized by Face Events on December 21, 2019, at S.R.S Tower, Faridabad, Haryana. The award was given to Mr. A. Siva Subramaniam for his exceptional contributions in the field of Health & Education. The event was hosted by Face Group and Face News, a media, events, and film organization. The award also features the image of Mother Teresa, symbolizing its core values of compassion and service to humanity.",
         link: "#",
       },
       {
         id: 3,
-        title: "FCRA Certification",
-        image: { src: fcra, alt: "FCRA Certification Document" },
+        title: "Doctor of Letters",
+        image: { src: EDR, alt: "Doctor of Letters" },
         description:
-          "FCRA certification enables NGOs to legally receive foreign contributions, ensuring compliance with India's regulations on international funding. This certification is essential for organizations working on social, educational, and developmental projects. It also mandates transparency in fund utilization, preventing misuse and ensuring funds are used solely for charitable purposes.",
+          "This honorary doctorate was conferred upon Dr. Guruji Shivathma, the Founder of the Universal Peace Foundation, Coimbatore, by the University of New Jerusalem.The award recognizes his various contributions to society and youth development. It grants all rights and privileges associated with this academic honor. The degree was officially awarded on December 8, 2018, at Hotel Chennai Gateway, Chennai.",
+        link: "#",
+      },
+      {
+        id: 4,
+        title: "Seva Ratna Award",
+        image: { src: FSevaRatna, alt: "Seva Ratna Award" },
+        description:
+          "The Seva Ratna Award – 2018 was presented by Irattaipaathai Tamil Newspaper to Guruji Shivathma of the Universal Peace Foundation, Coimbatore, in recognition of his outstanding services to society. The award ceremony took place on December 8, 2018, at the Chennai Gateway Auditorium, Chennai, with Hon'ble Mr. Justice K. Swamidurai (Retd. Judge, High Court of Madras) as the chief guest. The event was officiated by Dr. S. S. Pari Parameswaran, Governor of Lions Club International, and V. Sivaperumal, Editor of Irattaipaathai News Paper.",
         link: "#",
       },
     ],
@@ -520,6 +531,7 @@ export const events = [
     location: "india",
   },
 ];
+
 export const news = [
   {
     id: 1,
