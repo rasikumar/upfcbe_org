@@ -22,7 +22,7 @@ const Total = () => {
     });
 
     tf.fromTo(
-      ".fadeIn",
+      ".fadeInA",
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.3, ease: "power2.out" }
     );
@@ -31,27 +31,29 @@ const Total = () => {
   return (
     <div
       ref={sectionRefA}
-      className="relative flex flex-col items-center py-36 bg-red-400"
+      className="relative flex flex-col items-center pt-20 bg-red-400"
       style={{
         backgroundImage: `url(${about_bottom_pic})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        // backgroundPosition: "",
       }}
     >
       <div className="absolute inset-0 bg-black opacity-80"></div>
       <div className="relative flex flex-col items-center gap-6 text-white px-4 md:px-0">
-        <Heading undertext={title} className="fadeIn" />
-        <h2 className="text-2xl md:text-4xl font-semibold fadeIn">{heading}</h2>
-        <p className="font-medium fadeIn text-center">{description}</p>
+        <Heading undertext={title} className="fadeInA" />
+        <h2 className="text-2xl md:text-4xl font-semibold fadeInA">
+          {heading}
+        </h2>
+        <p className="font-medium fadeInA text-center">{description}</p>
         <div className="flex flex-col md:flex-row gap-10">
           {boxes.map((box, index) => (
             <div
               key={box.id}
               ref={(el) => (boxRefsA.current[index] = el)}
-              className={`flex flex-col items-center py-10 gap-2 fadeIn ${
+              className={`flex flex-col items-center py-10 gap-2 fadeInA ${
                 index !== boxes.length - 1
-                  ? "md:border-r border-upfgray md:mr-10 md:pr-20"
+                  ? "md:border-r border-upfdarkblack/90 md:mr-10 md:pr-20"
                   : ""
               }`}
             >

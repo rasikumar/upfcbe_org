@@ -2,7 +2,7 @@ import Heading from "@/components/Heading";
 import { heroContent } from "../../data";
 import CountUp from "react-countup";
 import { useEffect, useState, useRef } from "react";
-import { bg } from "@/assets";
+import { shape } from "@/assets";
 import VerticalBox from "@/components/VerticalBox";
 
 const About = () => {
@@ -56,7 +56,7 @@ const About = () => {
     <div
       ref={sectionRef}
       className="flex flex-col lg:flex-row max-w-[100rem] mx-auto bg-cover bg-center items-start p-4 sm:p-8"
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{ backgroundImage: `url(${shape})` }}
     >
       <div className="w-full lg:w-1/2 flex flex-col items-start">
         {aboutContents.map((aboutContent) => (

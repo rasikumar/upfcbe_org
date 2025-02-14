@@ -1,6 +1,6 @@
 export const MiniCards = ({ title, description, icon: Icon }) => {
   return (
-    <div className="w-full sm:w-72 p-6 rounded-lg border transition-transform transform hover:scale-105 shadow-md">
+    <div className="w-full sm:w-72 p-6 rounded-lg  transition-transform transform hover:scale-105 ">
       {/* Icon Display */}
       {Icon && (
         <div className="flex justify-center mb-3">
