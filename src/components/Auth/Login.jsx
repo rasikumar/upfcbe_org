@@ -18,13 +18,16 @@ const Login = ({ className, ...props }) => {
     password: "",
   });
 
-  const { Login } = Auth();
+  const auth = Auth();
+  const { Login } = auth;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Login.mutate(login);
-    setLogin({ email: "", password: "" });
-    console.log(login);
+    Login.mutate(login, {
+      onSuccess: () => {
+        setLogin({ email: "", password: "" });
+      },
+    });
   };
 
   const handleChange = (e) => {
@@ -47,7 +50,7 @@ const Login = ({ className, ...props }) => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-6">
                   <div className="grid gap-2">
                     <Label htmlFor="email">Email</Label>
@@ -78,23 +81,10 @@ const Login = ({ className, ...props }) => {
                       required
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    onClick={handleSubmit}
-                    className="w-full"
-                  >
+                  <Button type="submit" className="w-full">
                     Login
                   </Button>
-                  {/* <Button variant="outline" className="w-full">
-                    Login with Google
-                  </Button> */}
                 </div>
-                {/* <div className="mt-4 text-center text-sm">
-                  Don&apos;t have an account?{" "}
-                  <a href="#" className="underline underline-offset-4">
-                    Sign up
-                  </a>
-                </div> */}
               </form>
             </CardContent>
           </Card>

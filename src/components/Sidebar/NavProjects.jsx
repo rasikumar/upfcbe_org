@@ -25,7 +25,7 @@ export function NavProjects({ projects }) {
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
-          <Collapsible>
+          <Collapsible key={item.id}>
             <SidebarMenuItem key={item.name}>
               <CollapsibleTrigger asChild>
                 <SidebarMenuButton asChild>

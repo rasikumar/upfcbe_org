@@ -2,6 +2,8 @@
 import { Route, Routes, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 
+import { Toaster } from "@/components/ui/toaster";
+
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -16,10 +18,13 @@ import ContactUs from "./pages/ContactUs/ContactUs";
 // admin
 import Login from "./components/Auth/Login";
 import Sidebar from "./pages/Dashboard/Sidebar";
-import NewsEvents from "./pages/Dashboard/Events_News/News&Events";
+import News from "./pages/Dashboard/News/News";
 import Donations from "./pages/Dashboard/Donations/Donations";
 import Leads from "./pages/Dashboard/Leads/Leads";
-import Profile from "./pages/Dashboard/Profile/Profile";
+// import Profile from "./pages/Dashboard/Profile/Profile";
+import ProtectedRoute from "./components/Auth/ProtectedROute";
+import NotAuthorized from "./components/NotAuthorized";
+import Events from "./pages/Dashboard/Events/Events";
 
 const App = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -44,6 +49,7 @@ const App = () => {
 
   return (
     <div className="font-NotoSans">
+      <Toaster />
       {/* Only show Header & Navbar if not on restricted routes */}
       {!isRestrictedRoute && (
         <>
@@ -60,15 +66,24 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
 
         {/* Admin Routes */}
-        <Route path="/dashboard" element={<Sidebar />}>
-          <Route index path="news-events" element={<NewsEvents />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Sidebar />
+            </ProtectedRoute>
+          }
+        >
+          <Route index path="news" element={<News />} />
+          <Route path="events" element={<Events />} />
           <Route path="donations" element={<Donations />} />
           <Route path="leads" element={<Leads />} />
-          <Route path="profile" element={<Profile />} />
+          {/* <Route path="profile" element={<Profile />} /> */}
         </Route>
         <Route path="/admin" element={<Login />} />
 
         {/* Error Page */}
+        <Route path="/not-authorized" element={<NotAuthorized />} />
         <Route path="*" element={<Error />} />
       </Routes>
 

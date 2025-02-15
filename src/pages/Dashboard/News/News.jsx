@@ -1,7 +1,7 @@
 import React from "react";
 
-const NewsEvents = () => {
+const News = () => {
   return <div>szssasassz</div>;
 };
 
-export default NewsEvents;
+export default News;

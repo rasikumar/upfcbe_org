@@ -4,16 +4,19 @@ import { useNavigate } from "react-router";
 
 const Auth = () => {
   const navigate = useNavigate();
+
   const Login = useMutation({
-    mutationFn: adminLogin,
-    onSuccess: () => {
-      console.log("Login successful");
+    mutationFn: (loginData) => adminLogin(loginData),
+    onSuccess: (response) => {
+      // console.log("Login successful", response.token);
+      localStorage.setItem("token", response.token);
       navigate("/dashboard");
     },
     onError: (error) => {
       console.error("Login failed", error);
     },
   });
+
   return { Login };
 };
 

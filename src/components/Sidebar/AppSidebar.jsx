@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import {
   AudioWaveform,
@@ -28,149 +26,49 @@ import {
 import { BiNews } from "react-icons/bi";
 import { FaDonate } from "react-icons/fa";
 
-// This is sample data.
-const data = {
-  //   user: {
-  //     name: "shadcn",
-  //     email: "m@example.com",
-  //     avatar: "/avatars/shadcn.jpg",
-  //   },
-  //   teams: [
-  //     {
-  //       name: "Acme Inc",
-  //       logo: GalleryVerticalEnd,
-  //       plan: "Enterprise",
-  //     },
-  //     {
-  //       name: "Acme Corp.",
-  //       logo: AudioWaveform,
-  //       plan: "Startup",
-  //     },
-  //     {
-  //       name: "Evil Corp.",
-  //       logo: Command,
-  //       plan: "Free",
-  //     },
-  //   ],
-  //   navMain: [
-  //     {
-  //       title: "Playground",
-  //       url: "#",
-  //       icon: SquareTerminal,
-  //       isActive: true,
-  //       items: [
-  //         {
-  //           title: "History",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Starred",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Settings",
-  //           url: "#",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "Models",
-  //       url: "#",
-  //       icon: Bot,
-  //       items: [
-  //         {
-  //           title: "Genesis",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Explorer",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Quantum",
-  //           url: "#",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "Documentation",
-  //       url: "#",
-  //       icon: BookOpen,
-  //       items: [
-  //         {
-  //           title: "Introduction",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Get Started",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Tutorials",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Changelog",
-  //           url: "#",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "Settings",
-  //       url: "#",
-  //       icon: Settings2,
-  //       items: [
-  //         {
-  //           title: "General",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Team",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Billing",
-  //           url: "#",
-  //         },
-  //         {
-  //           title: "Limits",
-  //           url: "#",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  projects: [
-    {
-      name: "News & Events",
-      url: "news-events",
-      icon: BiNews,
-    },
-    {
-      name: "Donations",
-      url: "donations",
-      icon: FaDonate,
-    },
-    {
-      name: "Leads",
-      url: "leads",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "profile",
-      icon: Map,
-    },
-  ],
-};
+import { jwtDecode } from "jwt-decode";
 
 export function AppSidebar({ ...props }) {
+  const token = localStorage.getItem("token");
+  const decodedToken = token ? jwtDecode(token) : null; // Ensure token exists before decoding
+
+  const data = {
+    user: {
+      name: decodedToken?.name || "Guest",
+      email: decodedToken?.email || "guest@example.com",
+      avatar: decodedToken?.name || "G",
+    },
+    projects: [
+      {
+        id: 0,
+        name: "News",
+        url: "news",
+        icon: BiNews,
+      },
+      {
+        id: 1,
+        name: "Events",
+        url: "events",
+        icon: Map,
+      },
+      {
+        id: 2,
+        name: "Donations",
+        url: "donations",
+        icon: FaDonate,
+      },
+      {
+        id: 3,
+        name: "Leads",
+        url: "leads",
+        icon: PieChart,
+      },
+    ],
+  };
+
   return (
     <Sidebar collapsible="icon" {...props}>
-      {/* <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
-      </SidebarHeader> */}
       <SidebarContent>
-        {/* <NavMain items={data.navMain} /> */}
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
