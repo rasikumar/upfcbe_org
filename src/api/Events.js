@@ -29,7 +29,7 @@ export const createEvent = async (eventData) => {
 };
 
 export const deleteEvent = async (Eventid) => {
-  console.log(Eventid);
+  // console.log(Eventid);
   try {
     const response = await Instance.delete(`${EVENT}/delEve/${Eventid}`);
     console.log(response.data);

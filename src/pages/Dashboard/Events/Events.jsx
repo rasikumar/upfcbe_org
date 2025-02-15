@@ -54,7 +54,7 @@ const Events = () => {
       {isEventListsError ? (
         <>{`eventLists ${EventListsError}`}</>
       ) : isEventListsLoading ? (
-        <></>
+        <>Loading</>
       ) : (
         <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4">
           {EventLists.map((EventList) => (

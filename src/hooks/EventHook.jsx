@@ -59,6 +59,14 @@ const EventHook = () => {
         className: "bg-red-500 text-white",
       });
     },
+    onError: (error) => {
+      console.error("Failed to create event", error);
+      toast({
+        title: "Error",
+        description: error?.message || "Failed to create event",
+        variant: "destructive",
+      });
+    },
   });
 
   const GetEventById = useMutation({

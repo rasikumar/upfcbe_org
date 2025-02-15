@@ -80,7 +80,7 @@ export function CreateEvents({ onCreate, success }) {
           </DialogHeader>
 
           <div className="grid gap-6 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
+            <div className="md:grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right text-sm font-medium">
                 Name
               </Label>
@@ -93,7 +93,7 @@ export function CreateEvents({ onCreate, success }) {
               />
             </div>
 
-            <div className="grid grid-cols-4 items-center gap-4">
+            <div className="md:grid grid-cols-4 items-center gap-4">
               <Label
                 htmlFor="date_time"
                 className="text-right text-sm font-medium"
@@ -111,7 +111,7 @@ export function CreateEvents({ onCreate, success }) {
               />
             </div>
 
-            <div className="grid grid-cols-4 items-center gap-4">
+            <div className="md:grid grid-cols-4 items-center gap-4">
               <Label htmlFor="venue" className="text-right text-sm font-medium">
                 Venue
               </Label>
@@ -124,21 +124,21 @@ export function CreateEvents({ onCreate, success }) {
               />
             </div>
 
-            <div className="flex float-right gap-2">
+            <div className="md:flex float-right gap-2">
               <Label
                 htmlFor="description"
-                className="text-sm font-medium ml-10"
+                className="text-sm font-medium md:ml-10"
               >
                 Description
               </Label>
               <ReactQuill
                 value={description}
                 onChange={setDescription}
-                className="min-h-[120px] mb-16 ml-2"
+                className="md:mb-16 ml-2"
               />
             </div>
 
-            <div className="grid grid-cols-4 items-center gap-4">
+            <div className="md:grid grid-cols-4 items-center gap-4">
               <Label
                 htmlFor="status"
                 className="text-right text-sm font-medium"
@@ -159,7 +159,7 @@ export function CreateEvents({ onCreate, success }) {
               </Select>
             </div>
 
-            <div className="grid grid-cols-4 items-center gap-4">
+            <div className="md:grid grid-cols-4 items-center gap-4">
               <Label htmlFor="image" className="text-right text-sm font-medium">
                 Image
               </Label>
