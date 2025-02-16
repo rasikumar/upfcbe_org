@@ -57,12 +57,12 @@ export function AppSidebar({ ...props }) {
         url: "donations",
         icon: FaDonate,
       },
-      {
-        id: 3,
-        name: "Leads",
-        url: "leads",
-        icon: PieChart,
-      },
+      // {
+      //   id: 3,
+      //   name: "Leads",
+      //   url: "leads",
+      //   icon: PieChart,
+      // },
     ],
   };
 

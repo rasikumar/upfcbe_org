@@ -18,21 +18,26 @@ const NewsCard = ({
   id,
 }) => {
   return (
-    <Card className="max-w-sm bg-white shadow-md rounded-lg overflow-hidden p-4 border border-gray-200">
+    <Card className="overflow-hidden border transition-transform duration-300 hover:border-emerald-300 relative">
       <img
         className="w-full h-48 object-cover rounded-md"
         src={`${PHOTOS}${image}`}
         alt={title}
       />
-      <CardContent className="mt-3">
+      <CardContent className="p-4">
         <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
-        <p className="text-gray-600 mt-1">{description}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: description || "<em>No description provided</em>",
+          }}
+          className="line-clamp-4"
+        />
         <p className="text-gray-700 mt-2">{text}</p>
       </CardContent>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            variant="ghost"
+            // variant="ghost"
             size="icon"
             className="absolute top-4 right-4"
           >
