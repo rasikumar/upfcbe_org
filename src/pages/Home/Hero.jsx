@@ -36,12 +36,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={comp} className="flex flex-col gap-10 my-20 relative px-4 ">
+    <div ref={comp} className="flex flex-col gap-10 relative px-4 ">
       <div className="w-80 h-32 absolute bg-upfteagreent/50 rounded-full blur-[80px] flex items-center justify-center left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 -z-10" />
 
       <div className="max-w-7xl m-auto flex flex-col gap-6 text-center">
         {/* Hero Text */}
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6 my-20">
           <h2
             className="text-2xl md:text-4xl 2xl:text-5xl font-bold "
             id="text-reveal"

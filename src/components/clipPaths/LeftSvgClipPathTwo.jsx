@@ -1,16 +1,34 @@
-import React, { forwardRef } from "react";
+import EventHook from "@/hooks/EventHook";
+import React, { forwardRef, useEffect } from "react";
+import { Link } from "react-router";
 
 const LeftSvgClipPathTwo = forwardRef(
-  (
-    {
-      imageUrl,
-      title = "Events",
-      description = "Join us in making a difference in our community",
-    },
-    ref
-  ) => {
+  ({ id, imageUrl, title = "Events" }, ref) => {
+    const Event = EventHook();
+    const {
+      isEventError,
+      isEventLoading,
+      EventError,
+      EventLists,
+      GetEventById,
+    } = Event;
+
+    // console.log(EventLists);
+    // Fetch event by ID when component mounts
+    useEffect(() => {
+      if (id) {
+        GetEventById(id);
+      }
+    }, [id]);
+
+    // Get the first event name if available
+    const eventName = EventLists?.length > 0 ? EventLists[0].name : "";
+
     return (
-      <div className="relative w-full h-full">
+      <Link
+        to={`events-home/events/${id}`}
+        className="relative w-full h-full block group"
+      >
         <svg viewBox="0 0 210 296" className="main__hero__image w-full h-auto">
           <defs>
             <clipPath id="LeftSvgClipPathTwo" clipPathUnits="userSpaceOnUse">
@@ -38,16 +56,14 @@ const LeftSvgClipPathTwo = forwardRef(
         </svg>
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col p-4 justify-between">
-          {title && (
-            <h2 className="text-xl text-white">{title}</h2>
-          )}
-          {description && (
-            <p className="text-xs md:text-base text-white drop-shadow-md line-clamp-3">
-              {description}
+          {title && <h2 className="text-xl text-white">{title}</h2>}
+          {eventName && (
+            <p className="text-xs md:text-base text-white drop-shadow-md line-clamp-3 group-hover:underline">
+              {eventName}
             </p>
           )}
         </div>
-      </div>
+      </Link>
     );
   }
 );

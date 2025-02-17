@@ -2,9 +2,20 @@ import { PHOTOS } from "@/utils/api";
 import { FaClock, FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router";
 
-const Eventcard = ({ date_time, description, image, name, status, venue }) => {
+const Eventcard = ({
+  id,
+  date_time,
+  description,
+  image,
+  name,
+  status,
+  venue,
+}) => {
   return (
-    <div className="w-full max-w-96 h-full max-h-auto p-2">
+    <Link
+      to={`./events/${id}`}
+      className="w-full max-w-96 h-full max-h-auto p-2"
+    >
       {/* Event Date Badge */}
       <div className="relative left-4 top-7 bg-[#FD8343] text-white text-center w-16 h-16 border-4 border-white rounded-full z-10">
         <p className="text-lg font-bold">
@@ -51,25 +62,24 @@ const Eventcard = ({ date_time, description, image, name, status, venue }) => {
 
             {/* Event name */}
             <h3 className="text-xl font-semibold transition-all duration-500 group-hover:text-black hover:text-upforangecrayola relative">
-              <Link to={"/"} className="hover:text-upforangecrayola">
-                {name}
-              </Link>
+              {name}
             </h3>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: description,
+              }}
+              className="line-clamp-3"
+            />
 
             {/*More details */}
             <div className="text-white group-hover:text-black mt-3 text-sm text-bold font-medium relative">
-              <Link
-                to={"/"}
-                className="relative inline-block transition-all duration-500 group"
-              >
-                <span className="absolute left-0 top-[-4px] w-4 h-0.5 bg-[#FD8343] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-                <span className="hover:text-[#FD8343]">MORE DETAILS</span>
-              </Link>
+              <span className="absolute left-0 top-[-4px] w-4 h-0.5 bg-[#FD8343] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+              <span className="hover:text-[#FD8343]">MORE DETAILS</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

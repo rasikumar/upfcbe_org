@@ -50,10 +50,12 @@ export const getNewsById = async (newsId) => {
   }
 };
 
-export const updateNews = async (newsId, newsData) => {
+export const updateNews = async (newsData) => {
+  console.log(newsData);
+  // console.log(newsId);
   try {
     const response = await Instance.put(
-      `${NEWS}/update_news/${newsId}`,
+      `${NEWS}/update_news/${newsData.id}`,
       newsData,
       {
         headers: {

@@ -1,6 +1,5 @@
 import { heroContent } from "@/data";
 import ServiceCard from "../../components/ServiceCard";
-import { bg } from "@/assets";
 import { useState, useEffect, useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
@@ -53,10 +52,7 @@ const Service = () => {
   }, [currentIndex]);
 
   return (
-    <div
-      className="flex items-center md:justify-end justify-center md:py-16 py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
+    <div className="flex items-center md:justify-end justify-center md:py-16 py-10 px-6 m-auto 2xl:max-w-[120rem] w-full">
       {/* Service Cards Grid */}
       <div className="flex flex-col md:flex-row max-md:gap-3">
         <div className="relative max-w-7xl mx-auto flex flex-col gap-4 px-6">

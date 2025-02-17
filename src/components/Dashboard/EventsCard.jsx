@@ -54,7 +54,6 @@ const EventsCard = ({
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            variant="ghost"
             size="icon"
             className="absolute top-4 right-4"
           >

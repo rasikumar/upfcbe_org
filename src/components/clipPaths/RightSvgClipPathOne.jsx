@@ -1,17 +1,33 @@
-import React, { forwardRef } from "react";
-import { gurujiwalk } from "@/assets";
+import NewsHook from "@/hooks/NewsHook";
+import React, { forwardRef, useEffect } from "react";
+import { Link } from "react-router";
 
 const RightSvgClipPathOne = forwardRef(
   (
     {
+      id,
       imageUrl,
       title = "News",
       description = "Volunteers making a difference in the community every day",
     },
     ref
   ) => {
+    const Newss = NewsHook();
+    const { isNewsError, isNewsLoading, NewsError, NewsLists, GetNewsById } =
+      Newss;
+    // console.log(NewsLists?.news);
+    useEffect(() => {
+      if (id) {
+        GetNewsById(id);
+      }
+    }, [id]);
+
+    // Get the first event name if available
+    const newsName =
+      NewsLists?.news?.length > 0 ? NewsLists?.news[0].title : "";
+
     return (
-      <div className="relative w-full h-full">
+      <Link to={`events-home/news/${id}`} className="relative w-full h-full">
         <svg viewBox="0 0 210 296" className="main__hero__image w-full h-auto">
           <defs>
             <clipPath id="RightSvgClipPathOne" clipPathUnits="userSpaceOnUse">
@@ -39,14 +55,14 @@ const RightSvgClipPathOne = forwardRef(
         </svg>
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col p-4 justify-between items-end">
-          {title && <h2 className="text-xl text-white ">{title}</h2>}
-          {description && (
-            <p className="text-xs md:text-base text-white drop-shadow-md line-clamp-3">
-              {description}
+          {title && <h2 className="text-xl text-white">{title}</h2>}
+          {newsName && (
+            <p className="text-xs md:text-base text-white drop-shadow-md line-clamp-3 group-hover:underline">
+              {newsName}
             </p>
           )}
         </div>
-      </div>
+      </Link>
     );
   }
 );

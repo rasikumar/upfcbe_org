@@ -26,6 +26,14 @@ const NewsHook = (currentpage, itemPerPage) => {
     staleTime: 1000 * 60 * 5,
   });
 
+  const useNewsDetails = (id) =>
+    useQuery({
+      queryKey: ["news", id],
+      queryFn: () => getNewsById(id),
+      enabled: !!id,
+      staleTime: 1000 * 60 * 5,
+    });
+
   const CreateNew = useMutation({
     mutationFn: (newNewsData) => createNews(newNewsData),
     onSuccess: (data) => {
@@ -99,6 +107,7 @@ const NewsHook = (currentpage, itemPerPage) => {
     GetNewsById,
     selectedNews,
     NewsLists,
+    useNewsDetails,
     isNewsLoading,
     isNewsError,
     NewsError,

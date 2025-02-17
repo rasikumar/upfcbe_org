@@ -13,11 +13,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { toast } from "@/hooks/use-toast";
 
 export function CreateNews({ onCreate, success }) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [description, setdescription] = useState("");
+  const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [showPreview, setShowPreview] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ export function CreateNews({ onCreate, success }) {
   useEffect(() => {
     if (success) {
       setTitle("");
-      setdescription("");
+      setDescription("");
       setText("");
       setImage(null);
       setIsOpen(false);
@@ -33,9 +34,38 @@ export function CreateNews({ onCreate, success }) {
   }, [success]);
 
   const handleSubmit = () => {
+    // Basic validation
+    if (!title || !text || !description) {
+      alert("Title, Text, and Description are required!");
+      return;
+    }
+
     const newsData = { title, text, description, image };
     if (onCreate) {
       onCreate(newsData);
+    }
+    setShowPreview(false); // Close preview after submission
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files?.[0];
+
+    // Validate image size
+    if (file && file.size > 5 * 1024 * 1024) {
+      toast({
+        title: "Image size exceeds 5MB",
+        description: "Please upload an image smaller than 5MB.",
+      });
+      e.target.value = ""; // Reset file input
+      setImage(null); // Reset image state
+      return;
+    }
+
+    // Check if the file is an image
+    if (file && file.type.startsWith("image/")) {
+      setImage(file);
+    } else {
+      alert("Please upload a valid image file.");
     }
   };
 
@@ -77,7 +107,7 @@ export function CreateNews({ onCreate, success }) {
 
             <div className="md:grid grid-cols-4 items-center gap-4">
               <Label htmlFor="text" className="text-right text-sm font-medium">
-                text
+                Text
               </Label>
               <Input
                 id="text"
@@ -89,12 +119,15 @@ export function CreateNews({ onCreate, success }) {
             </div>
 
             <div className="md:flex float-right gap-2">
-              <Label htmlFor="description" className="text-sm font-medium md:ml-10">
-                description
+              <Label
+                htmlFor="description"
+                className="text-sm font-medium md:ml-10"
+              >
+                Description
               </Label>
               <ReactQuill
                 value={description}
-                onChange={setdescription}
+                onChange={setDescription}
                 className="md:mb-16 ml-2"
               />
             </div>
@@ -107,13 +140,15 @@ export function CreateNews({ onCreate, success }) {
                 id="image"
                 type="file"
                 className="col-span-3 px-3 py-2"
-                onChange={(e) => setImage(e.target.files?.[0] || null)}
+                onChange={handleImageChange}
               />
-              {/* <img
-                src={URL.createObjectURL(image)}
-                alt="News"
-                className="max-w-xs rounded-md shadow-md"
-              /> */}
+              {image && (
+                <img
+                  src={URL.createObjectURL(image)}
+                  alt="News"
+                  className="max-w-xs rounded-md shadow-md mt-2"
+                />
+              )}
             </div>
           </div>
 
@@ -129,7 +164,15 @@ export function CreateNews({ onCreate, success }) {
               type="button"
               variant="outline"
               className="w-full py-2 text-sm font-medium"
-              onClick={() => setShowPreview(true)}
+              onClick={() => {
+                if (!text || !description || !image || !title) {
+                  toast({
+                    title: "Please fill in all the fields before previewing.",
+                  });
+                  return;
+                }
+                setShowPreview(true);
+              }}
             >
               Preview
             </Button>

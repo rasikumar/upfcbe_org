@@ -24,7 +24,7 @@ import {
 const ViewEvent = ({
   event,
   onUpdate,
-  success,
+  successs, // success indicator
   isModalOpen,
   setIsModalOpen,
 }) => {
@@ -56,6 +56,13 @@ const ViewEvent = ({
     }
   }, [event]);
 
+  // Close modal if update is successful
+  useEffect(() => {
+    if (successs ) {
+      setIsModalOpen(false); // Close only if changes were saved
+    }
+  }, [successs, setIsModalOpen]);
+
   const handleSaveChanges = () => {
     const updatedEvent = {
       id: event.id, // Ensure ID is included for backend reference
@@ -66,7 +73,6 @@ const ViewEvent = ({
       description,
       image, // You may need to handle file upload separately
     };
-    console.log(updatedEvent);
     onUpdate(updatedEvent); // Send updated data to the parent component
   };
 
@@ -184,7 +190,7 @@ const ViewEvent = ({
               />
             </>
           )}
-        </div>
+        </div>  
 
         <DialogFooter className="mt-6 flex gap-4">
           {isEdit ? (

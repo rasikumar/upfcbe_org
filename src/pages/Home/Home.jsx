@@ -1,3 +1,4 @@
+import { eventbg } from "@/assets";
 import About from "./About";
 import Donations from "./Donations";
 import Hero from "./Hero";
@@ -6,7 +7,11 @@ import Service from "./Service";
 
 const Home = () => {
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${eventbg})`,
+      }}
+    >
       <Hero />
       <Intro />
       <About />

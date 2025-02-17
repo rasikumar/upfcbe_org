@@ -26,6 +26,14 @@ const EventHook = () => {
     staleTime: 1000 * 60 * 5,
   });
 
+  const useEventDetails = (id) =>
+    useQuery({
+      queryKey: ["events", id],
+      queryFn: () => getEventById(id),
+      enabled: !!id,
+      staleTime: 1000 * 60 * 5,
+    });
+
   const CreateEvent = useMutation({
     mutationFn: (eventData) => createEvent(eventData),
     onSuccess: (data) => {
@@ -42,7 +50,7 @@ const EventHook = () => {
       console.error("Failed to create event", error);
       toast({
         title: "Error",
-        description: error?.message || "Failed to create event",
+        description: error?.error || "Failed to create event",
         variant: "destructive",
       });
     },
@@ -75,6 +83,7 @@ const EventHook = () => {
       const EventResponseId = data;
       setSelectedEvent(EventResponseId);
     },
+
     onError: (error) => {
       console.error("Failed to get event by ID", error);
       toast({
@@ -108,6 +117,7 @@ const EventHook = () => {
 
   return {
     EventLists,
+    useEventDetails,
     isEventListsError,
     isEventListsLoading,
     EventListsError,

@@ -11,7 +11,7 @@ const Error = () => {
     }, 1000);
 
     const timeout = setTimeout(() => {
-      navigate("/");
+      navigate(-1);
     }, 3000);
 
     return () => {

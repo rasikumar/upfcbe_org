@@ -11,29 +11,29 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { statusOptions } from "@/utils/statusOptions";
+// import { statusOptions } from "@/utils/statusOptions";
+import { toast } from "@/hooks/use-toast";
 
 export function CreateEvents({ onCreate, success }) {
   const [name, setName] = useState("");
   const [date_time, setDateTime] = useState("");
   const [venue, setVenue] = useState("");
   const [description, setDescription] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("open");
   const [image, setImage] = useState(null);
   const [showPreview, setShowPreview] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // Controls modal open state
 
   const startDateRef = useRef(null);
-
   // Reset form & close modal when success is true
   useEffect(() => {
     if (success) {
@@ -41,14 +41,64 @@ export function CreateEvents({ onCreate, success }) {
       setDateTime("");
       setVenue("");
       setDescription("");
-      setStatus("");
+      setStatus("open");
       setImage(null);
       setIsOpen(false);
     }
   }, [success]);
 
+  const handleImageChange = (e) => {
+    const file = e.target.files?.[0];
+
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        toast({
+          title: "Image size exceeds 5MB",
+          description: "Please upload an image smaller than 5MB.",
+        });
+
+        // Reset file input
+        e.target.value = "";
+        setImage(null);
+        return;
+      }
+      setImage(file);
+    }
+
+    if (file && file.type.startsWith("image/")) {
+      setImage(file);
+    } else {
+      alert("Please upload a valid image file.");
+    }
+  };
+
   // Handle Form Submission
   const handleSubmit = () => {
+    // Check if all required fields are filled
+    if (!name || !date_time || !venue || !description || !status || !image) {
+      toast({
+        title: "All fields are required.",
+      });
+      return;
+    }
+
+    // Validate event name length
+    if (name.length < 5) {
+      toast({
+        title: "Event name must be at least 5 characters long.",
+      });
+      return;
+    }
+
+    // Validate description length
+    if (description.length < 20) {
+      toast({
+        title: "Description must be at least 20 characters long.",
+      });
+      return;
+    }
+
+    // If validation passes, proceed with submitting the form
     const eventData = { name, date_time, venue, description, status, image };
 
     if (onCreate) {
@@ -138,7 +188,7 @@ export function CreateEvents({ onCreate, success }) {
               />
             </div>
 
-            <div className="md:grid grid-cols-4 items-center gap-4">
+            {/* <div className="md:grid grid-cols-4 items-center gap-4">
               <Label
                 htmlFor="status"
                 className="text-right text-sm font-medium"
@@ -157,7 +207,7 @@ export function CreateEvents({ onCreate, success }) {
                   ))}
                 </SelectContent>
               </Select>
-            </div>
+            </div> */}
 
             <div className="md:grid grid-cols-4 items-center gap-4">
               <Label htmlFor="image" className="text-right text-sm font-medium">
@@ -167,8 +217,16 @@ export function CreateEvents({ onCreate, success }) {
                 id="image"
                 type="file"
                 className="col-span-3 px-3 py-2"
-                onChange={(e) => setImage(e.target.files?.[0] || null)}
+                onChange={handleImageChange}
               />
+
+              {image && (
+                <img
+                  src={URL.createObjectURL(image)}
+                  alt="News"
+                  className="max-w-xs rounded-md shadow-md mt-2"
+                />
+              )}
             </div>
           </div>
 
@@ -184,7 +242,15 @@ export function CreateEvents({ onCreate, success }) {
               type="button"
               variant="outline"
               className="w-full py-2 text-sm font-medium"
-              onClick={() => setShowPreview(true)}
+              onClick={() => {
+                if (!name || !date_time || !venue || !description || !image) {
+                  toast({
+                    title: "Please fill in all the fields before previewing.",
+                  });
+                  return;
+                }
+                setShowPreview(true);
+              }}
             >
               Preview
             </Button>

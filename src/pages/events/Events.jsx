@@ -1,4 +1,3 @@
-import { events } from "../../data/index";
 import Eventcard from "../../components/Eventcard";
 import { eventbg } from "@/assets";
 import EventHook from "@/hooks/EventHook";
@@ -12,7 +11,7 @@ const Events = () => {
     isEventListsLoading,
   } = Events;
 
-  console.log(EventLists);
+  // console.log(EventLists);
   return (
     <>
       <div style={{ backgroundImage: `url(${eventbg})` }}>
@@ -26,13 +25,8 @@ const Events = () => {
             ) : isEventListsLoading ? (
               <>Loading</>
             ) : (
-              EventLists.map((event) => (
-                <Eventcard key={event.id} {...event} />
-              ))
+              EventLists.map((event) => <Eventcard key={event.id} {...event} />)
             )}
-            {/* {events.map((event) => (
-              <Eventcard key={event.id} event={event} />
-            ))} */}
           </div>
         </div>
       </div>

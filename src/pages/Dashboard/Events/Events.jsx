@@ -36,12 +36,9 @@ const Events = () => {
   };
 
   const handleUpdateEvent = (eventData) => {
-    console.log(`event: ${eventData}`);
-    UpdateEvent.mutate(eventData, {
-      onSuccess: () => {
-        setIsModalOpen(false);
-      },
-    });
+    // console.log(`event: ${eventData}`);
+    UpdateEvent.mutate(eventData);
+    window.location.reload()
   };
 
   return (
@@ -71,9 +68,9 @@ const Events = () => {
         <ViewEvent
           event={selectedEvent}
           onUpdate={handleUpdateEvent}
-          success={CreateEvent.isSuccess}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
+          successs={UpdateEvent.isSuccess}
         />
       )}
     </div>
