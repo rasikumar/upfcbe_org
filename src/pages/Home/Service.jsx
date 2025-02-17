@@ -4,14 +4,12 @@ import { bg } from "@/assets";
 import { useState, useEffect, useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
-import { gsap } from "gsap";
 import Heading from "@/components/Heading";
 
 const Service = () => {
   const serviceContents = heroContent[2]?.boxes || [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const cardsRef = useRef([]);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => {
@@ -56,7 +54,7 @@ const Service = () => {
 
   return (
     <div
-      className="flex items-center md:justify-end justify-center py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
+      className="flex items-center md:justify-end justify-center md:py-16 py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* Service Cards Grid */}

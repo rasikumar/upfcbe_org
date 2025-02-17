@@ -8,7 +8,7 @@ import VerticalBox from "@/components/VerticalBox";
 const About = () => {
   const aboutContents = heroContent[1].content;
   const motoContents = heroContent[3].moto;
-  console.log(motoContents);
+  // console.log(motoContents);
   const [progress, setProgress] = useState([0, 0, 0]);
   const [startCounting, setStartCounting] = useState(false);
   const sectionRef = useRef(null);
@@ -139,6 +139,7 @@ const About = () => {
       <div className="w-full lg:w-1/2 flex flex-col gap-8 mt-8 lg:mt-0">
         {motoContents.map((moto) => (
           <VerticalBox
+            key={moto.id}
             title={moto.title}
             description={moto.description}
             url={moto.url}

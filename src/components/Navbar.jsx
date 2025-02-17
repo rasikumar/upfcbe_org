@@ -138,7 +138,7 @@ const Navbar = () => {
                 to={navigation.url}
                 key={navigation.title}
                 className={`hover:text-gray-300 transition duration-300 ${
-                  navigation.active ? "text-red-400" : ""
+                  navigation.active ? "text-upfdarkblack" : ""
                 }`}
                 onClick={() => handleNavigationClick(navigation.id)} // Close on click
                 ref={(el) => (linksRef.current[index] = el)} // Assign each link ref
