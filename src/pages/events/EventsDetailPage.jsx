@@ -34,31 +34,53 @@ const EventsDetailPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-gray-900">{selectedEvent.name}</h1>
-      <img
-        src={`${PHOTOS}${selectedEvent.image}`}
-        alt={selectedEvent.name}
-        className="w-full h-80 object-cover rounded-lg shadow-lg"
-      />
-      <div
-        className="prose max-w-none text-gray-700"
-        dangerouslySetInnerHTML={{
-          __html:
-            selectedEvent.description || "<em>No description provided.</em>",
-        }}
-      />
-      <p className="text-lg text-gray-600">
-        {new Date(selectedEvent.date_time).toLocaleDateString("en-GB")}
-      </p>
-      <p className="text-lg text-gray-600">
-        {new Date(selectedEvent.date_time).toLocaleTimeString("en-IN", {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-      </p>
-      <p className="text-lg text-gray-600 font-semibold">
-        {selectedEvent.venue}
-      </p>
+      {/* Event Name and Details */}
+      <div className="space-y-4">
+        <h1 className="text-4xl font-semibold text-gray-900">
+          {selectedEvent.name}
+        </h1>
+
+        {/* Date, Time, and Venue */}
+        <div className="flex items-center gap-5">
+          <p className="text-lg text-gray-600">
+            <strong>Date:</strong>{" "}
+            {new Date(selectedEvent.date_time).toLocaleDateString("en-GB")}
+          </p>
+          <p className="text-lg text-gray-600">
+            <strong>Time:</strong>{" "}
+            {new Date(selectedEvent.date_time).toLocaleTimeString("en-IN", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
+          </p>
+          <p className="text-lg text-gray-600 font-semibold">
+            <strong>Venue:</strong> {selectedEvent.venue}
+          </p>
+        </div>
+      </div>
+
+      {/* Event Image and Description */}
+      <div className="space-y-4">
+        {/* Event Image */}
+        <div className="relative w-full h-80 overflow-hidden rounded-lg shadow-lg">
+          <img
+            src={`${PHOTOS}${selectedEvent.image}`}
+            alt={selectedEvent.name}
+            className="object-cover w-full h-full"
+          />
+        </div>
+
+        {/* Event Description */}
+        <div className="prose text-gray-700">
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                selectedEvent.description ||
+                "<em>No description provided.</em>",
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };

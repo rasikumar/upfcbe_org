@@ -35,7 +35,7 @@ const Eventcard = ({
         <img
           src={`${PHOTOS}${image}`}
           alt={name}
-          className="w-full object-cover rounded-md min-w-[370px] min-h-[440px]"
+          className="w-full object-cover rounded-md min-w-[370px] max-h-[440px] min-h-[440px]"
         />
         <div className="absolute inset-0 bg-black opacity-50 rounded-md"></div>
 
