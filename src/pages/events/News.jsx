@@ -7,7 +7,7 @@ const News = () => {
   return (
     <>
       <div style={{ backgroundImage: `url(${eventbg})` }}>
-        <div className="w-full text-center mb-8 h-40 flex justify-center items-center">
+        <div className="w-full text-center  pt-10  h-10 flex justify-center items-center">
           <h1 className="text-4xl font-bold">Current News</h1>
         </div>
         <MotionSection>

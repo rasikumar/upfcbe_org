@@ -14,6 +14,7 @@ import About from "./pages/Aboutus/About";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Event_NewsHome from "./pages/events/Event_NewsHome";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import Menu from "./pages/Service/Menu";
 
 // admin
 import Login from "./components/Auth/Login";
@@ -48,6 +49,24 @@ const App = () => {
   );
 
   return (
+<<<<<<< HEAD
+    <div>
+      <div className="font-NotoSans">
+        <Header />
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          {/* <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/events-home" element={<Event_NewsHome />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="*" element={<Error />} /> */}
+          <Route path="/" element ={<Menu/>} />
+        </Routes>
+        <Footer />
+        {showScrollToTop && <ScrollToTopButton />}
+      </div>
+=======
     <div className="font-NotoSans">
       <Toaster />
       {/* Only show Header & Navbar if not on restricted routes */}
@@ -91,6 +110,7 @@ const App = () => {
       {!isRestrictedRoute && <Footer />}
 
       {showScrollToTop && <ScrollToTopButton />}
+>>>>>>> 82ed14e0ad93dd905791dd840119d50fef79d20e
     </div>
   );
 };
