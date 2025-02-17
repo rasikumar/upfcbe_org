@@ -12,6 +12,7 @@ import About from "./pages/Aboutus/About";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Event_NewsHome from "./pages/events/Event_NewsHome";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import Menu from "./pages/Service/Menu";
 
 const App = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -36,11 +37,12 @@ const App = () => {
         <Navbar />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/events-home" element={<Event_NewsHome />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<Error />} /> */}
+          <Route path="/" element ={<Menu/>} />
         </Routes>
         <Footer />
         {showScrollToTop && <ScrollToTopButton />}

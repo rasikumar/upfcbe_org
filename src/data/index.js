@@ -19,7 +19,7 @@ import {
   twelveA,
 } from "@/assets";
 import { Crosshair, Eye, Goal } from "lucide-react";
-import { FaCalendarAlt, FaHandsHelping, FaUser } from "react-icons/fa";
+import { FaCalendarAlt, FaHandsHelping, FaUser ,  } from "react-icons/fa";
 import {
   FaBuilding,
   FaFacebookF,
@@ -572,4 +572,74 @@ export const live = [
     hoverbg: hoverbg,
     link: "https://your-donation-page.com",
   },
+];
+
+export const servicemenulist = [
+  {
+    id: 0,
+    title: "Social Service",
+    color: "#FD8348", // Orange
+    image: hero_banner,
+    description: "Universal Peace Foundation in Nallagoundapalayam, Coimbatore, is a sanctuary for the underprivileged, offering care to starving children, differently-abled individuals, the elderly, and the destitute. It provides food, shelter, medical care, and education, empowering individuals to lead a dignified life. The foundation ensures proper nourishment and education for children, specialized care for the differently-abled, and a safe environment for the elderly. It also conducts social awareness programs, skill development initiatives, and rehabilitation activities to help individuals reintegrate into society, striving to create a compassionate world where no one is left behind.",
+    benefits: [
+      { description: " – Provides food, education, and healthcare for underprivileged children.",title: "Child Welfare ",  },
+      { description: " – Offers specialized care, skill training, and rehabilitation programs.",title: "Support for the Differently-Abled ",},
+      { description: " – Ensures a safe, loving environment with proper medical support and shelter.", title: "Elderly Care ", },
+      { description: " – Conducts awareness programs, skill development, and reintegration initiatives.", title: "Community Empowerment ", },
+    ],
+  },
+  {
+    id: 1,
+    title: "Education Service",
+    color: "#FD8348", // Orange
+    image: education,
+    description: "Universal Peace Foundation supports students from nearby villages with free evening coaching for over 100 students within the ashram campus. Tribals from Thirumorthi Hills receive essential resources like clothing and free computers to enhance learning. UPF also provides necessities such as water, medicines, and groceries based on community needs. A free tuition center with a library has been established for underprivileged individuals, ensuring proper guidance from volunteers. With a strong focus on tribal welfare, UPF is dedicated to uplifting these communities by addressing their educational and fundamental needs.",
+    benefits: [
+      { description: " – Provides education support for over 100 village students at the ashram.", title: "Free Evening Coaching ",  },
+      { description: " – Distributes clothing, free computers, and learning resources to Thirumorthi Hills tribals.", title: "Support for Tribals ",  },
+      { description: " – Offers water, medicines, and groceries based on community needs.", title: "Basic Necessities  "},
+      { description: " – Established a free education center with library facilities for underprivileged individuals.",title: "Tuition & Library ",  },
+    ],
+  },
+  {
+    id: 2,
+    title: "Natural Service",
+    color: "#FD8348", // Orange
+    image: natural,
+    description: "Universal Peace Foundation is committed to environmental sustainability, having planted over 3,000 trees on its campus and distributing over 100,000 saplings to promote afforestation. Through its social forestry system, UPF fosters biodiversity, enhances air quality, and encourages widespread conservation efforts. The foundation conducts awareness programs on tree plantation and sustainable living while ensuring regular maintenance of planted trees. By integrating environmental consciousness into its initiatives, UPF nurtures human lives and safeguards nature for future generations.",
+    benefits: [
+      { description: " – Planted over 3,000 trees on campus and distributed 100,000+ saplings.", title: "Tree Plantation Drive ", },
+      { description: " – Promotes biodiversity, enhances air quality, and encourages conservation.", title: "Social Forestry ",  },
+      { description: " – Conducts tree plantation and sustainable living initiatives.", title: "Awareness Programs ", },
+      { description: " – Ensures proper care of planted trees for lasting environmental benefits.",title: "Long-Term Maintenance ",  },
+    ],
+  },
+  {
+    id: 3,
+    title: "spirutal Service",
+    color: "#FD8348", // Orange
+    image: spirutal,
+    description: "Universal Peace Foundation promotes the Indian inner sciences of Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, making these ancient practices accessible to all. Guided by Guruji Shivathma, UPF conducts specialized classes to help individuals attain inner peace, balance, and well-being. These sessions are available through course bookings and appointments for personalized guidance. By imparting spiritual and mindfulness techniques, the foundation empowers individuals to lead a harmonious and enlightened life, fostering mental clarity, emotional stability, and holistic well-being.",
+    benefits: [
+      { description: " – Promotes ancient practices like Yoga, Pranayama, Dhiyana, and Vipassana.", title: "Yoga & Meditation ",  },
+      { description: " – Specialized sessions for inner peace, balance, and well-being.", title: "Guidance from Guruji Shivathma ",  },
+      { description: " – Available through course bookings and appointments.", title: "Personalized Learning  ",  },
+      { description: " – Enhances mental clarity, emotional stability, and spiritual growth.", title: "Holistic Well-Being ", },
+    ],
+  },
+  {
+    id: 4,
+    title: "Medical Service",
+    color: "#FD8348", // Orange
+    image: medicalservice,
+    description: "Universal Peace Foundation provides free hospital and ambulance services, ensuring timely medical assistance for the underprivileged. It conducts bi-monthly medical camps within the ashram and frequently organizes free health camps in nearby villages, offering checkups and medicines. UPF’s healthcare initiatives extend across six districts in Tamil Nadu through its branches. Its dedicated medical team provides quality care, preventive treatments, and awareness programs, bridging gaps in medical accessibility. Through continuous efforts, UPF remains committed to serving humanity with compassion and care.",
+    benefits: [
+      { description: " – Provides timely medical assistance to the underprivileged.",title: "Free Hospital & Ambulance Services ", },
+      { description: " – Conducts bi-monthly health camps at the ashram and in nearby villages.", title: "Regular Medical Camps ", },
+      { description: " – Healthcare services extend across six districts in Tamil Nadu.", title: "Extensive Reach  ",  },
+      { description: " – Offers free checkups, medicines, and health education programs.", title: "Preventive Care & Awareness ",  },
+    ],
+   
+  },
+
 ];
