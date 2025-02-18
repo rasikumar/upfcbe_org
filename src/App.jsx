@@ -29,6 +29,9 @@ import Leads from "./pages/Dashboard/Leads/Leads";
 import ProtectedRoute from "./components/Auth/ProtectedROute";
 import NotAuthorized from "./components/NotAuthorized";
 import Events from "./pages/Dashboard/Events/Events";
+import PaymentResponse from "./pages/Donation/PaymentResponse";
+import Failure from "./pages/Donation/Failure";
+import Success from "./pages/Donation/Success";
 
 const App = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -77,6 +80,9 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/services" element={<Menu />} />
         <Route path="/donation" element={<Donation />} />
+        <Route path="/paymentresponse" element={<PaymentResponse />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/failure" element={<Failure />} />
         <Route path="/events-home/events/:id" element={<EventsDetailPage />} />
         <Route path="/events-home/news/:id" element={<NewsDetailPage />} />
 
