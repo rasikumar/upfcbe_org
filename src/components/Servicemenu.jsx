@@ -2,43 +2,48 @@ import React, { useState, useEffect, useRef } from "react";
 import { servicemenulist } from "@/data";
 import gsap from "gsap";
 import { FaHandPointRight } from "react-icons/fa";
+import { medicalservice } from "@/assets";
 
 const Servicemenu = () => {
   const [selectedService, setSelectedService] = useState(servicemenulist[0]);
   const contentRef = useRef(null);
-  const imageRef = useRef(null);
+  const benefitsRef = useRef(null); // Reference for the benefits section
 
   useEffect(() => {
-    if (contentRef.current && imageRef.current) {
+    if (contentRef.current) {
       gsap.fromTo(
         contentRef.current,
         { opacity: 0, x: 50 },
         { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }
       );
-      
+    }
+
+    // Animation for the benefits
+    if (benefitsRef.current) {
       gsap.fromTo(
-        imageRef.current,
-        { opacity: 0, scale: 0.9 },
-        { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }
+        benefitsRef.current.children,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.2, // This will stagger the animation
+          ease: "power3.out",
+        }
       );
     }
   }, [selectedService]);
 
   return (
-    <div className="w-full flex flex-col py-12 dark:bg-gray-800">
-      <div className="w-full md:w-3/5 mx-auto flex flex-col max-sm:px-10 max-md:px-5 px-0 ">
+    <div className="w-full flex flex-col py-16 px-6 dark:bg-gray-800 space-y-10">
+      <div className="w-full md:w-3/5 mx-auto flex flex-col max-sm:px-10 max-md:px-5 px-0 space-y-8">
         <div className="w-full flex flex-col md:flex-row border border-[#FD8348] rounded-lg bg-transparent">
           {servicemenulist.map((service) => (
             <button
               key={service.id}
               onClick={() => setSelectedService(service)}
               className={`w-full md:flex-1 py-4 px-6 text-lg font-semibold text-center transition-all duration-300 border-b md:border-b-0 md:border-r border-gray-300 
-                ${
-                  selectedService.id === service.id
-                    ? "text-white bg-[" + service.color + "]"
-                    : "bg-transparent text-black"
-                }
-                hover:bg-gray-200 first:rounded-t-lg md:first:rounded-l-lg last:border-b-0 md:last:border-r-0 md:last:rounded-r-lg last:rounded-b-lg`}
+                ${selectedService.id === service.id ? "text-white bg-[#FD8348]" : "bg-transparent text-black"}`}
             >
               {service.title}
             </button>
@@ -46,45 +51,73 @@ const Servicemenu = () => {
         </div>
 
         {selectedService && (
-          <div
-            className="w-full flex flex-col md:flex-row p-6 mt-6 border rounded-lg bg-white dark:bg-gray-900 shadow-lg"
-          >
-            <div ref={imageRef} className="w-full md:w-1/2 h-auto flex items-stretch">
-              <img
-                src={selectedService.image}
-                alt={selectedService.title}
-                className="w-full h-auto object-cover rounded-lg"
-              />
+          <div className="w-full flex flex-col p-8 mt-8 space-y-10">
+            <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">
+              <div ref={contentRef} className="w-full flex flex-col justify-center space-y-4">
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-white">
+                  {selectedService.title}
+                </h2>
+                <p className=" text-base md:text-lg w-full">
+                  {selectedService.description}
+                </p>
+              </div>
             </div>
 
-            <div ref={contentRef} className="flex-1 flex flex-col justify-center mt-6 md:mt-0 md:pl-6">
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-                {selectedService.title}
-              </h2>
-              <p className="text-gray-800 dark:text-white text-lg mb-4">
-                {selectedService.description}
-              </p>
-
-              {selectedService.benefits && selectedService.benefits.length > 0 && (
-                <div className="flex flex-col space-y-4">
-                  {selectedService.benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-4">
-                      <FaHandPointRight className="w-6 h-6 text-[#21B740] mt-1" />
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                          {benefit.title}
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm">
-                          {benefit.description}
-                        </p>
-                      </div>
+            {selectedService.benefits && selectedService.benefits.length > 0 && (
+              <div
+                className="w-full flex flex-col space-y-12 mt-8  bg-transparent"
+              >
+                {selectedService.benefits.map((benefit, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-10 
+                      ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  >
+                    <div className="md:w-1/2 px-5 flex flex-col space-y-2">
+                      <h3 className="text-xl md:text-2xl font-semibold text-gray-800 dark:text-white flex items-center">
+                        <FaHandPointRight className="w-6 h-6 text-[#21B740] mr-2" />
+                        {benefit.title}
+                      </h3>
+                      <p className="text-base w-full">
+                        {benefit.description}
+                      </p>
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
+                    <div className="md:w-1/2 flex items-center justify-center">
+                      <img
+                        src={benefit.image}
+                        alt={benefit.title}
+                        className="w-full h-auto object-cover rounded-lg"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
+      </div>
+
+      {/* Donation Section */}
+      <div className="relative w-full h-full overflow-auto p-6 mt-10 rounded-xl">
+        <div
+          className="absolute inset-0 bg-fixed bg-cover bg-top"
+          style={{ backgroundImage: `url(${medicalservice})` }}
+        ></div>
+        <div className="absolute inset-0 bg-[#21B740] opacity-50"></div> {/* Green overlay */}
+        <div className="relative bg-opacity-75 rounded-xl max-w-full mx-auto flex flex-col md:flex-row items-center justify-between p-10">
+          <div className="w-full md:w-1/2 flex flex-col items-start text-left text-white p-4">
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              {selectedService.donationText}
+            </h2>
+          </div>
+
+          {/* Button Section */}
+          <div className="w-full md:w-1/2 flex justify-start md:justify-end p-4">
+            <button className="bg-upforangecrayola hover:bg-upforangecrayola/90 hover:scale-105 transition-all p-4 rounded-md  md:w-w-1/4 text-x font-semibold transform duration-200 ease-in-out text-white">
+              Donate Now
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -42,6 +42,17 @@ import eventbg from "./events/eventbg.png";
 import hoverbg from "./contact/hoverbg.jpg";
 import contact_image from "./contact/contact_image.webp";
 
+import childwelfare from "./services/childwelfare.jpg";
+import supportda from "./services/supportda.jpg";
+import eldercare from "./services/eldercare.jpg";
+import Basicnecessities from "./services/Basicnecessities.jpg";
+import tribal from "./services/tribal.jpg";
+import library from "./services/library.jpg";
+import tree from "./services/tree.jpg";
+import Treeawareness from "./services/Treeawareness.jpg";
+import yoga from "./services/yoga.jpg";
+import holistic from "./services/holistic.jpg";
+
 export {
   hoverbg,
   main_logo,
@@ -81,4 +92,15 @@ export {
   EDR,
   FSevaRatna,
   contact_image,
+  childwelfare,
+  supportda,
+  eldercare,
+  Basicnecessities,
+  tribal,
+  library, 
+  tree,
+  Treeawareness,
+  yoga,
+  holistic,
+
 };
