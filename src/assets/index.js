@@ -40,6 +40,7 @@ import bannerbg from "./events/bannerbg.jpg";
 import eventbg from "./events/eventbg.png";
 
 import hoverbg from "./contact/hoverbg.jpg";
+import contact_image from "./contact/contact_image.webp";
 
 export {
   hoverbg,
@@ -79,4 +80,5 @@ export {
   pigeon,
   EDR,
   FSevaRatna,
+  contact_image,
 };

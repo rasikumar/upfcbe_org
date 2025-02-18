@@ -105,7 +105,10 @@ const Footer = () => {
         {/* Footer Bottom Section */}
         <div className="flex flex-col sm:flex-row items-center justify-between py-4 gap-4">
           <div>&copy; {new Date().getFullYear()} UPF. All rights reserved.</div>
-          <Button className="bg-upfteagreeno max-md:w-full group relative overflow-hidden hover:text-white hover:border-white hover:bg-black">
+          <Button
+            to={"/donation"}
+            className="bg-upfteagreeno max-md:w-full group relative overflow-hidden hover:text-white hover:border-white hover:bg-black"
+          >
             Donate Now
             <ArrowUp className="rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-90" />
           </Button>

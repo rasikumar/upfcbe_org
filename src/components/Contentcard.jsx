@@ -1,5 +1,5 @@
 import React from "react";
-import { gurujiwalk } from "@/assets";
+import { contact_image } from "@/assets";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope, FaTextHeight, FaUser } from "react-icons/fa6";
 import { MdOutlineSubject } from "react-icons/md";
@@ -96,9 +96,9 @@ const Contactcard = () => {
           {/* Image inside extra div to keep top part visible */}
           <div className="absolute bottom-0 w-full">
             <img
-              src={gurujiwalk}
+              src={contact_image}
               alt="Volunteer"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-3xl"
             />
           </div>
         </div>

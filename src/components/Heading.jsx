@@ -3,7 +3,7 @@ import { styleimage } from "@/assets";
 const Heading = ({ undertext, className = "" }) => {
   return (
     <div className={`font-Caveat text-upfteagreent ${className}`}>
-      <p className="relative text-2xl w-fit">
+      <p className={`relative text-2xl w-fit ${className}`}>
         {undertext}{" "}
         <span className="absolute top-8 right-0">
           <img src={styleimage} alt="underlineimage" />

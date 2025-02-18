@@ -1,7 +1,7 @@
 // src/App.js
 import { Route, Routes, useLocation } from "react-router";
 import { useState, useEffect } from "react";
-
+import IntroSlider from "./components/IntroSlider";
 import { Toaster } from "@/components/ui/toaster";
 
 import Home from "./pages/Home/Home";
@@ -17,6 +17,7 @@ import ContactUs from "./pages/ContactUs/ContactUs";
 import Menu from "./pages/Service/Menu";
 import EventsDetailPage from "./pages/events/EventsDetailPage";
 import NewsDetailPage from "./pages/events/NewsDetailPage";
+import Donation from "./pages/Donation/Donation";
 
 // admin
 import Login from "./components/Auth/Login";
@@ -32,15 +33,19 @@ import Events from "./pages/Dashboard/Events/Events";
 const App = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const location = useLocation();
+  const [animationComplete, setAnimationComplete] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollToTop(window.scrollY > 300);
-    };
+  // const handleAnimationComplete = () => {
+  //   setAnimationComplete(true); // Update state when animation completes
+  // };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setShowScrollToTop(window.scrollY > 300);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   // Define routes where Navbar, Header, and Footer should NOT appear
   const restrictedRoutes = ["/admin", "/dashboard"];
@@ -52,8 +57,11 @@ const App = () => {
 
   return (
     <div className="font-NotoSans">
+      {/* {!animationComplete ? (
+        <IntroSlider onComplete={handleAnimationComplete} />
+      ) : (
+        <> */}
       <Toaster />
-      {/* Only show Header & Navbar if not on restricted routes */}
       {!isRestrictedRoute && (
         <>
           <Header />
@@ -68,6 +76,7 @@ const App = () => {
         <Route path="/events-home" element={<Event_NewsHome />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/services" element={<Menu />} />
+        <Route path="/donation" element={<Donation />} />
         <Route path="/events-home/events/:id" element={<EventsDetailPage />} />
         <Route path="/events-home/news/:id" element={<NewsDetailPage />} />
 
@@ -97,6 +106,8 @@ const App = () => {
       {!isRestrictedRoute && <Footer />}
 
       {showScrollToTop && <ScrollToTopButton />}
+      {/* </>
+      )} */}
     </div>
   );
 };
