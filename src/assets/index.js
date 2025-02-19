@@ -13,23 +13,23 @@ import styleimage from "./styleimage.png";
 import familyphoto from "./hero/familyphoto.webp";
 import donarDetails from "./hero/donarDetails.jpg";
 
-import Amahathma from "./aboutus/certificate/A-mahathma.jpg";
-import Bmahathma from "./aboutus/certificate/B-mahathma.jpg";
-import DMotherTerasascaled from "./aboutus/certificate/D-Mother-Terasa-scaled.jpg";
-import EDR from "./aboutus/certificate/E-DR.jpg";
-import FSevaRatna from "./aboutus/certificate/F-Seva-Ratna.jpg";
+import Amahathma from "./aboutus/certificate/A-mahathma.webp";
+import Bmahathma from "./aboutus/certificate/B-mahathma.webp";
+import DMotherTerasascaled from "./aboutus/certificate/D-Mother-Terasa-scaled.webp";
+import EDR from "./aboutus/certificate/E-DR.webp";
+import FSevaRatna from "./aboutus/certificate/F-Seva-Ratna.webp";
 
-import heart from "./aboutus/heart.png";
-import rotate_text from "./aboutus/rotate_text.png";
+import heart from "./aboutus/heart.webp";
+import rotate_text from "./aboutus/rotate_text.webp";
 
 import shape from "./shape.png";
-import timeline_bg from "./aboutus/timeline_bg.png";
-import about_guruji from "./aboutus/about_guruji.jpg";
-import about_bottom_pic from "./aboutus/about_bottom_pic.jpg";
-import about_header from "./aboutus/about_header.jpg";
-import about_first from "./aboutus/about_first.png";
-import about_second from "./aboutus/about_second.jpg";
-import pigeon from "./aboutus/pigeon.png";
+import timeline_bg from "./aboutus/timeline_bg.webp";
+import about_guruji from "./aboutus/about_guruji.webp";
+import about_bottom_pic from "./aboutus/about_bottom_pic.webp";
+import about_header from "./aboutus/about_header.webp";
+import about_first from "./aboutus/about_first.webp";
+import about_second from "./aboutus/about_second.webp";
+import pigeon from "./aboutus/pigeon.webp";
 
 import events_1 from "./events/events_1.jpg";
 import events_2 from "./events/events_2.jpg";
@@ -39,7 +39,7 @@ import news_2 from "./events/news_2.jpg";
 import bannerbg from "./events/bannerbg.jpg";
 import eventbg from "./events/eventbg.png";
 
-import hoverbg from "./contact/hoverbg.jpg";
+import hoverbg from "./contact/hoverbg.webp";
 import contact_image from "./contact/contact_image.webp";
 
 import childwelfare from "./services/childwelfare.jpg";
