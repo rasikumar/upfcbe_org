@@ -1,16 +1,10 @@
-import { eventbg } from "@/assets";
-import { bannerbg } from "@/assets";
+import { contact_bg } from "@/assets";
 
 const Header = () => {
   return (
-    <div style={{ backgroundImage: `url(${eventbg})` }}>
-      <div
-        className="w-full text-center mb-5 h-80 flex justify-center items-center bg-cover bg-center relative"
-        style={{
-          backgroundImage: `url(${bannerbg})`,
-        }}
-      >
-        <div className="absolute inset-0 bg-upfteagreent opacity-50"></div>
+    <div style={{ backgroundImage: `url(${contact_bg})` }}>
+      <div className="w-full text-center mb-5 h-80 flex justify-center items-center bg-cover bg-center relative">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <h2 className="text-4xl font-bold text-white relative">Contact Us</h2>
       </div>
     </div>

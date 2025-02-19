@@ -10,7 +10,7 @@ const Events = () => {
     EventListsError,
     isEventListsLoading,
   } = Events;
-
+  const ListEvents = EventLists?.events
   // console.log(EventLists);
   return (
     <>
@@ -25,7 +25,7 @@ const Events = () => {
             ) : isEventListsLoading ? (
               <>Loading</>
             ) : (
-              EventLists.map((event) => <Eventcard key={event.id} {...event} />)
+              ListEvents.map((event) => <Eventcard key={event.id} {...event} />)
             )}
           </div>
         </div>

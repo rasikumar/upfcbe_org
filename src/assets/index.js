@@ -40,7 +40,10 @@ import bannerbg from "./events/bannerbg.jpg";
 import eventbg from "./events/eventbg.png";
 
 import hoverbg from "./contact/hoverbg.webp";
+
+
 import contact_image from "./contact/contact_image.webp";
+import contact_bg from "./contact/contact_bg.jpg"
 
 import childwelfare from "./services/childwelfare.jpg";
 import supportda from "./services/supportda.jpg";
@@ -52,6 +55,7 @@ import tree from "./services/tree.jpg";
 import Treeawareness from "./services/Treeawareness.jpg";
 import yoga from "./services/yoga.jpg";
 import holistic from "./services/holistic.jpg";
+
 
 export {
   hoverbg,
@@ -102,5 +106,5 @@ export {
   Treeawareness,
   yoga,
   holistic,
-
+  contact_bg
 };

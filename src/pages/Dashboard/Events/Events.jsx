@@ -38,8 +38,10 @@ const Events = () => {
   const handleUpdateEvent = (eventData) => {
     // console.log(`event: ${eventData}`);
     UpdateEvent.mutate(eventData);
-    window.location.reload()
+    window.location.reload();
   };
+
+  const listEvents = EventLists?.events;
 
   return (
     <div className="flex flex-col gap-4">
@@ -54,7 +56,7 @@ const Events = () => {
         <>Loading</>
       ) : (
         <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4">
-          {EventLists.map((EventList) => (
+          {listEvents.map((EventList) => (
             <EventsCard
               key={EventList.id}
               {...EventList}

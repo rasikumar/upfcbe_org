@@ -40,7 +40,10 @@ export function NavUser({ user }) {
             >
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage />
-                <AvatarImage src={user.avatar} alt={user.name} />
+                <AvatarImage
+                  src={`https://ui-avatars.com/api/?name=${user.avatar}&background=random`}
+                  alt={user.name}
+                />
                 <AvatarFallback className="rounded-lg">CN</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
@@ -59,8 +62,10 @@ export function NavUser({ user }) {
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarImage />
+                  <AvatarImage
+                    src={`https://ui-avatars.com/api/?name=${user.avatar}&background=random`}
+                    alt={user.name}
+                  />
                   <AvatarFallback className="rounded-lg">CN</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
@@ -70,13 +75,13 @@ export function NavUser({ user }) {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup>
+            {/* <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>
             </DropdownMenuGroup>
-            <DropdownMenuSeparator />
+            <DropdownMenuSeparator /> */}
             <DropdownMenuItem
               onClick={() => {
                 localStorage.removeItem("token");

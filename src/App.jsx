@@ -33,6 +33,7 @@ import Events from "./pages/Dashboard/Events/Events";
 import PaymentResponse from "./pages/Donation/PaymentResponse";
 import Failure from "./pages/Donation/Failure";
 import Success from "./pages/Donation/Success";
+import DashBoardMain from "./pages/Dashboard/Home/DashBoardMain";
 
 const App = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -42,14 +43,14 @@ const App = () => {
   // const handleAnimationComplete = () => {
   //   setAnimationComplete(true); // Update state when animation completes
   // };
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setShowScrollToTop(window.scrollY > 300);
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollToTop(window.scrollY > 300);
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Define routes where Navbar, Header, and Footer should NOT appear
   const restrictedRoutes = ["/admin", "/dashboard"];
@@ -97,7 +98,8 @@ const App = () => {
             </ProtectedRoute>
           }
         >
-          <Route index path="news" element={<News />} />
+          <Route index path="home" element={<DashBoardMain />} />
+          <Route path="news" element={<News />} />
           <Route path="events" element={<Events />} />
           <Route path="donations" element={<Donations />} />
           <Route path="leads" element={<Leads />} />
