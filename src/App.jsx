@@ -27,7 +27,7 @@ import News from "./pages/Dashboard/News/News";
 import Donations from "./pages/Dashboard/Donations/Donations";
 import Leads from "./pages/Dashboard/Leads/Leads";
 // import Profile from "./pages/Dashboard/Profile/Profile";
-import ProtectedRoute from "./components/Auth/ProtectedROute";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import NotAuthorized from "./components/NotAuthorized";
 import Events from "./pages/Dashboard/Events/Events";
 import PaymentResponse from "./pages/Donation/PaymentResponse";
