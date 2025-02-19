@@ -1,7 +1,7 @@
 import main_logo from "./main_logo.png";
 import gurujiHeropic from "./hero/gurujiHeropic.png";
 import gurujiwalk from "./hero/guruji-walk.png";
-import gurujihero from "./hero/gurujihero.jpg";
+import gurujihero from "./hero/gurujihero.webp";
 import bg from "./hero/bg.jpg";
 import bgo from "./hero/bgo.jpg";
 import hero_banner from "./hero/hero_banner.jpg";
@@ -12,8 +12,8 @@ import education from "./hero/education.jpg";
 import styleimage from "./styleimage.png";
 import familyphoto from "./hero/familyphoto.webp";
 import donarDetails from "./hero/donarDetails.jpg";
-import events_home from "./hero/events_home.jpg";
-import news_home from "./hero/news_home.jpg";
+import events_home from "./hero/events_home.webp";
+import news_home from "./hero/news_home.webp";
 
 import Amahathma from "./aboutus/certificate/A-mahathma.webp";
 import Bmahathma from "./aboutus/certificate/B-mahathma.webp";
