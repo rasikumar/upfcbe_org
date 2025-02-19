@@ -18,6 +18,7 @@ import Menu from "./pages/Service/Menu";
 import EventsDetailPage from "./pages/events/EventsDetailPage";
 import NewsDetailPage from "./pages/events/NewsDetailPage";
 import Donation from "./pages/Donation/Donation";
+import PrivacyRefundPage from "./components/PrivacyRefundPage";
 
 // admin
 import Login from "./components/Auth/Login";
@@ -86,6 +87,7 @@ const App = () => {
         <Route path="/failure" element={<Failure />} />
         <Route path="/events-home/events/:id" element={<EventsDetailPage />} />
         <Route path="/events-home/news/:id" element={<NewsDetailPage />} />
+        <Route path="/privacy-refund" element={<PrivacyRefundPage />} />
 
         {/* Admin Routes */}
         <Route
