@@ -3,11 +3,14 @@ import EventHook from "@/hooks/EventHook";
 import { CreateEvents } from "./CreateEvent";
 import { useState } from "react";
 import ViewEvent from "./ViewEvent";
+import PaginationComponent from "@/components/PaginationComponent";
 
 const Events = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [itemsPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const Events = EventHook();
+  const Events = EventHook(currentPage, itemsPerPage, setCurrentPage);
   const {
     isEventListsError,
     EventLists,
@@ -42,6 +45,8 @@ const Events = () => {
   };
 
   const listEvents = EventLists?.events;
+  const totalpages = Math.ceil((EventLists?.total || 0) / itemsPerPage);
+  // console.log(EventLists);
 
   return (
     <div className="flex flex-col gap-4">
@@ -75,6 +80,12 @@ const Events = () => {
           successs={UpdateEvent.isSuccess}
         />
       )}
+
+      <PaginationComponent
+        totalPages={totalpages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };

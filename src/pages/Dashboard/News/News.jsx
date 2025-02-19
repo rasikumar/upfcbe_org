@@ -24,28 +24,28 @@ const News = () => {
     UpdateNews,
   } = News;
   // console.log(NewsLists);
-  const newsLists = NewsLists?.news;
-
+  
   const handleCreateNews = (newsData) => {
     // console.log(newsData);
     CreateNew.mutate(newsData);
   };
-
+  
   const handleDeleteNews = (id) => {
     DeleteNews.mutate(id);
   };
-
+  
   const handleViewNews = (newsName) => {
     // console.log(`Viewing event: ${newsName}`);
     GetNewsById.mutate(newsName);
     setIsModalOpen(true);
   };
-
+  
   const handleUpdateNews = (newsData) => {
     UpdateNews.mutate(newsData);
     window.location.reload();
   };
-
+  
+  const newsLists = NewsLists?.news;
   const totalpages = Math.ceil((NewsLists?.totalNews || 0) / itemsPerPage);
 
   return (

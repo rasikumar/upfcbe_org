@@ -34,6 +34,7 @@ import PaymentResponse from "./pages/Donation/PaymentResponse";
 import Failure from "./pages/Donation/Failure";
 import Success from "./pages/Donation/Success";
 import DashBoardMain from "./pages/Dashboard/Home/DashBoardMain";
+import FloatingIcon from "./components/FloatingIcon";
 
 const App = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -71,6 +72,7 @@ const App = () => {
         <>
           <Header />
           <Navbar />
+          <FloatingIcon />
         </>
       )}
 
@@ -81,13 +83,15 @@ const App = () => {
         <Route path="/events-home" element={<Event_NewsHome />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/services" element={<Menu />} />
+
         <Route path="/donation" element={<Donation />} />
+        
         <Route path="/paymentresponse" element={<PaymentResponse />} />
         <Route path="/success" element={<Success />} />
         <Route path="/failure" element={<Failure />} />
         <Route path="/events-home/events/:id" element={<EventsDetailPage />} />
         <Route path="/events-home/news/:id" element={<NewsDetailPage />} />
-        <Route path="/privacy-refund" element={<PrivacyRefundPage />} />
+        <Route path="/privacy-Terms" element={<PrivacyRefundPage />} />
 
         {/* Admin Routes */}
         <Route
@@ -98,7 +102,8 @@ const App = () => {
             </ProtectedRoute>
           }
         >
-          <Route index path="home" element={<DashBoardMain />} />
+          <Route index element={<DashBoardMain />} />
+          <Route path="home" element={<DashBoardMain />} />
           <Route path="news" element={<News />} />
           <Route path="events" element={<Events />} />
           <Route path="donations" element={<Donations />} />

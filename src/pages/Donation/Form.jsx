@@ -10,12 +10,12 @@ import { PAY } from "@/utils/api";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const values = [
-  { id: 0, value: 10 },
-  { id: 1, value: 20 },
-  { id: 2, value: 50 },
-  { id: 3, value: 100 },
-  { id: 4, value: 500 },
-  { id: 5, value: 1000 },
+  { id: 0, value: 100 },
+  { id: 1, value: 200 },
+  { id: 2, value: 500 },
+  { id: 3, value: 1000 },
+  { id: 4, value: 2000 },
+  { id: 5, value: 10000 },
 ];
 
 const DonationForm = () => {
@@ -43,10 +43,7 @@ const DonationForm = () => {
 
     const payload = { ...formData, donationAmount: selectedValue };
     try {
-      const response = await axios.post(
-        `${BASE_URL}${PAY}/pay`,
-        payload
-      );
+      const response = await axios.post(`${BASE_URL}${PAY}/pay`, payload);
       const { url, data } = response.data;
 
       const form = document.createElement("form");
@@ -80,13 +77,18 @@ const DonationForm = () => {
     >
       <div className="flex flex-col items-center justify-center my-10">
         <Heading undertext="Make Your Donation" className="text-3xl" />
-        <h2 className="text-3xl font-semibold">Creating a Brighter Tomorrow</h2>
+        <h2 className="text-3xl font-semibold max-md:text-center max-md:mt-4">
+          Creating a Brighter Tomorrow
+        </h2>
       </div>
-      <form onSubmit={handleSubmit} className="flex gap-8">
-        <div className="bg-upfwhite p-10 py-12 flex flex-col gap-6 w-1/2 rounded-3xl shadow-upfshadow">
+      <form
+        onSubmit={handleSubmit}
+        className="flex md:flex-row flex-col gap-8 px-4"
+      >
+        <div className="bg-upfwhite p-10 py-12 flex flex-col gap-6 md:w-1/2 rounded-3xl shadow-upfshadow">
           <h3 className="text-xl font-semibold">How Much?</h3>
-          <div className="grid grid-cols-2 gap-10">
-            <ul className="grid grid-rows-1 grid-cols-3 gap-10">
+          <div className="grid 2xl:grid-cols-2 grid-cols-1 gap-10">
+            <ul className="grid grid-rows-2 md:grid-cols-3 gap-10">
               {values.map((value) => (
                 <button
                   type="button"
@@ -100,7 +102,7 @@ const DonationForm = () => {
               ))}
             </ul>
             <div
-              className="bg-slate-400 rounded-xl flex items-center flex-col gap-4 justify-center"
+              className="bg-slate-400 rounded-xl flex items-center flex-col gap-4 justify-center py-8 2xl:py-0"
               style={{ backgroundImage: `url(${timeline_bg})` }}
             >
               <h4 className="text-lg font-semibold text-center">
@@ -127,9 +129,9 @@ const DonationForm = () => {
             </div>
           </div>
         </div>
-        <div className="bg-upfwhite p-10 py-12 flex flex-col gap-6 w-1/2 rounded-3xl shadow-upfshadow">
+        <div className="bg-upfwhite p-10 py-12 flex flex-col gap-6 md:w-1/2 rounded-3xl shadow-upfshadow h-fit">
           <h3 className="text-xl font-semibold">Donor Information</h3>
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="flex flex-col gap-4">
               <Label htmlFor="name">Your Name</Label>
               <Input
@@ -170,7 +172,7 @@ const DonationForm = () => {
             {error && <p className="text-red-500">{error}</p>}
             <Button
               type="submit"
-              className="border-upforangecrayola text-black"
+              className="border-upforangecrayola text-black "
               disabled={loading}
             >
               {loading ? "Processing..." : "Donate Now"}

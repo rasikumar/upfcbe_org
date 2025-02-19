@@ -6,7 +6,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { jwtDecode } from "jwt-decode";
-import { ChevronsUpDown, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { Outlet } from "react-router";
 
 export default function Sidebar() {

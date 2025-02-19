@@ -1,5 +1,5 @@
 import { medicalservice } from "@/assets";
-import { Input } from "@/components/ui/input";
+import { Link } from "react-router";
 
 const Donations = () => {
   return (
@@ -22,9 +22,12 @@ const Donations = () => {
             Donate What You Can
           </h2>
 
-          <button className="bg-upforangecrayola hover:bg-upforangecrayola/90 transition-all p-2 rounded-md w-fit px-4 mt-4 text-white font-semibold">
+          <Link
+            to={"/donation"}
+            className="bg-upforangecrayola hover:bg-upforangecrayola/90 transition-all p-2 rounded-md w-fit px-4 mt-4 text-white font-semibold"
+          >
             Support Our Cause
-          </button>
+          </Link>
         </div>
 
         {/* Form Section */}

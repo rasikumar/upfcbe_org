@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className="w-full text-center mb-5 h-80 flex justify-center items-center bg-cover bg-center relative"
+        className="w-full text-center h-80 flex justify-center items-center bg-cover bg-center relative"
         style={{
           backgroundImage: `url(${bannerbg})`,
         }}

@@ -524,7 +524,7 @@ export const live = [
       "Connect with us to learn how you can support our mission and make an impact.",
     buttonText: "CHAT NOW",
     hoverbg: hoverbg,
-    link: "https://wa.me/your-whatsapp-number",
+    link: "https://wa.me/919842220285",
   },
   {
     id: 1,
@@ -533,7 +533,7 @@ export const live = [
       "Join our team and be a part of positive change in the community.",
     buttonText: "JOIN US",
     hoverbg: hoverbg,
-    link: "https://wa.me/your-whatsapp-number",
+    link: "https://wa.me/919842220285",
   },
   {
     id: 2,
@@ -542,7 +542,7 @@ export const live = [
       "Your contribution helps us continue our efforts to support those in need.",
     buttonText: "DONATE NOW",
     hoverbg: hoverbg,
-    link: "https://your-donation-page.com",
+    link: "/donation",
   },
 ];
 

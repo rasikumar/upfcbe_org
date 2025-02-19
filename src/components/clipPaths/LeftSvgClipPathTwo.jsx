@@ -1,50 +1,22 @@
+import { news_home } from "@/assets";
 import EventHook from "@/hooks/EventHook";
-import React, { forwardRef, useEffect } from "react";
+import React, { forwardRef } from "react";
 import { Link } from "react-router";
 
 const LeftSvgClipPathTwo = forwardRef(
-  ({ id, imageUrl, title = "Events" }, ref) => {
+  ({ imageUrl = news_home, title = "Events" }, ref) => {
     const Event = EventHook();
-    const {
-      isEventError,
-      isEventLoading,
-      EventError,
-      EventLists,
-      GetEventById,
-    } = Event;
-
+    const { EventLists } = Event;
     const eventLists = EventLists?.events;
 
-    useEffect(() => {
-      if (id) {
-        GetEventById(id);
-      }
-    }, [id]);
-
-    // Handle error state
-    if (isEventError) {
-      return (
-        <div className="w-full h-full flex items-center justify-center bg-red-500 text-white p-4">
-          <p>Error: {EventError?.message || "Failed to load event data."}</p>
-        </div>
-      );
-    }
-
-    // Handle loading state
-    if (isEventLoading) {
-      return (
-        <div className="w-full h-full flex items-center justify-center bg-gray-300 p-4">
-          <p>Loading...</p>
-        </div>
-      );
-    }
-
     // Get the first event name if available
-    const eventName = eventLists?.length > 0 ? eventLists[0].name : "";
+    const eventName =
+      eventLists?.length > 0 ? eventLists[0].name : "Default Title is there";
+    const eventId = eventLists?.length > 0 ? eventLists[0].id : "";
 
     return (
       <Link
-        to={`events-home/events/${id}`}
+        to={`events-home/events/${eventId}`}
         className="relative w-full h-full block group"
       >
         <svg viewBox="0 0 210 296" className="main__hero__image w-full h-auto">
@@ -68,7 +40,7 @@ const LeftSvgClipPathTwo = forwardRef(
             width="100%"
             height="100%"
             fill="black"
-            opacity="0.5"
+            opacity="0.6"
             clipPath="url(#LeftSvgClipPathTwo)"
           />
         </svg>
@@ -76,7 +48,7 @@ const LeftSvgClipPathTwo = forwardRef(
         <div className="absolute top-0 left-0 w-full h-full flex flex-col p-4 justify-between">
           {title && <h2 className="text-xl text-white">{title}</h2>}
           {eventName && (
-            <p className="text-xs md:text-base text-white drop-shadow-md line-clamp-3 group-hover:underline">
+            <p className="text-xs md:text-xl text-white drop-shadow-md line-clamp-3 group-hover:underline">
               {eventName}
             </p>
           )}

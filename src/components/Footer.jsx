@@ -1,6 +1,6 @@
 import { footer, icons } from "@/data";
 import Button from "./Button";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Check } from "lucide-react";
 import { Link } from "react-router";
 
 const Footer = () => {
@@ -12,10 +12,10 @@ const Footer = () => {
   return (
     <footer className="w-full m-auto bg-upfdarkblack">
       {/* Navigation & Content */}
-      <div className=" max-w-[100rem] mx-auto flex flex-col text-secondary p-6">
-        <nav className="flex flex-col md:flex-row md:justify-between items-start p-4 gap-8">
+      <div className="max-w-[100rem] mx-auto flex flex-col text-secondary p-6">
+        <nav className="flex flex-col md:flex-row m-auto p-4 gap-8 ">
           {/* Left Section */}
-          <div className="flex flex-col max-w-md gap-4">
+          <div className="flex flex-col max-w-md gap-4 md:border-r border-upfblack md:px-4">
             {sections.map((section) => (
               <div key={section.id}>
                 <h3 className="inline-flex items-center font-bold">
@@ -60,25 +60,28 @@ const Footer = () => {
           {/* Right Section (Links) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {/* Contact */}
-            <div className="flex flex-col">
+            <div className="flex flex-col md:border-r border-upfblack md:px-4">
               <h2 className="font-bold mb-4 text-lg">Contact Us</h2>
               {contacts.map((contact) => (
-                <span key={contact.id} className="text-lg">
-                  {contact.title}
+                <span
+                  key={contact.id}
+                  className="text-lg inline-flex items-center gap-2 text-upflightwhite mb-2"
+                >
+                  <Check /> {contact.title}
                 </span>
               ))}
             </div>
 
             {/* Navigations */}
-            <div className="flex flex-col">
+            <div className="flex flex-col md:border-r border-upfblack md:px-4">
               <h2 className="font-bold mb-4 text-lg">Navigations</h2>
               {links.map((link) => (
                 <Link
                   to={link.url}
                   key={link.id}
-                  className="text-lg hover:text-upfmelon transition duration-300 ease-in-out"
+                  className="text-lg hover:text-upforangecrayola transition duration-300 ease-in-out inline-flex items-center gap-2 text-upflightwhite mb-2"
                 >
-                  {link.title}
+                  <Check /> {link.title}
                 </Link>
               ))}
             </div>
@@ -90,9 +93,9 @@ const Footer = () => {
                 <Link
                   to={quicklink.url}
                   key={quicklink.id}
-                  className="text-lg hover:text-upfmelon transition duration-300 ease-in-out"
+                  className="text-lg hover:text-upforangecrayola transition duration-300 ease-in-out inline-flex items-center gap-2 text-upflightwhite mb-2"
                 >
-                  {quicklink.title}
+                  <Check /> {quicklink.title}
                 </Link>
               ))}
             </div>
@@ -100,11 +103,14 @@ const Footer = () => {
         </nav>
 
         {/* Divider */}
-        <hr className="my-4 border-gray-300" />
+      </div>
 
+      <div className="bg-upfCardBg px-4">
         {/* Footer Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between py-4 gap-4">
-          <div>&copy; {new Date().getFullYear()} UPF. All rights reserved.</div>
+        <div className="flex flex-col max-w-[80rem] sm:flex-row items-center justify-between py-4 gap-4 m-auto">
+          <span className="text-upflightwhite">
+            &copy; {new Date().getFullYear()} UPF. All rights reserved.
+          </span>
           <Button
             to={"/donation"}
             className="bg-upfteagreeno max-md:w-full group relative overflow-hidden hover:text-white hover:border-white hover:bg-black"

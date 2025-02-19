@@ -17,6 +17,16 @@ const Header = () => {
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         modules={[Autoplay]}
         speed={2000} // Smooth transition speed
+        breakpoints={{
+          375: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        }}
         grabCursor={true} // Improves user experience
       >
         {[...Array(10)].map((_, i) => (

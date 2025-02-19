@@ -9,7 +9,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
-const EventHook = () => {
+const EventHook = (currentpage, itemPerPage) => {
   const { toast } = useToast();
 
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -21,8 +21,8 @@ const EventHook = () => {
     isLoading: isEventListsLoading,
     error: EventListsError,
   } = useQuery({
-    queryKey: ["events"],
-    queryFn: () => getAllEvents(),
+    queryKey: ["events", currentpage, itemPerPage],
+    queryFn: () => getAllEvents(currentpage, itemPerPage),
     staleTime: 1000 * 60 * 5,
   });
 

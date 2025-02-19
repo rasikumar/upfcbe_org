@@ -12,6 +12,8 @@ import education from "./hero/education.JPG";
 import styleimage from "./styleimage.png";
 import familyphoto from "./hero/familyphoto.webp";
 import donarDetails from "./hero/donarDetails.jpg";
+import events_home from "./hero/events_home.jpg";
+import news_home from "./hero/news_home.jpg"
 
 import Amahathma from "./aboutus/certificate/A-mahathma.webp";
 import Bmahathma from "./aboutus/certificate/B-mahathma.webp";
@@ -41,9 +43,8 @@ import eventbg from "./events/eventbg.png";
 
 import hoverbg from "./contact/hoverbg.webp";
 
-
 import contact_image from "./contact/contact_image.webp";
-import contact_bg from "./contact/contact_bg.jpg"
+import contact_bg from "./contact/contact_bg.jpg";
 
 import childwelfare from "./services/childwelfare.jpg";
 import supportda from "./services/supportda.jpg";
@@ -55,7 +56,6 @@ import tree from "./services/tree.jpg";
 import Treeawareness from "./services/Treeawareness.jpg";
 import yoga from "./services/yoga.jpg";
 import holistic from "./services/holistic.jpg";
-
 
 export {
   hoverbg,
@@ -101,10 +101,12 @@ export {
   eldercare,
   Basicnecessities,
   tribal,
-  library, 
+  library,
   tree,
   Treeawareness,
   yoga,
   holistic,
-  contact_bg
+  contact_bg,
+  events_home,
+  news_home
 };

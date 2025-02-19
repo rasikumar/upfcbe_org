@@ -1,9 +1,11 @@
 import { EVENT } from "@/utils/api";
 import Instance from "./Instance";
 
-export const getAllEvents = async () => {
+export const getAllEvents = async (currentpage, itemPerPage) => {
   try {
-    const response = await Instance.get(`${EVENT}/AllEvent`);
+    const response = await Instance.get(
+      `${EVENT}/AllEvent/?page=${currentpage}&limit=${itemPerPage}`
+    );
     // console.log(response.data);
     return response.data;
   } catch (error) {

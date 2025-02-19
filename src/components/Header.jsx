@@ -57,7 +57,7 @@ const Header = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex gap-2 md:gap-3">
+        <div className="flex gap-2 md:gap-3 items-center max-md:justify-center max-md:w-full">
           {icons.map((icon, index) => (
             <a
               href={icon.link}

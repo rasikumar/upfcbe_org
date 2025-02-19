@@ -20,11 +20,11 @@ const DonationList = ({ data }) => {
         <TableCaption>A list of your recent Donations.</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">Name</TableHead>
+            <TableHead>Name</TableHead>
             <TableHead>TaxID</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Reason</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead>Amount</TableHead>
           </TableRow>
         </TableHeader>
         {data && data.length > 0 ? (
@@ -37,7 +37,7 @@ const DonationList = ({ data }) => {
               <TableCell className="font-medium">{d.txnid}</TableCell>
               <TableCell>{d.status}</TableCell>
               <TableCell>{d.reason}</TableCell>
-              <TableCell className="text-right">{d.amount}</TableCell>
+              <TableCell>{d.amount}</TableCell>
             </TableRow>
           ))
         ) : (
