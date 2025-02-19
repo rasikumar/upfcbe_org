@@ -1,10 +1,11 @@
+import { eventbg } from "@/assets";
 import Header from "./Header";
 import Livecard from "./Livecard";
 import Contentcard from "@/components/Contentcard";
 
 const ContactUs = () => {
   return (
-    <div>
+    <div style={{ backgroundImage: `url(${eventbg})` }}>
       <Header />
       <Contentcard />
       <Livecard />

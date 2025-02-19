@@ -1,26 +1,14 @@
-import * as React from "react";
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { Home, Map } from "lucide-react";
 
-import { NavMain } from "@/components/Sidebar/NavMain";
+// import { NavMain } from "@/components/Sidebar/NavMain";
 import { NavProjects } from "@/components/Sidebar/NavProjects";
 import { NavUser } from "@/components/Sidebar/NavUser";
-import { TeamSwitcher } from "@/components/Sidebar/TeamSwitcher";
+// import { TeamSwitcher } from "@/components/Sidebar/TeamSwitcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarHeader,
+  // SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { BiNews } from "react-icons/bi";
@@ -41,28 +29,28 @@ export function AppSidebar({ ...props }) {
     projects: [
       {
         id: 0,
+        name: "Home",
+        url: "home",
+        icon: Home,
+      },
+      {
+        id: 1,
         name: "News",
         url: "news",
         icon: BiNews,
       },
       {
-        id: 1,
+        id: 2,
         name: "Events",
         url: "events",
         icon: Map,
       },
       {
-        id: 2,
+        id: 3,
         name: "Donations",
         url: "donations",
         icon: FaDonate,
       },
-      // {
-      //   id: 3,
-      //   name: "Leads",
-      //   url: "leads",
-      //   icon: PieChart,
-      // },
     ],
   };
 

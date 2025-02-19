@@ -9,7 +9,7 @@ const Header = () => {
           backgroundImage: `url(${bannerbg})`,
         }}
       >
-        <div className="absolute inset-0 bg-upfteagreent opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <h2 className="text-4xl font-bold text-white relative">
           Events & News
         </h2>

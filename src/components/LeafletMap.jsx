@@ -134,7 +134,10 @@ export default function Map() {
         leaflet
           .marker([latitude, longitude])
           .addTo(mapRef.current)
-          .bindPopup(`<b>${name}</b><br>Lat: `)
+          .bindTooltip(`<b>${name}</b><br>${street}`, {
+            permanent: true,
+            direction: "top",
+          })
           .on("click", () => {
             setSelectedBranch({ name, latitude, longitude, street });
           });

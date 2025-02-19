@@ -29,10 +29,9 @@ import {
   Treeawareness,
   yoga,
   holistic,
-
 } from "@/assets";
 import { Crosshair, Eye, Goal } from "lucide-react";
-import { FaCalendarAlt, FaHandsHelping, FaUser ,  } from "react-icons/fa";
+import { FaCalendarAlt, FaHandsHelping, FaUser } from "react-icons/fa";
 import {
   FaBuilding,
   FaFacebookF,
@@ -49,13 +48,17 @@ export const icons = [
   {
     component: FaFacebookF,
     color: "#3b5998",
-    link: "https://www.facebook.com",
+    link: "https://www.facebook.com/UniversalPeaceFoundation/photos_by",
   },
-  { component: FaYoutube, color: "#FF0000", link: "https://www.youtube.com" },
+  {
+    component: FaYoutube,
+    color: "#FF0000",
+    link: "https://www.youtube.com/channel/UCGtiRw190jv2KHeDzyvSKRA",
+  },
   {
     component: FaInstagram,
     color: "#C13584",
-    link: "https://www.instagram.com",
+    link: "https://www.instagram.com/guruji.shivathma/",
   },
 ];
 
@@ -69,25 +72,25 @@ export const founder = [
         id: 0,
         icon: FaFacebookF,
         color: "#3b5998",
-        link: "https://www.facebook.com/rashidahmad.ahmed.9",
+        link: "https://www.facebook.com/UniversalPeaceFoundation/photos_by",
       },
       {
         id: 1,
         icon: FaInstagram,
         color: "#C13584",
-        link: "https://www.instagram.com/rashidahmad.ahmed.9/",
+        link: "https://www.instagram.com/guruji.shivathma/",
       },
       {
         id: 2,
         icon: FaYoutube,
         color: "#FF0000",
-        link: "https://www.instagram.com/rashidahmad.ahmed.9/",
+        link: "https://www.youtube.com/channel/UCGtiRw190jv2KHeDzyvSKRA",
       },
       {
         id: 3,
         icon: FaLinkedin,
         color: "#3b5998",
-        link: "https://www.instagram.com/rashidahmad.ahmed.9/",
+        link: "https://www.linkedin.com/in/guruji-shivathma-b891ba100/",
       },
     ],
   },
@@ -513,85 +516,31 @@ export const aboutContent = [
   },
 ];
 
-export const events = [
-  {
-    id: 0,
-    image: events_1,
-    date: "31",
-    month: "Mar",
-    time: "17:30 AM - 8:00 AM",
-    title: "Event Name",
-    location: "india",
-  },
-  {
-    id: 1,
-    image: events_2,
-    date: "05",
-    month: "Nov",
-    time: "10:00 PM - 11:00 AM",
-    title: "Event Name",
-    location: "india",
-  },
-  {
-    id: 2,
-    image: events_3,
-    date: "22",
-    month: "May",
-    time: "10:00 AM - 11:00 AM",
-    title: "Event Name",
-    location: "india",
-  },
-];
-
-export const news = [
-  {
-    id: 1,
-    location: "india",
-    title: "Royal Parks Half Marathon",
-    description:
-      "On the other hand denounce with righteous indignations dislike men who are so beguiled.",
-    date: "31",
-    month: "May",
-    time: "10:00 AM",
-    image: news_1,
-  },
-  {
-    id: 2,
-    location: "tamilnadu",
-    title: "Some Other Event",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    date: "15",
-    month: "Mar",
-    time: "10:00 AM",
-    image: news_2,
-  },
-];
-
 export const live = [
   {
     id: 0,
-    title: "Chat with a Live",
+    title: "Support Our Cause",
     description:
-      "Let’s chat with our live experts to get answer your questions.",
-    buttonText: "LIVE CHAT",
+      "Connect with us to learn how you can support our mission and make an impact.",
+    buttonText: "CHAT NOW",
     hoverbg: hoverbg,
     link: "https://wa.me/your-whatsapp-number",
   },
   {
     id: 1,
-    title: "Become a Partner",
+    title: "Volunteer With Us",
     description:
-      "Become a business partner with us and get an opportunity to grow.",
-    buttonText: "JOIN WITH US",
+      "Join our team and be a part of positive change in the community.",
+    buttonText: "JOIN US",
     hoverbg: hoverbg,
     link: "https://wa.me/your-whatsapp-number",
   },
   {
     id: 2,
-    title: "Donation",
+    title: "Make a Donation",
     description:
-      "You can find the answers in our list of frequently asked questions.",
-    buttonText: "GET ANSWER",
+      "Your contribution helps us continue our efforts to support those in need.",
+    buttonText: "DONATE NOW",
     hoverbg: hoverbg,
     link: "https://your-donation-page.com",
   },
@@ -601,78 +550,186 @@ export const servicemenulist = [
   {
     id: 0,
     title: "Social Service",
-    description: "Universal Peace Foundation in Nallagoundapalayam, Coimbatore, is a sanctuary for the underprivileged, offering care to starving children, differently-abled individuals, the elderly, and the destitute. It provides food, shelter, medical care, and education, empowering individuals to lead a dignified life. The foundation ensures proper nourishment and education for children, specialized care for the differently-abled, and a safe environment for the elderly. It also conducts social awareness programs, skill development initiatives, and rehabilitation activities to help individuals reintegrate into society, striving to create a compassionate world where no one is left behind.",
-    donationText: "Donate today and help transform lives through healthcare, education, and compassionate service.",
+    description:
+      "Universal Peace Foundation in Nallagoundapalayam, Coimbatore, is a sanctuary for the underprivileged, offering care to starving children, differently-abled individuals, the elderly, and the destitute. It provides food, shelter, medical care, and education, empowering individuals to lead a dignified life. The foundation ensures proper nourishment and education for children, specialized care for the differently-abled, and a safe environment for the elderly. It also conducts social awareness programs, skill development initiatives, and rehabilitation activities to help individuals reintegrate into society, striving to create a compassionate world where no one is left behind.",
+    donationText:
+      "Donate today and help transform lives through healthcare, education, and compassionate service.",
     benefits: [
-      { description: " The Universal Peace Foundation’s Child Welfare program focuses on ensuring the well-being of underprivileged children by providing essential services like food, education, healthcare, and emotional support. The foundation offers nutritious meals, free education, and regular medical care, helping children grow healthily and learn effectively. It also provides a safe, nurturing environment and counseling to support emotional well-being. Additionally, rehabilitation programs aim to reintegrate children into society, empowering them to become self-reliant and live a dignified life. Through these efforts, the foundation strives to create a brighter future for disadvantaged children.",title: "Child Welfare ", image: childwelfare,  },
+      {
+        description:
+          " The Universal Peace Foundation’s Child Welfare program focuses on ensuring the well-being of underprivileged children by providing essential services like food, education, healthcare, and emotional support. The foundation offers nutritious meals, free education, and regular medical care, helping children grow healthily and learn effectively. It also provides a safe, nurturing environment and counseling to support emotional well-being. Additionally, rehabilitation programs aim to reintegrate children into society, empowering them to become self-reliant and live a dignified life. Through these efforts, the foundation strives to create a brighter future for disadvantaged children.",
+        title: "Child Welfare ",
+        image: childwelfare,
+      },
 
-      { description: " The Universal Peace Foundation offers specialized care, skill training, and rehabilitation for differently-abled individuals. It provides personalized support to enhance their physical, emotional, and mental well-being. The foundation focuses on equipping them with vocational skills, offering rehabilitation programs, and ensuring they have access to the resources needed to live independently and with dignity. Through these initiatives, the foundation helps differently-abled individuals integrate into society and lead fulfilling lives.",title: "Support for the Differently-Abled ",image: supportda,},
-      
-      { description: " The Universal Peace Foundation provides elderly care by ensuring a safe, loving environment with proper medical support and shelter. The foundation focuses on offering comfort, security, and specialized care for senior citizens, addressing their physical, emotional, and social needs. It creates a nurturing space where the elderly can live with dignity, receive healthcare services, and enjoy companionship in their later years. By providing not only physical care but also mental and emotional support, the foundation fosters a sense of belonging and purpose. Through these efforts, the foundation significantly enhances the quality of life for elderly individuals, helping them feel respected, valued, and cared for in a community that prioritizes their well-being.", title: "Elderly Care ",image: eldercare, },
+      {
+        description:
+          " The Universal Peace Foundation offers specialized care, skill training, and rehabilitation for differently-abled individuals. It provides personalized support to enhance their physical, emotional, and mental well-being. The foundation focuses on equipping them with vocational skills, offering rehabilitation programs, and ensuring they have access to the resources needed to live independently and with dignity. Through these initiatives, the foundation helps differently-abled individuals integrate into society and lead fulfilling lives.",
+        title: "Support for the Differently-Abled ",
+        image: supportda,
+      },
 
-      { description: " The Universal Peace Foundation focuses on community empowerment by conducting awareness programs, skill development, and reintegration initiatives. These efforts are aimed at educating and uplifting communities, particularly the underprivileged, by providing the tools and knowledge needed to improve their lives. The foundation organizes awareness programs to address social issues, offers skill training to enhance employability, and runs reintegration initiatives to help individuals re-enter society with confidence. Through these programs, the foundation fosters self-reliance, personal growth, and social responsibility, empowering individuals to contribute positively to their communities.", title: "Community Empowerment ", image: hero_banner, },
+      {
+        description:
+          " The Universal Peace Foundation provides elderly care by ensuring a safe, loving environment with proper medical support and shelter. The foundation focuses on offering comfort, security, and specialized care for senior citizens, addressing their physical, emotional, and social needs. It creates a nurturing space where the elderly can live with dignity, receive healthcare services, and enjoy companionship in their later years. By providing not only physical care but also mental and emotional support, the foundation fosters a sense of belonging and purpose. Through these efforts, the foundation significantly enhances the quality of life for elderly individuals, helping them feel respected, valued, and cared for in a community that prioritizes their well-being.",
+        title: "Elderly Care ",
+        image: eldercare,
+      },
+
+      {
+        description:
+          " The Universal Peace Foundation focuses on community empowerment by conducting awareness programs, skill development, and reintegration initiatives. These efforts are aimed at educating and uplifting communities, particularly the underprivileged, by providing the tools and knowledge needed to improve their lives. The foundation organizes awareness programs to address social issues, offers skill training to enhance employability, and runs reintegration initiatives to help individuals re-enter society with confidence. Through these programs, the foundation fosters self-reliance, personal growth, and social responsibility, empowering individuals to contribute positively to their communities.",
+        title: "Community Empowerment ",
+        image: hero_banner,
+      },
     ],
   },
   {
     id: 1,
     title: "Education Service",
-    description: "Universal Peace Foundation supports students from nearby villages with free evening coaching for over 100 students within the ashram campus. Tribals from Thirumorthi Hills receive essential resources like clothing and free computers to enhance learning. UPF also provides necessities such as water, medicines, and groceries based on community needs. A free tuition center with a library has been established for underprivileged individuals, ensuring proper guidance from volunteers. With a strong focus on tribal welfare, UPF is dedicated to uplifting these communities by addressing their educational and fundamental needs.",
-    donationText: "Your donation can empower futures by providing education, resources, and opportunities for those in need.",
+    description:
+      "Universal Peace Foundation supports students from nearby villages with free evening coaching for over 100 students within the ashram campus. Tribals from Thirumorthi Hills receive essential resources like clothing and free computers to enhance learning. UPF also provides necessities such as water, medicines, and groceries based on community needs. A free tuition center with a library has been established for underprivileged individuals, ensuring proper guidance from volunteers. With a strong focus on tribal welfare, UPF is dedicated to uplifting these communities by addressing their educational and fundamental needs.",
+    donationText:
+      "Your donation can empower futures by providing education, resources, and opportunities for those in need.",
     benefits: [
-      { description: "The Universal Peace Foundation provides education support for over 100 village students through free evening coaching at the ashram. This initiative aims to enhance the learning opportunities for students from nearby villages, offering them extra academic assistance outside of regular school hours. With dedicated volunteers and resources, the foundation ensures that these students receive the guidance they need to succeed academically and reach their full potential. By providing free tuition and support, UPF contributes to their educational growth and development, helping them build a brighter future.", title: "Free Evening Coaching ", image: education },
+      {
+        description:
+          "The Universal Peace Foundation provides education support for over 100 village students through free evening coaching at the ashram. This initiative aims to enhance the learning opportunities for students from nearby villages, offering them extra academic assistance outside of regular school hours. With dedicated volunteers and resources, the foundation ensures that these students receive the guidance they need to succeed academically and reach their full potential. By providing free tuition and support, UPF contributes to their educational growth and development, helping them build a brighter future.",
+        title: "Free Evening Coaching ",
+        image: education,
+      },
 
-      { description: " The Universal Peace Foundation (UPF) is dedicated to supporting the tribals of Thirumorthi Hills by distributing clothing, free computers, and other essential learning resources. These efforts aim to enhance the educational opportunities available to tribal communities, empowering them with the tools they need to succeed. In addition to providing educational materials, UPF also addresses their basic needs by supplying necessities such as water, medicines, and groceries based on community requirements. Through these initiatives, UPF plays a crucial role in improving the lives of tribal individuals, ensuring they have the resources to thrive.", title: "Support for Tribals ",image: tribal  },
+      {
+        description:
+          " The Universal Peace Foundation (UPF) is dedicated to supporting the tribals of Thirumorthi Hills by distributing clothing, free computers, and other essential learning resources. These efforts aim to enhance the educational opportunities available to tribal communities, empowering them with the tools they need to succeed. In addition to providing educational materials, UPF also addresses their basic needs by supplying necessities such as water, medicines, and groceries based on community requirements. Through these initiatives, UPF plays a crucial role in improving the lives of tribal individuals, ensuring they have the resources to thrive.",
+        title: "Support for Tribals ",
+        image: tribal,
+      },
 
-      { description: "The Universal Peace Foundation addresses the essential needs of communities by offering water, medicines, and groceries based on the specific needs of the people. This initiative ensures that individuals, particularly those in underprivileged areas, have access to the basic resources required for survival and well-being. By providing these necessities, the foundation helps improve the quality of life for many, ensuring that families and individuals can meet their daily needs and stay healthy. This support is especially crucial during times of hardship, contributing to the overall welfare of the community.", title: "Basic Necessities ",image: Basicnecessities},
+      {
+        description:
+          "The Universal Peace Foundation addresses the essential needs of communities by offering water, medicines, and groceries based on the specific needs of the people. This initiative ensures that individuals, particularly those in underprivileged areas, have access to the basic resources required for survival and well-being. By providing these necessities, the foundation helps improve the quality of life for many, ensuring that families and individuals can meet their daily needs and stay healthy. This support is especially crucial during times of hardship, contributing to the overall welfare of the community.",
+        title: "Basic Necessities ",
+        image: Basicnecessities,
+      },
 
-      { description: "The Universal Peace Foundation has established a free education center with library facilities for underprivileged individuals. This initiative provides access to quality education and resources that may otherwise be out of reach for many. The education center offers free tuition to help students improve their academic performance, while the library provides a wide range of learning materials to foster self-study and personal growth. Through these efforts, the foundation ensures that individuals from disadvantaged backgrounds have the opportunity to learn, grow, and build a better future.",title: "Tuition & Library ",image: library },
+      {
+        description:
+          "The Universal Peace Foundation has established a free education center with library facilities for underprivileged individuals. This initiative provides access to quality education and resources that may otherwise be out of reach for many. The education center offers free tuition to help students improve their academic performance, while the library provides a wide range of learning materials to foster self-study and personal growth. Through these efforts, the foundation ensures that individuals from disadvantaged backgrounds have the opportunity to learn, grow, and build a better future.",
+        title: "Tuition & Library ",
+        image: library,
+      },
     ],
   },
   {
     id: 2,
     title: "Natural Service",
-    description: "Universal Peace Foundation is committed to environmental sustainability, having planted over 3,000 trees on its campus and distributing over 100,000 saplings to promote afforestation. Through its social forestry system, UPF fosters biodiversity, enhances air quality, and encourages widespread conservation efforts. The foundation conducts awareness programs on tree plantation and sustainable living while ensuring regular maintenance of planted trees. By integrating environmental consciousness into its initiatives, UPF nurtures human lives and safeguards nature for future generations.",
-    donationText: "Donate to support environmental sustainability, fostering a greener future through tree planting and conservation efforts.",
+    description:
+      "Universal Peace Foundation is committed to environmental sustainability, having planted over 3,000 trees on its campus and distributing over 100,000 saplings to promote afforestation. Through its social forestry system, UPF fosters biodiversity, enhances air quality, and encourages widespread conservation efforts. The foundation conducts awareness programs on tree plantation and sustainable living while ensuring regular maintenance of planted trees. By integrating environmental consciousness into its initiatives, UPF nurtures human lives and safeguards nature for future generations.",
+    donationText:
+      "Donate to support environmental sustainability, fostering a greener future through tree planting and conservation efforts.",
     benefits: [
-      { description: "The Universal Peace Foundation has made a significant commitment to environmental sustainability through its Tree Plantation Drive. Over 3,000 trees have been planted on the foundation's campus, and more than 100,000 saplings have been distributed to encourage afforestation. This initiative not only fosters biodiversity but also enhances air quality and promotes conservation efforts. By conducting awareness programs and ensuring regular maintenance of the planted trees, UPF works to integrate environmental consciousness into the community, safeguarding nature for future generations while nurturing a greener, healthier planet.", title: "Tree Plantation Drive ", image: tree },
+      {
+        description:
+          "The Universal Peace Foundation has made a significant commitment to environmental sustainability through its Tree Plantation Drive. Over 3,000 trees have been planted on the foundation's campus, and more than 100,000 saplings have been distributed to encourage afforestation. This initiative not only fosters biodiversity but also enhances air quality and promotes conservation efforts. By conducting awareness programs and ensuring regular maintenance of the planted trees, UPF works to integrate environmental consciousness into the community, safeguarding nature for future generations while nurturing a greener, healthier planet.",
+        title: "Tree Plantation Drive ",
+        image: tree,
+      },
 
-      { description: " The Universal Peace Foundation’s Social Forestry initiative promotes biodiversity, enhances air quality, and encourages widespread conservation efforts. Through this program, UPF integrates tree planting and forest management into the community, contributing to the restoration of natural habitats and the protection of local ecosystems. By fostering a balanced environment, UPF helps sustain natural resources while educating the community on the importance of preserving nature. This initiative plays a vital role in promoting long-term environmental health and encouraging a culture of sustainability and conservation.", title: "Social Forestry ", image: natural  },
+      {
+        description:
+          " The Universal Peace Foundation’s Social Forestry initiative promotes biodiversity, enhances air quality, and encourages widespread conservation efforts. Through this program, UPF integrates tree planting and forest management into the community, contributing to the restoration of natural habitats and the protection of local ecosystems. By fostering a balanced environment, UPF helps sustain natural resources while educating the community on the importance of preserving nature. This initiative plays a vital role in promoting long-term environmental health and encouraging a culture of sustainability and conservation.",
+        title: "Social Forestry ",
+        image: natural,
+      },
 
-      { description: "The Universal Peace Foundation conducts awareness programs focused on tree plantation and sustainable living. These programs aim to educate the community about the importance of environmental conservation, sustainable practices, and the benefits of planting trees. By raising awareness and promoting eco-friendly habits, UPF encourages individuals to take active steps toward protecting the environment. Through these initiatives, the foundation fosters a sense of responsibility for nature, helping people understand how their actions contribute to a healthier planet and a more sustainable future.", title: "Awareness Programs ", image: Treeawareness },
+      {
+        description:
+          "The Universal Peace Foundation conducts awareness programs focused on tree plantation and sustainable living. These programs aim to educate the community about the importance of environmental conservation, sustainable practices, and the benefits of planting trees. By raising awareness and promoting eco-friendly habits, UPF encourages individuals to take active steps toward protecting the environment. Through these initiatives, the foundation fosters a sense of responsibility for nature, helping people understand how their actions contribute to a healthier planet and a more sustainable future.",
+        title: "Awareness Programs ",
+        image: Treeawareness,
+      },
 
-      { description: "The Universal Peace Foundation emphasizes the long-term maintenance of its planted trees to ensure lasting environmental benefits. This initiative focuses on regularly monitoring and caring for the trees, ensuring their growth and sustainability. By providing the necessary attention, including watering, pruning, and protection from pests, UPF ensures that the trees thrive and continue to contribute to biodiversity, air quality, and ecosystem health for years to come. This commitment to maintenance supports the foundation's long-term environmental goals, fostering a greener, healthier environment for future generations.",title: "Long-Term Maintenance ", image: natural  },
+      {
+        description:
+          "The Universal Peace Foundation emphasizes the long-term maintenance of its planted trees to ensure lasting environmental benefits. This initiative focuses on regularly monitoring and caring for the trees, ensuring their growth and sustainability. By providing the necessary attention, including watering, pruning, and protection from pests, UPF ensures that the trees thrive and continue to contribute to biodiversity, air quality, and ecosystem health for years to come. This commitment to maintenance supports the foundation's long-term environmental goals, fostering a greener, healthier environment for future generations.",
+        title: "Long-Term Maintenance ",
+        image: natural,
+      },
     ],
   },
   {
     id: 3,
     title: "spirutal Service",
-    description: "Universal Peace Foundation promotes the Indian inner sciences of Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, making these ancient practices accessible to all. Guided by Guruji Shivathma, UPF conducts specialized classes to help individuals attain inner peace, balance, and well-being. These sessions are available through course bookings and appointments for personalized guidance. By imparting spiritual and mindfulness techniques, the foundation empowers individuals to lead a harmonious and enlightened life, fostering mental clarity, emotional stability, and holistic well-being.",
-    donationText: "Contribute to spiritual growth and well-being by supporting mindfulness, meditation, and transformative practices for all.",
+    description:
+      "Universal Peace Foundation promotes the Indian inner sciences of Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, making these ancient practices accessible to all. Guided by Guruji Shivathma, UPF conducts specialized classes to help individuals attain inner peace, balance, and well-being. These sessions are available through course bookings and appointments for personalized guidance. By imparting spiritual and mindfulness techniques, the foundation empowers individuals to lead a harmonious and enlightened life, fostering mental clarity, emotional stability, and holistic well-being.",
+    donationText:
+      "Contribute to spiritual growth and well-being by supporting mindfulness, meditation, and transformative practices for all.",
     benefits: [
-      { description: "The Universal Peace Foundation promotes the Indian inner sciences of Yoga, Pranayama, Dhiyana, and Vipassana, making these ancient practices accessible to all. Through specialized classes guided by Guruji Shivathma, UPF helps individuals achieve inner peace, balance, and overall well-being. These practices foster mental clarity, emotional stability, and holistic health, empowering individuals to lead a harmonious and enlightened life. By integrating spiritual and mindfulness techniques, the foundation supports personal growth and self-discovery.", title: "Yoga & Meditation ", image: yoga  },
+      {
+        description:
+          "The Universal Peace Foundation promotes the Indian inner sciences of Yoga, Pranayama, Dhiyana, and Vipassana, making these ancient practices accessible to all. Through specialized classes guided by Guruji Shivathma, UPF helps individuals achieve inner peace, balance, and overall well-being. These practices foster mental clarity, emotional stability, and holistic health, empowering individuals to lead a harmonious and enlightened life. By integrating spiritual and mindfulness techniques, the foundation supports personal growth and self-discovery.",
+        title: "Yoga & Meditation ",
+        image: yoga,
+      },
 
-      { description: " The Universal Peace Foundation offers specialized sessions led by Guruji Shivathma, focusing on inner peace, balance, and overall well-being. These sessions provide personalized guidance in Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, helping individuals deepen their spiritual practices. Through these teachings, participants cultivate mental clarity, emotional stability, and self-awareness, empowering them to lead a harmonious and enlightened life.", title: "Guidance from Guruji Shivathma ", image: spirutal  },
+      {
+        description:
+          " The Universal Peace Foundation offers specialized sessions led by Guruji Shivathma, focusing on inner peace, balance, and overall well-being. These sessions provide personalized guidance in Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, helping individuals deepen their spiritual practices. Through these teachings, participants cultivate mental clarity, emotional stability, and self-awareness, empowering them to lead a harmonious and enlightened life.",
+        title: "Guidance from Guruji Shivathma ",
+        image: spirutal,
+      },
 
-      { description: " The Universal Peace Foundation offers personalized learning opportunities through course bookings and appointments, allowing individuals to deepen their practice of Yoga, Meditation, Pranayama, Dhiyana, and Vipassana at their own pace. These tailored sessions provide focused guidance to help participants achieve inner peace, mental clarity, and emotional balance. By offering customized learning experiences, UPF ensures that individuals receive the support and knowledge needed to embark on a transformative spiritual journey.", title: "Personalized Learning  ", image: spirutal   },
-      
-      { description: "The Universal Peace Foundation promotes holistic well-being by enhancing mental clarity, emotional stability, and spiritual growth through its teachings and practices. By integrating Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, UPF helps individuals cultivate inner peace and a balanced life. These practices empower individuals to manage stress, develop self-awareness, and achieve a deeper connection with themselves, fostering a harmonious and enlightened way of living.", title: "Holistic Well-Being ",image: holistic  },
+      {
+        description:
+          " The Universal Peace Foundation offers personalized learning opportunities through course bookings and appointments, allowing individuals to deepen their practice of Yoga, Meditation, Pranayama, Dhiyana, and Vipassana at their own pace. These tailored sessions provide focused guidance to help participants achieve inner peace, mental clarity, and emotional balance. By offering customized learning experiences, UPF ensures that individuals receive the support and knowledge needed to embark on a transformative spiritual journey.",
+        title: "Personalized Learning  ",
+        image: spirutal,
+      },
+
+      {
+        description:
+          "The Universal Peace Foundation promotes holistic well-being by enhancing mental clarity, emotional stability, and spiritual growth through its teachings and practices. By integrating Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, UPF helps individuals cultivate inner peace and a balanced life. These practices empower individuals to manage stress, develop self-awareness, and achieve a deeper connection with themselves, fostering a harmonious and enlightened way of living.",
+        title: "Holistic Well-Being ",
+        image: holistic,
+      },
     ],
   },
   {
     id: 4,
     title: "Medical Service",
-    description: "Universal Peace Foundation provides free hospital and ambulance services, ensuring timely medical assistance for the underprivileged. It conducts bi-monthly medical camps within the ashram and frequently organizes free health camps in nearby villages, offering checkups and medicines. UPF’s healthcare initiatives extend across six districts in Tamil Nadu through its branches. Its dedicated medical team provides quality care, preventive treatments, and awareness programs, bridging gaps in medical accessibility. Through continuous efforts, UPF remains committed to serving humanity with compassion and care.",
-    donationText: "Your donation can provide life-saving medical care, offering health, hope, and healing to those in need.",
+    description:
+      "Universal Peace Foundation provides free hospital and ambulance services, ensuring timely medical assistance for the underprivileged. It conducts bi-monthly medical camps within the ashram and frequently organizes free health camps in nearby villages, offering checkups and medicines. UPF’s healthcare initiatives extend across six districts in Tamil Nadu through its branches. Its dedicated medical team provides quality care, preventive treatments, and awareness programs, bridging gaps in medical accessibility. Through continuous efforts, UPF remains committed to serving humanity with compassion and care.",
+    donationText:
+      "Your donation can provide life-saving medical care, offering health, hope, and healing to those in need.",
     benefits: [
-      { description: "The Universal Peace Foundation offers free hospital and ambulance services, ensuring timely medical assistance for the underprivileged. These services provide emergency care, checkups, and essential treatments, bridging gaps in healthcare accessibility. UPF’s dedicated medical team works tirelessly to deliver quality care and preventive treatments, ensuring that those in need receive immediate and effective medical support. Through these compassionate initiatives, the foundation upholds its commitment to serving humanity and promoting overall well-being.",title: "Free Hospital & Ambulance Services ", image: medicalservice,},
+      {
+        description:
+          "The Universal Peace Foundation offers free hospital and ambulance services, ensuring timely medical assistance for the underprivileged. These services provide emergency care, checkups, and essential treatments, bridging gaps in healthcare accessibility. UPF’s dedicated medical team works tirelessly to deliver quality care and preventive treatments, ensuring that those in need receive immediate and effective medical support. Through these compassionate initiatives, the foundation upholds its commitment to serving humanity and promoting overall well-being.",
+        title: "Free Hospital & Ambulance Services ",
+        image: medicalservice,
+      },
 
-      { description: "The Universal Peace Foundation conducts bi-monthly health camps at the ashram and in nearby villages, ensuring that underprivileged individuals receive timely medical checkups, essential medicines, and preventive care. These camps focus on early diagnosis, disease prevention, and health awareness, addressing the medical needs of those who lack access to proper healthcare facilities.With the support of a dedicated medical team, UPF provides specialized consultations, screenings, and treatments for various health conditions. Additionally, awareness programs educate communities about hygiene, nutrition, and disease prevention, empowering them to lead healthier lives. Through these ongoing efforts, the foundation strives to create a healthier and more self-sufficient society by making quality healthcare accessible to all.", title: "Regular Medical Camps ",image: medicalservice, },
+      {
+        description:
+          "The Universal Peace Foundation conducts bi-monthly health camps at the ashram and in nearby villages, ensuring that underprivileged individuals receive timely medical checkups, essential medicines, and preventive care. These camps focus on early diagnosis, disease prevention, and health awareness, addressing the medical needs of those who lack access to proper healthcare facilities.With the support of a dedicated medical team, UPF provides specialized consultations, screenings, and treatments for various health conditions. Additionally, awareness programs educate communities about hygiene, nutrition, and disease prevention, empowering them to lead healthier lives. Through these ongoing efforts, the foundation strives to create a healthier and more self-sufficient society by making quality healthcare accessible to all.",
+        title: "Regular Medical Camps ",
+        image: medicalservice,
+      },
 
-      { description: " The Universal Peace Foundation’s healthcare services extend across six districts in Tamil Nadu, ensuring that medical assistance reaches underprivileged communities in remote and rural areas. Through its various branches, UPF organizes free medical camps, checkups, and treatments, making quality healthcare accessible to those in need.With a dedicated team of doctors and healthcare professionals, the foundation provides preventive care, essential medicines, and emergency support, bridging the gap in medical accessibility. By expanding its reach, UPF continues to serve humanity with compassion, striving to improve the overall health and well-being of disadvantaged individuals across the region.", title: "Extensive Reach  ", image: medicalservice, },
+      {
+        description:
+          " The Universal Peace Foundation’s healthcare services extend across six districts in Tamil Nadu, ensuring that medical assistance reaches underprivileged communities in remote and rural areas. Through its various branches, UPF organizes free medical camps, checkups, and treatments, making quality healthcare accessible to those in need.With a dedicated team of doctors and healthcare professionals, the foundation provides preventive care, essential medicines, and emergency support, bridging the gap in medical accessibility. By expanding its reach, UPF continues to serve humanity with compassion, striving to improve the overall health and well-being of disadvantaged individuals across the region.",
+        title: "Extensive Reach  ",
+        image: medicalservice,
+      },
 
-      { description: " The Universal Peace Foundation offers free checkups, medicines, and health education programs to underprivileged communities. These initiatives focus on preventive care by providing early detection of health conditions and offering necessary treatments to prevent further complications. Through its health education programs, UPF raises awareness about important topics like hygiene, nutrition, disease prevention, and healthy lifestyles, empowering individuals to take charge of their health. By combining medical care with education, UPF helps build healthier communities and reduces the spread of preventable diseases.", title: "Preventive Care & Awareness ", image: medicalservice, },
+      {
+        description:
+          " The Universal Peace Foundation offers free checkups, medicines, and health education programs to underprivileged communities. These initiatives focus on preventive care by providing early detection of health conditions and offering necessary treatments to prevent further complications. Through its health education programs, UPF raises awareness about important topics like hygiene, nutrition, disease prevention, and healthy lifestyles, empowering individuals to take charge of their health. By combining medical care with education, UPF helps build healthier communities and reduces the spread of preventable diseases.",
+        title: "Preventive Care & Awareness ",
+        image: medicalservice,
+      },
     ],
-   
   },
-
 ];

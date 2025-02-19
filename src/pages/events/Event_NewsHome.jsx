@@ -4,7 +4,7 @@ import News from "./News";
 
 const Event_NewsHome = () => {
   return (
-    <div >
+    <div>
       <Header />
       <Events />
       <News />

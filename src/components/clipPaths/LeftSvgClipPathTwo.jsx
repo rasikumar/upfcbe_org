@@ -13,16 +13,34 @@ const LeftSvgClipPathTwo = forwardRef(
       GetEventById,
     } = Event;
 
-    // console.log(EventLists);
-    // Fetch event by ID when component mounts
+    const eventLists = EventLists?.events;
+
     useEffect(() => {
       if (id) {
         GetEventById(id);
       }
     }, [id]);
 
+    // Handle error state
+    if (isEventError) {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-red-500 text-white p-4">
+          <p>Error: {EventError?.message || "Failed to load event data."}</p>
+        </div>
+      );
+    }
+
+    // Handle loading state
+    if (isEventLoading) {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-gray-300 p-4">
+          <p>Loading...</p>
+        </div>
+      );
+    }
+
     // Get the first event name if available
-    const eventName = EventLists?.length > 0 ? EventLists[0].name : "";
+    const eventName = eventLists?.length > 0 ? eventLists[0].name : "";
 
     return (
       <Link

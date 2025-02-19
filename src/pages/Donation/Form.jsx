@@ -86,7 +86,7 @@ const DonationForm = () => {
         <div className="bg-upfwhite p-10 py-12 flex flex-col gap-6 w-1/2 rounded-3xl shadow-upfshadow">
           <h3 className="text-xl font-semibold">How Much?</h3>
           <div className="grid grid-cols-2 gap-10">
-            <ul className="grid grid-rows-2 grid-cols-3 gap-10">
+            <ul className="grid grid-rows-1 grid-cols-3 gap-10">
               {values.map((value) => (
                 <button
                   type="button"

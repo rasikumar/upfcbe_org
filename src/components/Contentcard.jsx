@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { contact_image } from "@/assets";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope, FaTextHeight, FaUser } from "react-icons/fa6";
 import { MdOutlineSubject } from "react-icons/md";
 import Heading from "./Heading";
+import { createContact } from "@/api/Form";
+import { useToast } from "@/hooks/use-toast";
 
 const Contactcard = () => {
+  const { toast } = useToast();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form submitted!"); // Replace with actual form handling logic
+    createContact(formData);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+    toast({
+      title: "Message sent successfully",
+      description: "Thank you for contacting us. We will get back to you soon.",
+    });
   };
 
   return (
@@ -41,9 +69,9 @@ const Contactcard = () => {
                 <div>
                   <p className="text-sm sm:text-base text-gray-700">
                     Main Office <br />
-                    <a href="tel:#" className="text-upforangecrayola">
-                      (+233) 456-789-01
-                    </a>
+                    <span className="text-upforangecrayola">
+                      +91 98422 20285
+                    </span>
                   </p>
                 </div>
               </div>
@@ -60,12 +88,9 @@ const Contactcard = () => {
                 <div>
                   <p className="text-sm sm:text-base text-gray-700">
                     Mail to <br />
-                    <a
-                      href="mailto:info@example.com"
-                      className="text-upforangecrayola"
-                    >
-                      info@example.com
-                    </a>
+                    <span className="text-upforangecrayola">
+                      upfcbe@gmail.com
+                    </span>
                   </p>
                 </div>
               </div>
@@ -80,8 +105,10 @@ const Contactcard = () => {
                   <FaMapMarkerAlt className="text-white text-lg sm:text-xl" />
                 </div>
                 <div>
-                  <p className="text-sm sm:text-base text-gray-700">
-                    54 Berrick Street, Boston, MA 02115.
+                  <p className="text-sm sm:text-base text-upfblack capitalize">
+                    nalla goundan palayam, pathuvam palli (bus stop), kaduvetti
+                    palayam (post), karumatham patti – annur (via), coimbatore –
+                    641 659.
                   </p>
                 </div>
               </div>
@@ -98,7 +125,7 @@ const Contactcard = () => {
             <img
               src={contact_image}
               alt="Volunteer"
-              className="w-full h-auto object-cover rounded-3xl"
+              className="w-full h-auto object-cover rounded-t-3xl rounded-b-lg"
             />
           </div>
         </div>
@@ -120,19 +147,31 @@ const Contactcard = () => {
         <div className="bg-white p-5  rounded-lg border border-gray-200">
           <form onSubmit={handleSubmit}>
             {[
-              { icon: <FaUser />, type: "text", placeholder: "Your Name" },
+              {
+                icon: <FaUser />,
+                name: "name",
+                type: "text",
+                placeholder: "Your Name",
+              },
               {
                 icon: <FaEnvelope />,
                 type: "email",
+                name: "email",
                 placeholder: "Email Address",
               },
-              { icon: <FaPhoneAlt />, type: "text", placeholder: "Phone" },
+              {
+                icon: <FaPhoneAlt />,
+                type: "text",
+                name: "phone",
+                placeholder: "Phone",
+              },
               {
                 icon: <MdOutlineSubject />,
                 type: "text",
+                name: "subject",
                 placeholder: "Subject",
               },
-            ].map(({ icon, type, placeholder }, index) => (
+            ].map(({ icon, type, placeholder, name }, index) => (
               <div
                 key={index}
                 className="relative flex items-center p-3 space-x-3 border-b transition-all duration-300 focus-within:border-upforangecrayola"
@@ -140,6 +179,9 @@ const Contactcard = () => {
                 <span className="text-upforangecrayola text-2xl">{icon}</span>
                 <input
                   type={type}
+                  name={name}
+                  value={formData[name]}
+                  onChange={handleChange}
                   placeholder={placeholder}
                   className="w-full text-gray-700 focus:outline-none"
                   required
@@ -150,9 +192,13 @@ const Contactcard = () => {
             <div className="relative flex items-start p-3 space-x-3 border-b transition-all duration-300 focus-within:border-upforangecrayola">
               <FaTextHeight className="text-upforangecrayola text-2xl" />
               <textarea
+                name="message"
                 placeholder="Message"
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full text-gray-700 focus:outline-none"
-              ></textarea>
+                required
+              />
             </div>
             <div className="p-6">
               <button
