@@ -55,6 +55,7 @@ const Certification = () => {
   return (
     <div
       ref={containerRef}
+      id="certificate"
       className="flex items-center md:justify-end justify-center md:py-16 py-10 px-6 m-auto 2xl:max-w-[120rem] w-full"
     >
       <div className="flex flex-col md:flex-row max-md:gap-3">
@@ -117,6 +118,7 @@ const Certification = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 border-l-4 overflow-hidden">
           {getVisibleCertificates().map((cert) => (
             <ServiceCard
+              key={cert.id}
               tag={cert.tag}
               title={cert.title}
               description={cert.description}

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { main_logo } from "../assets";
 import { navigations, setActiveNavigation } from "../data";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { MdMenu, MdClose } from "react-icons/md";
 
@@ -10,21 +10,26 @@ const Navbar = () => {
   const linksRef = useRef([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [navItems, setNavItems] = useState(
-    setActiveNavigation(navigations[0].id)
-  );
+  const [navItems, setNavItems] = useState([]);
+
+  // Load active navigation from localStorage when the component mounts
+  useEffect(() => {
+    const savedNav = localStorage.getItem("activeNavigation");
+    if (savedNav) {
+      setNavItems(setActiveNavigation(savedNav));
+    } else {
+      setNavItems(setActiveNavigation(navigations[0].id));
+    }
+  }, []);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // Only animate the mobile menu when it is open
       if (menuOpen) {
         gsap.fromTo(
           ".mobile-menu",
           { opacity: 0, yPercent: "-100" },
           { opacity: 1, yPercent: 0, duration: 0.2, ease: "power4.inOut" }
         );
-
-        // Sequential animation for the menu links
         gsap.fromTo(
           linksRef.current,
           { opacity: 0, y: 30 },
@@ -38,7 +43,6 @@ const Navbar = () => {
           }
         );
       } else {
-        // Only animate the mobile menu when it is closing
         if (document.querySelector(".mobile-menu")) {
           gsap.to(".mobile-menu", {
             opacity: 0,
@@ -47,7 +51,6 @@ const Navbar = () => {
             ease: "power4.inOut",
           });
 
-          // Sequential exit animation for the links
           gsap.to(linksRef.current, {
             opacity: 0,
             y: 30,
@@ -61,7 +64,7 @@ const Navbar = () => {
     });
 
     return () => ctx.revert();
-  }, [menuOpen]); // Re-run on menuOpen state change
+  }, [menuOpen]);
 
   useLayoutEffect(() => {
     if (buttonClicked) {
@@ -77,6 +80,7 @@ const Navbar = () => {
   }, [buttonClicked]);
 
   const handleNavigationClick = (id) => {
+    localStorage.setItem("activeNavigation", id); // Save active nav in localStorage
     setNavItems(setActiveNavigation(id));
     setMenuOpen(false);
   };
@@ -112,7 +116,7 @@ const Navbar = () => {
           className="md:hidden text-2xl menu-toggle"
           onClick={() => {
             setMenuOpen(!menuOpen);
-            setButtonClicked(true); // Trigger the button animation
+            setButtonClicked(true);
           }}
         >
           {menuOpen ? <MdClose /> : <MdMenu />}
@@ -123,7 +127,7 @@ const Navbar = () => {
       {menuOpen && (
         <div
           className="fixed inset-0 w-full h-full bg-upforangecrayola flex flex-col items-center justify-center text-white z-50 transition-opacity duration-300 mobile-menu"
-          onClick={() => setMenuOpen(false)} // Click outside to close
+          onClick={() => setMenuOpen(false)}
         >
           <button
             className="absolute top-6 right-6 text-3xl"
@@ -140,8 +144,8 @@ const Navbar = () => {
                 className={`hover:text-gray-300 transition duration-300 ${
                   navigation.active ? "text-upfdarkblack" : ""
                 }`}
-                onClick={() => handleNavigationClick(navigation.id)} // Close on click
-                ref={(el) => (linksRef.current[index] = el)} // Assign each link ref
+                onClick={() => handleNavigationClick(navigation.id)}
+                ref={(el) => (linksRef.current[index] = el)}
               >
                 {navigation.title}
               </Link>

@@ -9,32 +9,27 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Link } from "react-router";
 import { useState } from "react";
 import Auth from "@/hooks/AuthHook";
-import { Link } from "react-router";
-
-const Login = ({ className, ...props }) => {
-  const [login, setLogin] = useState({
+const ResetPassword = ({ className, ...props }) => {
+  const [resetPassword, setResetPassword] = useState({
     email: "",
-    password: "",
   });
 
   const auth = Auth();
-  const { Login } = auth;
+  const { ResetPassword } = auth;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Login.mutate(login, {
-      onSuccess: () => {
-        setLogin({ email: "", password: "" });
-      },
-    });
+    // console.log(resetPassword);
+    ResetPassword.mutate(resetPassword);
   };
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setLogin((prevLogin) => ({
-      ...prevLogin,
+    setResetPassword((prevresetPassword) => ({
+      ...prevresetPassword,
       [id]: value,
     }));
   };
@@ -45,9 +40,9 @@ const Login = ({ className, ...props }) => {
         <div className={cn("flex flex-col gap-6", className)} {...props}>
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">Login</CardTitle>
+              <CardTitle className="text-2xl">ResetPassword</CardTitle>
               <CardDescription>
-                Enter your email below to login to your account
+                Enter your email below to ResetPassword to your account
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -59,36 +54,13 @@ const Login = ({ className, ...props }) => {
                       id="email"
                       type="email"
                       placeholder="m@example.com"
-                      value={login.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="password">Password</Label>
-
-                    {/* uncomment it if you need Reset Password need */}
-
-                    {/* <div className="flex items-center">
-                      <Link
-                        to={"/reset-password"}
-                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                      >
-                        Forgot your password?
-                      </Link>
-                    </div> */}
-                    
-                    <Input
-                      id="password"
-                      type="password"
-                      value={login.password}
-                      placeholder="!@#$%^&*()"
+                      value={resetPassword.email}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <Button type="submit" className="w-full">
-                    Login
+                    Send Request
                   </Button>
                 </div>
               </form>
@@ -100,4 +72,4 @@ const Login = ({ className, ...props }) => {
   );
 };
 
-export default Login;
+export default ResetPassword;

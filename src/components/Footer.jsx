@@ -91,7 +91,7 @@ const Footer = () => {
               <h2 className="font-bold mb-4 text-lg">Quicklinks</h2>
               {quicklinks.map((quicklink) => (
                 <Link
-                  to={quicklink.url}
+                  to={quicklink.url || quicklink.path}
                   key={quicklink.id}
                   className="text-lg hover:text-upforangecrayola transition duration-300 ease-in-out inline-flex items-center gap-2 text-upflightwhite mb-2"
                 >

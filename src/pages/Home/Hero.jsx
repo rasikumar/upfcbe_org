@@ -41,8 +41,8 @@ const Hero = () => {
 
       <div className="max-w-7xl m-auto flex flex-col gap-6 text-center">
         {/* Hero Text */}
-        <div className="flex flex-col items-center gap-6 my-20">
-          <h2
+        <div className="flex flex-col items-center gap-6 mt-20">
+          <h1
             className="text-2xl md:text-4xl 2xl:text-5xl font-bold "
             id="text-reveal"
           >
@@ -53,7 +53,7 @@ const Hero = () => {
                 {index !== hero.split(",").length - 1 && <br />}
               </span>
             ))}
-          </h2>
+          </h1>
           <p
             className="text-sm md:text-lg 2xl:text-xl max-w-xl"
             id="para-reveal"

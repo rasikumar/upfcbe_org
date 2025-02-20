@@ -190,7 +190,7 @@ export const footer = [
       {
         id: 3,
         title: "News & Events",
-        url: "/news-events",
+        url: "/events-home",
       },
     ],
     quicklinks: [
@@ -202,7 +202,7 @@ export const footer = [
       {
         id: 1,
         title: "Certificates",
-        url: "/certificates",
+        path: "/about-us#certificate",
       },
       {
         id: 2,
@@ -731,5 +731,262 @@ export const servicemenulist = [
         image: medicalservice,
       },
     ],
+  },
+];
+
+export const SEO = [
+  {
+    id: 0,
+    title: "Universal Peace Foundation - Indian Inner Sciences",
+    description:
+      "Universal Peace Foundation promotes the Indian inner sciences of Yoga, Meditation, Pranayama, Dhiyana, and Vipassana, making these ancient practices accessible to all. Guided by Guruji Shivathma, UPF conducts specialized classes to help individuals attain inner peace, balance, and well-being.",
+    meta: {
+      keywords: [
+        "Universal Peace Foundation",
+        "Yoga",
+        "Meditation",
+        "Pranayama",
+        "Dhiyana",
+        "Vipassana",
+        "Inner Sciences",
+        "Well-being",
+        "Guruji Shivathma",
+        "Spiritual Awakening",
+        "Mindfulness",
+        "Holistic Healing",
+        "CBE NGO",
+        "Coimbatore NGO",
+      ],
+      author: "Universal Peace Foundation",
+      og: {
+        title: "Universal Peace Foundation - Indian Inner Sciences",
+        description:
+          "UPF promotes Yoga, Meditation, Pranayama, Dhiyana, and Vipassana to help individuals achieve inner peace and balance. Guided by Guruji Shivathma, this NGO in Coimbatore is dedicated to holistic well-being.",
+        url: "https://www.upfindia.org", // Replace with the actual website link
+        image: "https://www.upfindia.org/og-image.jpg", // Replace with the actual image link
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@UPFIndia", // Replace with actual Twitter handle if available
+        title: "Universal Peace Foundation - Indian Inner Sciences",
+        description:
+          "Discover the transformative power of Yoga, Meditation, and Inner Sciences at Universal Peace Foundation, Coimbatore.",
+        image: "https://www.upfindia.org/twitter-image.jpg", // Replace with the actual image link
+      },
+    },
+    location: "Coimbatore, India",
+  },
+  {
+    id: 1,
+    title: "Universal Peace Foundation - About Us",
+    description:
+      "Discover the mission and vision of Universal Peace Foundation, dedicated to promoting Indian inner sciences like Yoga, Meditation, Pranayama, Dhiyana, and Vipassana. Guided by Guruji Shivathma, UPF offers specialized classes, spiritual guidance, and holistic well-being programs to help individuals achieve inner peace and self-realization.",
+    meta: {
+      keywords: [
+        "Universal Peace Foundation",
+        "About UPF",
+        "Yoga",
+        "Meditation",
+        "Pranayama",
+        "Dhiyana",
+        "Vipassana",
+        "Inner Sciences",
+        "Holistic Well-being",
+        "Guruji Shivathma",
+        "Spiritual Guidance",
+        "Self-Realization",
+        "Coimbatore NGO",
+        "CBE NGO",
+        "Mindfulness",
+        "Healing Practices",
+      ],
+      author: "Universal Peace Foundation",
+      og: {
+        title: "About Universal Peace Foundation",
+        description:
+          "Learn more about Universal Peace Foundation’s mission in spreading the inner sciences of Yoga, Meditation, and Spiritual Well-being under the guidance of Guruji Shivathma.",
+        url: "https://www.upfindia.org/about", // Replace with actual URL
+        image: "https://www.upfindia.org/about-og-image.jpg", // Replace with actual image link
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@UPFIndia", // Replace with actual Twitter handle if available
+        title: "About Universal Peace Foundation",
+        description:
+          "Explore the mission and teachings of Universal Peace Foundation, bringing Yoga, Meditation, and Spiritual Growth to all.",
+        image: "https://www.upfindia.org/about-twitter-image.jpg", // Replace with actual image link
+      },
+    },
+    location: "Coimbatore, India",
+  },
+  {
+    id: 2,
+    title: "Universal Peace Foundation - Medical Services & Events",
+    description:
+      "Stay updated with the latest medical service initiatives and events by Universal Peace Foundation. UPF provides free hospital and ambulance services, bi-monthly medical camps, and free health checkups across six districts in Tamil Nadu, benefiting underprivileged communities.",
+    meta: {
+      keywords: [
+        "Universal Peace Foundation",
+        "Medical Camps",
+        "Free Healthcare",
+        "Ambulance Service",
+        "Health Checkups",
+        "Bi-monthly Medical Camps",
+        "Tamil Nadu Health Initiatives",
+        "Community Healthcare",
+        "UPF Health Camps",
+        "NGO Medical Services",
+        "Coimbatore NGO",
+        "Free Medicine Distribution",
+        "Well-being Programs",
+        "UPF Events",
+      ],
+      author: "Universal Peace Foundation",
+      og: {
+        title: "Universal Peace Foundation - Medical Services & Events",
+        description:
+          "Explore UPF’s medical service initiatives, including free ambulance services, bi-monthly health checkups, and medical camps benefiting communities across Tamil Nadu.",
+        url: "https://www.upfindia.org/news-events", // Replace with actual URL
+        image: "https://www.upfindia.org/news-events-og-image.jpg", // Replace with actual image link
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@UPFIndia", // Replace with actual Twitter handle if available
+        title: "Universal Peace Foundation - Medical Services & Events",
+        description:
+          "Join Universal Peace Foundation’s healthcare initiatives, offering free ambulance services, medical camps, and well-being programs for underprivileged communities.",
+        image: "https://www.upfindia.org/news-events-twitter-image.jpg", // Replace with actual image link
+      },
+    },
+    location: "Tamil Nadu, India",
+  },
+  {
+    id: 3,
+    title: "Universal Peace Foundation - Yoga & Meditation Services",
+    description:
+      "Experience personalized Yoga and Meditation sessions with Universal Peace Foundation. Book courses and appointments to deepen your practice in Pranayama, Dhiyana, and Vipassana for mental clarity, emotional balance, and inner peace.",
+    meta: {
+      keywords: [
+        "Universal Peace Foundation",
+        "Yoga Classes",
+        "Meditation Sessions",
+        "Pranayama",
+        "Dhiyana",
+        "Vipassana",
+        "Spiritual Healing",
+        "Well-being Programs",
+        "Personalized Yoga Courses",
+        "Mindfulness Training",
+        "Inner Peace",
+        "Emotional Balance",
+        "Mental Clarity",
+        "Self-awareness",
+        "UPF Spiritual Services",
+      ],
+      author: "Universal Peace Foundation",
+      og: {
+        title: "Universal Peace Foundation - Yoga & Meditation Services",
+        description:
+          "Join Universal Peace Foundation’s Yoga and Meditation services. Book personalized courses and sessions to enhance mindfulness, emotional well-being, and self-awareness.",
+        url: "https://www.upfindia.org/services", // Replace with actual URL
+        image: "https://www.upfindia.org/services-og-image.jpg", // Replace with actual image link
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@UPFIndia", // Replace with actual Twitter handle if available
+        title: "Universal Peace Foundation - Yoga & Meditation Services",
+        description:
+          "Deepen your Yoga and Meditation practice with Universal Peace Foundation. Book guided courses and personalized sessions for inner peace and well-being.",
+        image: "https://www.upfindia.org/services-twitter-image.jpg", // Replace with actual image link
+      },
+    },
+    location: "Coimbatore, India",
+  },
+  {
+    id: 4,
+    title: "Universal Peace Foundation - Contact Us",
+    description:
+      "Get in touch with Universal Peace Foundation for inquiries about our free medical services, yoga and meditation programs, and community initiatives. We provide free hospital and ambulance services, along with bi-monthly health camps across Tamil Nadu.",
+    meta: {
+      keywords: [
+        "Universal Peace Foundation",
+        "Contact UPF",
+        "Free Medical Services",
+        "Ambulance Service",
+        "Health Camps",
+        "Yoga Programs",
+        "Meditation Courses",
+        "Holistic Healing",
+        "Coimbatore NGO",
+        "Tamil Nadu Health Services",
+        "Spiritual Guidance",
+        "Well-being Programs",
+        "Community Healthcare",
+      ],
+      author: "Universal Peace Foundation",
+      og: {
+        title: "Universal Peace Foundation - Contact Us",
+        description:
+          "Reach out to Universal Peace Foundation for inquiries about free medical services, yoga, meditation, and community healthcare programs. We are here to assist you.",
+        url: "https://www.upfindia.org/contact", // Replace with actual URL
+        image: "https://www.upfindia.org/contact-og-image.jpg", // Replace with actual image link
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@UPFIndia", // Replace with actual Twitter handle if available
+        title: "Universal Peace Foundation - Contact Us",
+        description:
+          "Connect with Universal Peace Foundation for medical services, health camps, and spiritual programs. We are here to support your well-being.",
+        image: "https://www.upfindia.org/contact-twitter-image.jpg", // Replace with actual image link
+      },
+    },
+    location: "Coimbatore, India",
+  },
+  {
+    id: 5,
+    title: "Universal Peace Foundation - Support Holistic Well-being",
+    description:
+      "Support Universal Peace Foundation in promoting holistic well-being through Yoga, Meditation, Pranayama, Dhiyana, and Vipassana. Your donation helps provide free medical services, spiritual guidance, and community health programs, making a difference in countless lives.",
+    meta: {
+      keywords: [
+        "Universal Peace Foundation",
+        "Donate to UPF",
+        "Support Holistic Well-being",
+        "Yoga for Inner Peace",
+        "Meditation for Mental Clarity",
+        "Spiritual Growth",
+        "Pranayama Benefits",
+        "Vipassana Practice",
+        "Dhiyana Meditation",
+        "Stress Management",
+        "Self-awareness",
+        "Coimbatore NGO",
+        "Nonprofit Donations",
+        "Health and Wellness Programs",
+      ],
+      author: "Universal Peace Foundation",
+      og: {
+        title: "Universal Peace Foundation - Donate for Holistic Well-being",
+        description:
+          "Contribute to Universal Peace Foundation's mission of enhancing well-being through Yoga, Meditation, and spiritual guidance. Your donation supports free medical services and community initiatives.",
+        url: "https://www.upfindia.org/donate", // Replace with actual URL
+        image: "https://www.upfindia.org/donate-og-image.jpg", // Replace with actual image link
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@UPFIndia", // Replace with actual Twitter handle if available
+        title: "Universal Peace Foundation - Donate for Holistic Well-being",
+        description:
+          "Make a difference by supporting Universal Peace Foundation’s efforts in Yoga, Meditation, and community health services. Donate today!",
+        image: "https://www.upfindia.org/donate-twitter-image.jpg", // Replace with actual image link
+      },
+    },
+    location: "Coimbatore, India",
   },
 ];

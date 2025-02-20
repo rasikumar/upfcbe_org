@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 
 const DonationList = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <h2 className="inline-flex flex-col text-xl">
@@ -25,6 +25,7 @@ const DonationList = ({ data }) => {
             <TableHead>Status</TableHead>
             <TableHead>Reason</TableHead>
             <TableHead>Amount</TableHead>
+            <TableHead>Date</TableHead>
           </TableRow>
         </TableHeader>
         {data && data.length > 0 ? (
@@ -38,6 +39,9 @@ const DonationList = ({ data }) => {
               <TableCell>{d.status}</TableCell>
               <TableCell>{d.reason}</TableCell>
               <TableCell>{d.amount}</TableCell>
+              <TableCell>
+                {new Date(d.created_at).toLocaleDateString("en-IN")}
+              </TableCell>
             </TableRow>
           ))
         ) : (
