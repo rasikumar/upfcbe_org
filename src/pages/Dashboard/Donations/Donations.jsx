@@ -20,6 +20,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
+import TableSkeleton from "@/components/loading/TableSkeleton";
 
 const Donations = () => {
   const [itemsPerPage] = useState(5);
@@ -54,7 +55,6 @@ const Donations = () => {
 
   if (isDonationError)
     return <h1>{DonationError?.message || "Error loading data"}</h1>;
-  if (isDonationLoading) return <h1>Loading...</h1>;
 
   const DonationLists = DonationData?.payments || [];
   const totalPages = Math.ceil((DonationData?.total || 0) / itemsPerPage);
@@ -124,14 +124,18 @@ const Donations = () => {
             setStatus("all");
             setDateRange(undefined);
             setCurrentPage(1);
-          }} 
+          }}
         >
           Clear Filters
         </Button>
       </div>
 
       {/* Donation List */}
-      <DonationList data={DonationLists} />
+      {isDonationLoading ? (
+        <TableSkeleton />
+      ) : (
+        <DonationList data={DonationLists} />
+      )}
 
       {/* Pagination */}
       <PaginationComponent

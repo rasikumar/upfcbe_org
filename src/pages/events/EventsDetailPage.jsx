@@ -72,13 +72,16 @@ const EventsDetailPage = () => {
 
         {/* Event Description */}
         <div className="prose text-gray-700">
-          <div
-            dangerouslySetInnerHTML={{
-              __html:
-                selectedEvent.description ||
-                "<em>No description provided.</em>",
-            }}
-          />
+          <div className="text-gray-700">
+            <div
+              dangerouslySetInnerHTML={{
+                __html:
+                  selectedEvent.description ||
+                  "<em>No description provided.</em>",
+              }}
+              className="[&>h1]:text-4xl [&>h1]:font-bold [&>h2]:text-3xl [&>h2]:font-semibold"
+            />
+          </div>
         </div>
       </div>
     </div>

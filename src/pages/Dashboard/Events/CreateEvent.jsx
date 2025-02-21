@@ -18,10 +18,11 @@ import { Label } from "@/components/ui/label";
 //   SelectTrigger,
 //   SelectValue,
 // } from "@/components/ui/select";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 // import { statusOptions } from "@/utils/statusOptions";
 import { toast } from "@/hooks/use-toast";
+import QuillEditor from "@/lib/QuillEditor";
 
 export function CreateEvents({ onCreate, success }) {
   const [name, setName] = useState("");
@@ -174,14 +175,14 @@ export function CreateEvents({ onCreate, success }) {
               />
             </div>
 
-            <div className="md:flex float-right gap-2">
+            <div className="md:flex float-right gap-2 mb-24">
               <Label
                 htmlFor="description"
                 className="text-sm font-medium md:ml-10"
               >
                 Description
               </Label>
-              <ReactQuill
+              <QuillEditor
                 value={description}
                 onChange={setDescription}
                 className="md:mb-16 ml-2"

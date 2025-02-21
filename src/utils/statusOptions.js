@@ -1,5 +1,5 @@
 export const statusOptions = [
   { value: "open", label: "open" },
-  { value: "close", label: "close" },
+  { value: "closed", label: "closed" },
   { value: "ongoing", label: "ongoing" },
 ];

@@ -11,9 +11,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 import { toast } from "@/hooks/use-toast";
+import QuillEditor from "@/lib/QuillEditor";
 
 export function CreateNews({ onCreate, success }) {
   const [title, setTitle] = useState("");
@@ -125,7 +124,7 @@ export function CreateNews({ onCreate, success }) {
               >
                 Description
               </Label>
-              <ReactQuill
+              <QuillEditor
                 value={description}
                 onChange={setDescription}
                 className="md:mb-16 ml-2"

@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 import { PHOTOS } from "@/utils/api";
+import QuillEditor from "@/lib/QuillEditor";
 
 const EditNews = ({ news, onUpdate, setIsEdit }) => {
   const [title, setTitle] = useState(news.title);
@@ -24,7 +23,7 @@ const EditNews = ({ news, onUpdate, setIsEdit }) => {
   };
 
   return (
-    <>
+    <div className="max-h-96 overflow-y-scroll">
       <Label htmlFor="title">Title</Label>
       <Input
         id="title"
@@ -33,18 +32,10 @@ const EditNews = ({ news, onUpdate, setIsEdit }) => {
       />
 
       <Label htmlFor="text">Text</Label>
-      <Input
-        id="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+      <Input id="text" value={text} onChange={(e) => setText(e.target.value)} />
 
       <Label htmlFor="description">Description</Label>
-      <ReactQuill
-        value={description}
-        onChange={setDescription}
-        className="min-h-56 mb-10"
-      />
+      <QuillEditor value={description} onChange={setDescription} />
 
       <Label htmlFor="image">Image</Label>
       <Input
@@ -76,7 +67,7 @@ const EditNews = ({ news, onUpdate, setIsEdit }) => {
       >
         Cancel
       </Button>
-    </>
+    </div>
   );
 };
 

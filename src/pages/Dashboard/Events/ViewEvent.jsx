@@ -9,8 +9,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 import { statusOptions } from "@/utils/statusOptions";
 import { PHOTOS } from "@/utils/api";
 import {
@@ -20,6 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import QuillEditor from "@/lib/QuillEditor";
 
 const ViewEvent = ({
   event,
@@ -58,7 +57,7 @@ const ViewEvent = ({
 
   // Close modal if update is successful
   useEffect(() => {
-    if (successs ) {
+    if (successs) {
       setIsModalOpen(false); // Close only if changes were saved
     }
   }, [successs, setIsModalOpen]);
@@ -78,14 +77,14 @@ const ViewEvent = ({
 
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-      <DialogContent className="sm:max-w-[550px] p-6 h-[30rem] overflow-y-scroll">
+      <DialogContent className="sm:max-w-[550px] p-6 overflow-y-scroll">
         <DialogHeader>
           <DialogTitle className="text-lg font-semibold">
             {isEdit ? "Edit The Event" : "Event Details"}
           </DialogTitle>
         </DialogHeader>
 
-        <div className="grid gap-4">
+        <div className="grid gap-4 overflow-y-scroll max-h-96">
           {isEdit ? (
             <div className="flex flex-col gap-y-4">
               <Label htmlFor="name">Name</Label>
@@ -127,7 +126,7 @@ const ViewEvent = ({
               </Select>
 
               <Label htmlFor="description">Description</Label>
-              <ReactQuill
+              <QuillEditor
                 value={description}
                 onChange={setDescription}
                 className="min-h-56 mb-10"
@@ -190,7 +189,7 @@ const ViewEvent = ({
               />
             </>
           )}
-        </div>  
+        </div>
 
         <DialogFooter className="mt-6 flex gap-4">
           {isEdit ? (
