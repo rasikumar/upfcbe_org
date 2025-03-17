@@ -63,7 +63,6 @@ const News = () => {
               {...newsList}
               onDelete={handleDeleteNews}
               onView={handleViewNews}
-              onvi
             />
           ))}
         </div>

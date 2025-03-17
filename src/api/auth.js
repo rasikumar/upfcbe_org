@@ -2,7 +2,7 @@ import { ADMIN } from "@/utils/api";
 import Instance from "./Instance";
 
 export const adminLogin = async (loginData) => {
-  console.log(loginData);
+  // console.log(loginData);
   try {
     const response = await Instance.post(`${ADMIN}/login`, {
       email: loginData.email,
@@ -27,7 +27,7 @@ export const resetPassword = async (emailData) => {
 };
 
 export const updatePassword = async (ResetLinkData) => {
-  console.log("Update Password", ResetLinkData);
+  // console.log("Update Password", ResetLinkData);
   try {
     const response = await Instance.post(
       `${ADMIN}/update-password`,
