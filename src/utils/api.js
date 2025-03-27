@@ -1,10 +1,10 @@
-export const ADMIN = import.meta.env.VITE_ADMIN_API;
-export const PAY = import.meta.env.VITE_PAY_API;
-export const NEWS = import.meta.env.VITE_NEWS_API;
-export const EVENT = import.meta.env.VITE_EVENT_API;
-export const CONTACT = import.meta.env.VITE_CONTACT_API;
+export const ADMIN = "/admin";
+export const PAY = "/pay";
+export const NEWS = "/news";
+export const EVENT = "/event";
+export const CONTACT = "/contact";
 export const ENRICH = import.meta.env.VITE_ENRICH_API;
 
-export const PHOTOS = import.meta.env.VITE_PHOTO_API;
+export const PHOTOS = "http://localhost:5000/uploads/";
 
 // export const USER = import.meta.env.VITE_USER_API;

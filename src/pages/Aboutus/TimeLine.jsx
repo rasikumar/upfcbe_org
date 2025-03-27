@@ -56,8 +56,8 @@ const TimeLine = () => {
               <div className="relative" ref={imageRef}>
                 <img
                   src={set.img}
-                  alt="#"
-                  className="rounded-3xl relative w-full md:w-auto"
+                  alt={set.title}
+                  className="rounded-3xl relative w-full md:w-auto h-96"
                 />
               </div>
               <div className="absolute rotate-90 xl:right-[57%] 2xl:right-[70.5%] top-[45%] gap-x-4 hidden md:flex">

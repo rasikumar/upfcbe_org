@@ -4,6 +4,13 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import SliderCard from "@/components/SliderCard";
 
+const titles = [
+  "Donate for Food & Education",
+  "Help Provide Clean Water",
+  "Support Medical Aid for Children",
+  "Empower Women Through Education",
+  "Plant Trees for a Greener Future",
+];
 const Header = () => {
   return (
     <div>
@@ -29,9 +36,9 @@ const Header = () => {
         }}
         grabCursor={true} // Improves user experience
       >
-        {[...Array(10)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <SwiperSlide key={i} className="px-4">
-            <SliderCard />
+            <SliderCard title={titles[i]} />
           </SwiperSlide>
         ))}
       </Swiper>

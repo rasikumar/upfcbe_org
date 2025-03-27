@@ -46,9 +46,6 @@ import hoverbg from "./contact/hoverbg.webp";
 import contact_image from "./contact/contact_image.webp";
 import contact_bg from "./contact/contact_bg.jpg";
 
-import childwelfare from "./services/childwelfare.jpg";
-import supportda from "./services/supportda.jpg";
-import eldercare from "./services/eldercare.jpg";
 import Basicnecessities from "./services/Basicnecessities.jpg";
 import tribal from "./services/tribal.jpg";
 import library from "./services/library.jpg";
@@ -56,8 +53,39 @@ import tree from "./services/tree.jpg";
 import Treeawareness from "./services/Treeawareness.jpg";
 import yoga from "./services/yoga.jpg";
 import holistic from "./services/holistic.jpg";
+import FreeEveningCoaching from "./services/FreeEveningCoaching.jpg";
+import RegularMedicalCamps from "./services/RegularMedicalCamps.jpg";
+import PreventiveCareAwareness from "./services/Preventive Care & Awareness.jpg";
+import ChildWelfare from "./services/Child Welfare.jpg";
+import differntlyabled from "./services/differntlyabled.jpg";
+import Elderly from "./services/Elderly.jpg";
+import Community from "./services/Community.jpg";
+import YogaMeditation from "./services/YogaMeditation.jpg";
+import PersonalizedLearning from "./services/PersonalizedLearning.jpg";
+import longtermmaintenance from "./services/longtermmaintenance.jpg";
+import AmbulanceServices from "./services/AmbulanceServices.jpg";
+import Extensive from "./services/Extensive.jpg";
+
+// progress
+import first from "./progress/2000.jpg";
+import third from "./progress/2021.jpg";
+import second from "./progress/2011.jpg";
+import fourth from "./progress/2025.jpg";
 
 export {
+  Extensive,
+  AmbulanceServices,
+  first,
+  third,
+  second,
+  fourth,
+  longtermmaintenance,
+  YogaMeditation,
+  PersonalizedLearning,
+  differntlyabled,
+  Elderly,
+  Community,
+  ChildWelfare,
   hoverbg,
   main_logo,
   gurujiHeropic,
@@ -96,9 +124,6 @@ export {
   EDR,
   FSevaRatna,
   contact_image,
-  childwelfare,
-  supportda,
-  eldercare,
   Basicnecessities,
   tribal,
   library,
@@ -109,4 +134,7 @@ export {
   contact_bg,
   events_home,
   news_home,
+  FreeEveningCoaching,
+  RegularMedicalCamps,
+  PreventiveCareAwareness,
 };
