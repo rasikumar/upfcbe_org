@@ -23,11 +23,11 @@ const Failure = () => {
       className="flex flex-col items-center justify-center h-[30rem] z-40"
       ref={box}
     >
-      <ReactConfetti
+      {/* <ReactConfetti
         width={confettiWidth}
         height={confettiHeight}
         recycle={false}
-      />
+      /> */}
       {/* Failure icon with animation */}
       <h1 className="failure-message text-3xl mt-6 inline-flex items-center gap-4 text-red-600">
         <span className="bg-red-600 p-4 rounded-full text-white">
@@ -36,7 +36,7 @@ const Failure = () => {
         Payment Failed!
       </h1>
       <p className="text-2xl font-bold mt-2">
-        Unfortunately, {name}, your payment of ${amount} could not be processed.
+        Unfortunately, your payment could not be processed.
       </p>
 
       {/* Button to retry or go back */}

@@ -3,6 +3,7 @@ import { Check, CheckCircle } from "lucide-react"; // Icon for success
 import { Card } from "@/components/ui/card";
 import ReactConfetti from "react-confetti";
 import Button from "@/components/Button";
+import { Link } from "react-router";
 
 const Success = () => {
   const box = useRef(null);
@@ -36,12 +37,14 @@ const Success = () => {
         </span>
         Payment Successful !
       </h1>
-      <p className="text-2xl font-bold mt-2">
+      {/* <p className="text-2xl font-bold mt-2">
         Thank you! {name} for your Payment Of ${amount}!
-      </p>
+      </p> */}
 
       {/* Button to go back */}
-      <Button className="mt-4">Know more Guruji</Button>
+      <Button to={"/about-us"} className="mt-4">
+        Know more Guruji
+      </Button>
     </div>
   );
 };
